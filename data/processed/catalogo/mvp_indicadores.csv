@@ -1,0 +1,54 @@
+﻿clave,eje_rector,nombre,descripcion,formula,unidad_medida,sentido,medio_verificacion,linea_base_anio,linea_base_valor,meta_2030_valor,metas_intermedias_json
+CGID-PVD25.30-ER1-O01-E00-IE001,1. Veracruz con Bienestar y,"Población en situación de pobreza 
+ Mide la proporción de personas que tienen al menos una
+ carencia social (en los seis indicadores de rezago educativo,
+ acceso a servicios de salud, acceso a la seguridad social,
+ calidad y espacios de la vivienda, servicios básicos en la",vivienda y acceso a la alimentación) y su ingreso es  insuficiente para adquirir los bienes y servicios que requiere  para satisfacer sus necesidades alimentarias y no   alimentarias.,,,Descendente,Presentación de resultados. https://www.inegi.org.mx/desarrollosocial/pm/#documentacion,2025,44.5,41.5,"{""2025"": 44.5, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E00-IE002,1. Veracruz con Bienestar y,"mínimos de protección social 
+ Considera la situación de no carencia por acceso a la
+ seguridad social, específicamente a la población que cumple
+ alguno de los siguientes criterios: 
+ Población económicamente activa asalariada que dispone de
+ las prestaciones establecidas en el artículo 2° de la Ley de
+ Seguridad Social por parte de su trabajo. 
+ Personas que disponen de servicios médicos como",prestación laboral o por contratación voluntaria al régimen  obligatorio del IMSS.   Población jubilada o pensionada o es familiar de una persona  dentro o fuera del hogar con acceso a la seguridad social.  Población de 65 años o más beneficiaria de algún programa  social de pensiones para adultos equivalente o superior al  promedio de la Línea de Pobreza Extrema por Ingresos rural  y urbana.,,,Ascendente,Presentación de resultados. https://www.inegi.org.mx/desarrollosocial/pm/#documentacion,2025,39.8,41.0,"{""2025"": 39.8, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E01-IE014,1. Veracruz con Bienestar y,"Porcentaje de población en situación de pobreza extrema
+ Población con ingreso inferior a la Línea de Pobreza Extrema",por Ingresos y que presenta más de 3 carencias establecidas  para la medición multidimensional de la pobreza.,,,Descendente,Presentación de resultados. https://www.inegi.org.mx/desarrollosocial/pm/#documentacion,2025,8.8,7.76,"{""2025"": 8.8, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E02-IE015,1. Veracruz con Bienestar y,"servicios de salud 
+ Mide el porcentaje de personas que no cuenta con 
+ adscripción o afiliación a las instituciones públicas de
+ seguridad social (IMSS, ISSSTE federal o estatal, Pemex,
+ Ejército o Marina), a servicios médicos privados, o bien, no se","encuentra afiliado o inscrito al Seguro Popular, o no reportó  tener derecho a recibir los servicios que presta el Instituto de  Salud para el Bienestar (INSABI, actualmente IMSS-  Bienestar), respecto a la población total del Estado.",,,Descendente,Presentación de resultados. https://www.inegi.org.mx/desarrollosocial/pm/#documentacion,2025,40.7,24.3,"{""2025"": 40.7, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E02-IE016,1. Veracruz con Bienestar y,"salud estatal 
+ Mide la satisfacción de los usuarios de los Servicios
+ de Salud de Veracruz correspondientes a INSABI",y/o IMSS-Bienestar. Únicamente considera los  niveles de satisfacción “Muy Satisfactorio” o  “Satisfactorio”.,"Gubernamental (ENCIG), toma en cuenta la  población de 18 años y más de acuerdo a su   experiencia respecto a los servicios de salud  estatales.",Porcentaje,Ascendente,"Gubernamental (ENCIG), publicada en el enlace: https://www.inegi.org.mx/programas/encig/2023/",2024,65.0,75.3,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E03-IE017,1. Veracruz con Bienestar y,"Tasa de cobertura en educación básica
+ Mide el número de alumnos en educación 
+ preescolar, primaria y secundaria al inicio del","ciclo escolar, por cada cien en el rango de edad  de 3 a 14 años de la población.",𝑏𝑎𝑠 𝑃𝑜𝑏   3_14,Tasa (alumnos),Regular,SEP. Serie histórica y pronósticos de la estadística del Sistema Educativo Nacional https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx | poblacion-de-mexico-y-de-las-entidades-federativas-2016- 2050,2024,86.13,86.17,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E03-IE018,1. Veracruz con Bienestar y,"Tasa de cobertura en educación media superior
+ Mide el número de alumnos en bachillerato y
+ profesional técnico al inicio del ciclo escolar, por",cada cien en el rango de edad de 15 a 17 años de  la población.,𝑚𝑒𝑑 𝑃𝑜𝑏   15_17,Tasa (alumnos),Ascendente,SEP. Serie histórica y pronósticos de la estadística del Sistema Educativo Nacional https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx | poblacion-de-mexico-y-de-las-entidades-federativas-2016- 2050,2024,73.94,86.57,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E03-IE019,1. Veracruz con Bienestar y,"Tasa de cobertura en educación superior
+ Mide el número de alumnos que estudian el nivel
+ de técnico superior universitario, normal o","licenciatura al inicio del ciclo escolar, por cada  cien en el rango de edad de 18 a 22 años de la  población.",𝑠𝑢𝑝 𝑃𝑜𝑏   18_22,Tasa (alumnos),Ascendente,SEP. Serie histórica y pronósticos de la estadística del Sistema Educativo Nacional https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx | poblacion-de-mexico-y-de-las-entidades-federativas-2016- 2050,2024,26.46,30.56,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E04-IE020,1. Veracruz con Bienestar y,"Tasa de eficiencia terminal en primaria
+ Refiere al número de alumnos que egresan en
+ educación primaria en un ciclo escolar, por cada",cien alumnos inscritos en la cohorte escolar inicial  del mismo nivel.,prim Nvo Ing 1º   ciclo n−5,Tasa (alumnos),Ascendente,x SEV. Prontuario Estadístico https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,97.56,98.59,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E04-IE021,1. Veracruz con Bienestar y,"Tasa de eficiencia terminal en secundaria
+ Refiere al número de alumnos que egresan en
+ educación secundaria en un ciclo escolar, por cada",cien alumnos inscritos en la cohorte escolar inicial  del mismo nivel.,sec Nvo Ing 1º   ciclo n−2,Tasa (alumnos),Ascendente,x SEV. Prontuario Estadístico https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,88.57,97.42,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E04-IE022,1. Veracruz con Bienestar y,"Tasa de eficiencia terminal en media superior
+ Refiere al número de alumnos que egresan en 
+ profesional técnico o bachillerato en un ciclo escolar,",por cada cien alumnos inscritos en la cohorte escolar  inicial de esos mismos niveles.,med Nvo Ing 1º   ciclo n−2,Tasa (alumnos),Ascendente,x SEV. Prontuario Estadístico https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,76.41,90.28,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E05-IE023,1. Veracruz con Bienestar y,"artística y cultural 
+ Muestra la variación del número de actividades,",eventos artísticos y culturales en la Secretaría de  Cultura.,año t/ Número de actividades de difusión cultural  artística y cultural en el año t-1) -1) *100,Porcentaje,Ascendente,"Patrimonio, Dirección de Desarrollo Cultural Regional, Dirección de Planeación y Vinculación, Archivo digital de evidencias fotográficas.",2024,0.77,1.57,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E05-IE024,1. Veracruz con Bienestar y,"administrados por la SECVER 
+ Muestra el promedio de asistentes a eventos
+ artísticos y culturales realizados en los diecisiete
+ recintos culturales de la SECVER, ubicados en los","municipios de Boca del Río, Coatepec, Huatusco,  Orizaba, Papantla, Tlacotalpan, Veracruz y  Xalapa.",la SECVER/ Número de recintos culturales   administrados por la SECVER).,Asistentes,Ascendente,"Patrimonio, Dirección de Planeación y Vinculación, Archivo digital de evidencias fotográficas, registro de asistencia. | Web de la SECVER: https://culturaveracruz.gob.mx/https://culturaveracruz.gob.mx/#/directorio;https://transparencia.veracruzcultura.com/organigrama.php",2024,15.0,17.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E06-IE025,1. Veracruz con Bienestar y,"sociales en Veracruz 
+ Mide la proporción de personas que cuentan con al
+ menos tres carencias sociales: rezago educativo, acceso","a los servicios de salud, acceso a la seguridad social,  calidad y espacios de la vivienda, acceso a los servicios  básicos de la vivienda, y acceso a la alimentación.","pobreza multidimensional extrema, la población con  ingresos superiores a la línea de pobreza por ingresos  que tiene al menos una carencia, y la población con al  menos una carencia social.",,Descendente,Presentación de resultados. https://www.inegi.org.mx/desarrollosocial/pm/#documentacion,2025,32.1,31.1,"{""2025"": 32.1, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E01-PS01-O01-E1.4-IE001,1. Veracruz con Bienestar y,"alcantarillado sanitario 
+ Mide el porcentaje de viviendas que cuentan con
+ infraestructura de alcantarillado sanitario para recolectar","y conducir las aguas residuales que se encuentran  conectadas a la red pública, en relación con el total de  viviendas en el Estado.",de servicio de alcantarillado sanitario en relación con el  número total de viviendas en el Estado. El valor obtenido  se expresa en porcentaje.,,Ascendente,Instituto Nacional de Estadística y Geografía (INEGI). Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH) 2024. Tabulados. Tabulados predefinidos. Tabulados de hogares y viviendas. Tabulados. https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados,2025,99.3,99.5,"{""2025"": 99.3, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"

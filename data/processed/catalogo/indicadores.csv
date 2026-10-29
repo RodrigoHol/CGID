@@ -1,0 +1,648 @@
+﻿clave,eje_rector,nombre,descripcion,formula,unidad_medida,sentido,medio_verificacion,linea_base_anio,linea_base_valor,meta_2030_valor,metas_intermedias_json
+CGID-PVD25.30-ER1-O01-E00-IE001,1. Veracruz con Bienestar y,"Población en situación de pobreza 
+ Mide la proporción de personas que tienen al menos una
+ carencia social (en los seis indicadores de rezago educativo,
+ acceso a servicios de salud, acceso a la seguridad social,
+ calidad y espacios de la vivienda, servicios básicos en la",vivienda y acceso a la alimentación) y su ingreso es  insuficiente para adquirir los bienes y servicios que requiere  para satisfacer sus necesidades alimentarias y no   alimentarias.,,,Descendente,Presentación de resultados. https://www.inegi.org.mx/desarrollosocial/pm/#documentacion,2025,44.5,41.5,"{""2025"": 44.5, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E00-IE002,1. Veracruz con Bienestar y,"mínimos de protección social 
+ Considera la situación de no carencia por acceso a la
+ seguridad social, específicamente a la población que cumple
+ alguno de los siguientes criterios: 
+ Población económicamente activa asalariada que dispone de
+ las prestaciones establecidas en el artículo 2° de la Ley de
+ Seguridad Social por parte de su trabajo. 
+ Personas que disponen de servicios médicos como",prestación laboral o por contratación voluntaria al régimen  obligatorio del IMSS.   Población jubilada o pensionada o es familiar de una persona  dentro o fuera del hogar con acceso a la seguridad social.  Población de 65 años o más beneficiaria de algún programa  social de pensiones para adultos equivalente o superior al  promedio de la Línea de Pobreza Extrema por Ingresos rural  y urbana.,,,Ascendente,Presentación de resultados. https://www.inegi.org.mx/desarrollosocial/pm/#documentacion,2025,39.8,41.0,"{""2025"": 39.8, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E01-IE014,1. Veracruz con Bienestar y,"Porcentaje de población en situación de pobreza extrema
+ Población con ingreso inferior a la Línea de Pobreza Extrema",por Ingresos y que presenta más de 3 carencias establecidas  para la medición multidimensional de la pobreza.,,,Descendente,Presentación de resultados. https://www.inegi.org.mx/desarrollosocial/pm/#documentacion,2025,8.8,7.76,"{""2025"": 8.8, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E02-IE015,1. Veracruz con Bienestar y,"servicios de salud 
+ Mide el porcentaje de personas que no cuenta con 
+ adscripción o afiliación a las instituciones públicas de
+ seguridad social (IMSS, ISSSTE federal o estatal, Pemex,
+ Ejército o Marina), a servicios médicos privados, o bien, no se","encuentra afiliado o inscrito al Seguro Popular, o no reportó  tener derecho a recibir los servicios que presta el Instituto de  Salud para el Bienestar (INSABI, actualmente IMSS-  Bienestar), respecto a la población total del Estado.",,,Descendente,Presentación de resultados. https://www.inegi.org.mx/desarrollosocial/pm/#documentacion,2025,40.7,24.3,"{""2025"": 40.7, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E02-IE016,1. Veracruz con Bienestar y,"salud estatal 
+ Mide la satisfacción de los usuarios de los Servicios
+ de Salud de Veracruz correspondientes a INSABI",y/o IMSS-Bienestar. Únicamente considera los  niveles de satisfacción “Muy Satisfactorio” o  “Satisfactorio”.,"Gubernamental (ENCIG), toma en cuenta la  población de 18 años y más de acuerdo a su   experiencia respecto a los servicios de salud  estatales.",Porcentaje,Ascendente,"Gubernamental (ENCIG), publicada en el enlace: https://www.inegi.org.mx/programas/encig/2023/",2024,65.0,75.3,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E03-IE017,1. Veracruz con Bienestar y,"Tasa de cobertura en educación básica
+ Mide el número de alumnos en educación 
+ preescolar, primaria y secundaria al inicio del","ciclo escolar, por cada cien en el rango de edad  de 3 a 14 años de la población.",𝑏𝑎𝑠 𝑃𝑜𝑏   3_14,Tasa (alumnos),Regular,SEP. Serie histórica y pronósticos de la estadística del Sistema Educativo Nacional https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx | poblacion-de-mexico-y-de-las-entidades-federativas-2016- 2050,2024,86.13,86.17,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E03-IE018,1. Veracruz con Bienestar y,"Tasa de cobertura en educación media superior
+ Mide el número de alumnos en bachillerato y
+ profesional técnico al inicio del ciclo escolar, por",cada cien en el rango de edad de 15 a 17 años de  la población.,𝑚𝑒𝑑 𝑃𝑜𝑏   15_17,Tasa (alumnos),Ascendente,SEP. Serie histórica y pronósticos de la estadística del Sistema Educativo Nacional https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx | poblacion-de-mexico-y-de-las-entidades-federativas-2016- 2050,2024,73.94,86.57,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E03-IE019,1. Veracruz con Bienestar y,"Tasa de cobertura en educación superior
+ Mide el número de alumnos que estudian el nivel
+ de técnico superior universitario, normal o","licenciatura al inicio del ciclo escolar, por cada  cien en el rango de edad de 18 a 22 años de la  población.",𝑠𝑢𝑝 𝑃𝑜𝑏   18_22,Tasa (alumnos),Ascendente,SEP. Serie histórica y pronósticos de la estadística del Sistema Educativo Nacional https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx | poblacion-de-mexico-y-de-las-entidades-federativas-2016- 2050,2024,26.46,30.56,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E04-IE020,1. Veracruz con Bienestar y,"Tasa de eficiencia terminal en primaria
+ Refiere al número de alumnos que egresan en
+ educación primaria en un ciclo escolar, por cada",cien alumnos inscritos en la cohorte escolar inicial  del mismo nivel.,prim Nvo Ing 1º   ciclo n−5,Tasa (alumnos),Ascendente,x SEV. Prontuario Estadístico https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,97.56,98.59,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E04-IE021,1. Veracruz con Bienestar y,"Tasa de eficiencia terminal en secundaria
+ Refiere al número de alumnos que egresan en
+ educación secundaria en un ciclo escolar, por cada",cien alumnos inscritos en la cohorte escolar inicial  del mismo nivel.,sec Nvo Ing 1º   ciclo n−2,Tasa (alumnos),Ascendente,x SEV. Prontuario Estadístico https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,88.57,97.42,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E04-IE022,1. Veracruz con Bienestar y,"Tasa de eficiencia terminal en media superior
+ Refiere al número de alumnos que egresan en 
+ profesional técnico o bachillerato en un ciclo escolar,",por cada cien alumnos inscritos en la cohorte escolar  inicial de esos mismos niveles.,med Nvo Ing 1º   ciclo n−2,Tasa (alumnos),Ascendente,x SEV. Prontuario Estadístico https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,76.41,90.28,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E05-IE023,1. Veracruz con Bienestar y,"artística y cultural 
+ Muestra la variación del número de actividades,",eventos artísticos y culturales en la Secretaría de  Cultura.,año t/ Número de actividades de difusión cultural  artística y cultural en el año t-1) -1) *100,Porcentaje,Ascendente,"Patrimonio, Dirección de Desarrollo Cultural Regional, Dirección de Planeación y Vinculación, Archivo digital de evidencias fotográficas.",2024,0.77,1.57,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E05-IE024,1. Veracruz con Bienestar y,"administrados por la SECVER 
+ Muestra el promedio de asistentes a eventos
+ artísticos y culturales realizados en los diecisiete
+ recintos culturales de la SECVER, ubicados en los","municipios de Boca del Río, Coatepec, Huatusco,  Orizaba, Papantla, Tlacotalpan, Veracruz y  Xalapa.",la SECVER/ Número de recintos culturales   administrados por la SECVER).,Asistentes,Ascendente,"Patrimonio, Dirección de Planeación y Vinculación, Archivo digital de evidencias fotográficas, registro de asistencia. | Web de la SECVER: https://culturaveracruz.gob.mx/https://culturaveracruz.gob.mx/#/directorio;https://transparencia.veracruzcultura.com/organigrama.php",2024,15.0,17.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E06-IE025,1. Veracruz con Bienestar y,"sociales en Veracruz 
+ Mide la proporción de personas que cuentan con al
+ menos tres carencias sociales: rezago educativo, acceso","a los servicios de salud, acceso a la seguridad social,  calidad y espacios de la vivienda, acceso a los servicios  básicos de la vivienda, y acceso a la alimentación.","pobreza multidimensional extrema, la población con  ingresos superiores a la línea de pobreza por ingresos  que tiene al menos una carencia, y la población con al  menos una carencia social.",,Descendente,Presentación de resultados. https://www.inegi.org.mx/desarrollosocial/pm/#documentacion,2025,32.1,31.1,"{""2025"": 32.1, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E01-PS01-O01-E1.4-IE001,1. Veracruz con Bienestar y,"alcantarillado sanitario 
+ Mide el porcentaje de viviendas que cuentan con
+ infraestructura de alcantarillado sanitario para recolectar","y conducir las aguas residuales que se encuentran  conectadas a la red pública, en relación con el total de  viviendas en el Estado.",de servicio de alcantarillado sanitario en relación con el  número total de viviendas en el Estado. El valor obtenido  se expresa en porcentaje.,,Ascendente,Instituto Nacional de Estadística y Geografía (INEGI). Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH) 2024. Tabulados. Tabulados predefinidos. Tabulados de hogares y viviendas. Tabulados. https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados,2025,99.3,99.5,"{""2025"": 99.3, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E01-PS01-O01-E1.4-IE002,1. Veracruz con Bienestar y,"agua potable 
+ El indicador mide el porcentaje de viviendas en el Estado
+ que cuentan con servicio de agua entubada dentro de la","vivienda o sólo en el patio o terreno, en relación con el  total de viviendas en el Estado para el año que  corresponda.",agua potable= (Número de viviendas con servicio de  agua entubada/Total de viviendas en el Estado)*100,,Ascendente,viviendas. Tabulados. https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados | Nacional de Ingresos y Gastos de los Hogares (ENIGH) 2024. Tabulados. Tabulados predefinidos. Tabulados de hogares y viviendas. Tabulados. https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados,2025,93.9,95.0,"{""2025"": 93.9, ""2024"": 2027.0, ""2026"": 2029.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E02-PS02-O01-E1.1-IE003,1. Veracruz con Bienestar y,"nivel 
+ Mide el porcentaje promedio, media anual, sobre la
+ calidad de la atención brindada en los centros de salud","más cercanos a la población, como clínicas y consultorios  que son considerados como primer nivel.","primer nivel en el Estado, considerando los trimestres  registrados del año que corresponda.",,Ascendente,médica efectiva: Primer nivel. https://calidad.salud.gob.mx/site/calidad/INDICAS_reportes.html,2025,89.85,94.1,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E02-PS02-O01-E1.2-IE004,1. Veracruz con Bienestar y,"en contacto con el paciente por cada mil habitantes
+ Muestra el número de médicos que se encuentran en",instituciones públicas en el Estado y que atienden  efectivamente a la población por cada mil habitantes.,"con el paciente respecto del total de la población por  cada mil habitantes, en el año que corresponda.",,Ascendente,https://www.inegi.org.mx/app/estatal/?ag=07000030 #grafica,2024,1.72,1.95,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E02-PS02-O01-E1.3-IE005,1. Veracruz con Bienestar y,"población sin seguridad social 
+ Mide el porcentaje de recursos económicos que se
+ destinan a la población que no cuenta con",derechohabiencia dentro de alguna de las instituciones  de seguridad social (federal o estatal) respecto al gasto  que se destina a la salud en el Estado.,relación con el monto total del gasto público en salud. El  valor resultante se multiplica por cien para conocer su  proporción del total.,,Regular,en Salud por Fuente de Financiamiento e Indicadores. http://www.dgis.salud.gob.mx/contenidos/basesdedatos/da_sicuentas_gobmx.html,2025,52.4,50.0,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E06-PS02-O02-E2.3-IE006,1. Veracruz con Bienestar y,"alimentación nutritiva y de calidad 
+ Mide el porcentaje del total de la población que ve
+ vulnerado su derecho a la alimentación nutritiva y de","calidad, que comprende un acceso carente a comida  suficiente para llevar una vida activa y sana.","construir dicho indicador. Toma en cuenta a personas  con las siguientes condiciones: presenta carencia por  acceso a la alimentación; presenta limitación en el  consumo de alimentos, o; presenta las dos anteriores.",,Descendente,https://www.inegi.org.mx/desarrollosocial/pm/#informacion_general,2025,14.2,13.2,"{""2025"": 14.2, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E03-PS03-O01-E1.4-IE007,1. Veracruz con Bienestar y,"Tasa de absorción en educación secundaria 
+ Mide el porcentaje de alumnos de nuevo ingreso a primer
+ grado de educación secundaria respecto de los alumnos
+ egresados del último año del nivel primaria,","correspondientes al ciclo escolar inmediato anterior; es  decir, permite conocer el porcentaje de alumnos que  ingresan al nivel secundaria en relación con los  egresados del nivel primaria.","ingreso a primer año del nivel educativo secundaria entre  el total de egresados del nivel primaria del ciclo escolar  inmediato anterior; a pesar de que el nombre del  indicador se plantea como una tasa, en este caso se  multiplica por cien para mostrar el resultado en  porcentaje.",,Ascendente,Educativo Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,94.74,95.72,"{""2025"": 95.69, ""2026"": 94.9, ""2027"": 95.1, ""2028"": 95.11, ""2029"": 95.4, ""2030"": 95.72}"
+CGID-PVD25.30-ER1-O01-E03-PS03-O01-E1.4-IE008,1. Veracruz con Bienestar y,"Tasa de absorción en educación media superior
+ Mide el porcentaje de alumnos de nuevo ingreso al nivel
+ educativo medio superior respecto de los alumnos","egresados del último año del nivel secundaria,   correspondientes al ciclo escolar inmediato anterior.","ingreso al nivel educativo medio superior entre el total  de egresados del nivel secundaria del ciclo escolar  inmediato anterior; a pesar de que el nombre del  indicador se plantea como una tasa, en este caso se  multiplica por cien para mostrar el resultado en  porcentaje.",,Ascendente,Educativo Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,111.35,103.1,"{""2025"": 109.66, ""2026"": 100.09, ""2027"": 100.89, ""2028"": 102.0, ""2029"": 102.9, ""2030"": 103.1}"
+CGID-PVD25.30-ER1-O01-E03-PS03-O01-E1.4-IE009,1. Veracruz con Bienestar y,"Tasa de absorción en educación superior 
+ Mide el porcentaje de alumnos de nuevo ingreso al nivel
+ educativo superior respecto de los alumnos egresados","del último año del nivel educativo medio superior,  correspondientes al ciclo escolar inmediato anterior.","ingreso al nivel educativo superior entre el total de  egresados del nivel medio superior del ciclo escolar  inmediato anterior; a pesar de que el nombre del  indicador se plantea como una tasa, en este caso se  multiplica por cien para mostrar el resultado en  porcentaje.",,Ascendente,Educativo Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,93.13,93.64,"{""2025"": 92.31, ""2026"": 93.02, ""2027"": 93.36, ""2028"": 93.23, ""2029"": 93.62, ""2030"": 93.64}"
+CGID-PVD25.30-ER1-O01-E03-PS03-O01-E1.11-IE010,1. Veracruz con Bienestar y,"Tasa neta de matriculación en educación preescolar
+ Mide el porcentaje de personas en educación preescolar
+ al inicio del ciclo escolar del rango de edad de 3 a 5 años,",respecto del total de personas en el mismo grupo de  edad de la población del Estado.,"las personas inscritas en preescolar en relación con el  total de la población del Estado en el mismo rango de  edad; a pesar de que el nombre del indicador se plantea  como una tasa, se multiplica por cien para mostrar el  resultado en porcentaje.",,Ascendente,Educativo Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,58.61,59.83,"{""2025"": 56.38, ""2026"": 57.07, ""2027"": 57.76, ""2028"": 58.45, ""2029"": 59.14, ""2030"": 59.83}"
+CGID-PVD25.30-ER1-O01-E03-PS03-O01-E1.11-IE011,1. Veracruz con Bienestar y,"Tasa neta de matriculación en educación primaria
+ Mide el porcentaje de personas en educación primaria al
+ inicio del ciclo escolar del rango de edad de 6 a 11 años,",respecto del total de personas en el mismo grupo de  edad de la población del Estado.,"las personas inscritas en primaria en relación con el total  de la población del Estado en el mismo rango de edad; a  pesar de que el nombre del indicador se plantea como  una tasa, se multiplica por cien para mostrar el resultado  en porcentaje.",,Ascendente,Educativo Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,91.43,91.62,"{""2025"": 90.53, ""2026"": 90.75, ""2027"": 90.97, ""2028"": 91.18, ""2029"": 91.4, ""2030"": 91.62}"
+CGID-PVD25.30-ER1-O01-E03-PS03-O01-E1.11-IE012,1. Veracruz con Bienestar y,"Tasa neta de matriculación en educación secundaria
+ Mide el porcentaje de personas en educación secundaria
+ al inicio del ciclo escolar del rango de edad de 13 a 14","años, respecto del total de personas en el mismo grupo  de edad de la población del Estado.","las personas inscritas en secundaria en relación con el  total de la población del Estado en el mismo rango de  edad; a pesar de que el nombre del indicador se plantea  como una tasa, se multiplica por cien para mostrar el  resultado en porcentaje.",,Ascendente,Educativo Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,76.7,81.52,"{""2025"": 78.83, ""2026"": 79.37, ""2027"": 79.91, ""2028"": 80.44, ""2029"": 80.98, ""2030"": 81.52}"
+CGID-PVD25.30-ER1-O01-E03-PS03-O01-E1.11-IE013,1. Veracruz con Bienestar y,"superior 
+ Mide el porcentaje de personas en educación medio
+ superior al inicio del ciclo escolar del rango de edad de","15 a 17 años, respecto del total de personas en el mismo  grupo de edad de la población del Estado.","las personas inscritas en el nivel medio superior en  relación con el total de la población del Estado en el  mismo rango de edad; a pesar de que el nombre del  indicador se plantea como una tasa, se multiplica por  cien para mostrar el resultado en porcentaje.",,Ascendente,Educativo Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,60.11,61.57,"{""2025"": 60.83, ""2026"": 61.01, ""2027"": 61.2, ""2028"": 61.38, ""2029"": 61.57}"
+CGID-PVD25.30-ER1-O01-E04-PS03-O02-E2.1-IE014,1. Veracruz con Bienestar y,"Tasa de abandono escolar en primaria 
+ Muestra el porcentaje de alumnos que dejan la escuela
+ en el nivel primaria de un ciclo escolar a otro, en relación",con el total de alumnos que se matricularon al inicio de  cursos en educación primaria.,"alumnos que por diferentes motivos abandonan la  primaria, respecto del total de alumnos que se   inscribieron al inicio del curso; a pesar de que el nombre  del indicador se plantea como una tasa, se multiplica por  cien para mostrar el resultado en porcentaje.",,Descendente,Educativo Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,0.54,0.53,"{""2025"": 0.76, ""2026"": 0.71, ""2027"": 0.67, ""2028"": 0.62, ""2029"": 0.57, ""2030"": 0.53}"
+CGID-PVD25.30-ER1-O01-E04-PS03-O02-E2.1-IE015,1. Veracruz con Bienestar y,"Tasa de abandono escolar en secundaria 
+ Muestra el porcentaje de alumnos que dejan la escuela
+ en el nivel secundaria de un ciclo escolar a otro, en",relación con el total de alumnos que se matricularon al  inicio de cursos en educación secundaria.,"alumnos que por diferentes motivos abandonan la  secundaria, respecto del total de alumnos que se  inscribieron al inicio del curso; a pesar de que el nombre  del indicador se plantea como una tasa, se multiplica por  cien para mostrar el resultado en porcentaje.",,Descendente,Educativo Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,3.08,2.53,"{""2025"": 3.73, ""2026"": 3.49, ""2027"": 3.25, ""2028"": 3.01, ""2029"": 2.77, ""2030"": 2.53}"
+CGID-PVD25.30-ER1-O01-E04-PS03-O02-E2.1-IE016,1. Veracruz con Bienestar y,"superior 
+ Muestra el porcentaje de alumnos que dejan la escuela
+ en el nivel medio superior de un ciclo escolar a otro, en",relación con el total de alumnos que se matricularon al  inicio de cursos en educación medio superior.,"alumnos que por diferentes motivos abandonan la  educación en el nivel medio superior, respecto del total  de alumnos que se inscribieron al inicio del curso; a pesar  de que el nombre del indicador se plantea como una  tasa, se multiplica por cien para mostrar el resultado en  porcentaje.",,Regular,Educativo Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,12.13,12.32,"{""2025"": 13.45, ""2026"": 13.22, ""2027"": 13.0, ""2028"": 12.77, ""2029"": 12.55, ""2030"": 12.32}"
+CGID-PVD25.30-ER1-O01-E04-PS03-O02-E2.1-IE017,1. Veracruz con Bienestar y,"Tasa de abandono escolar en educación superior
+ Muestra el porcentaje de alumnos que dejan la escuela
+ en el nivel superior de un ciclo escolar a otro, en relación",con el total de alumnos que se matricularon al inicio de  cursos en educación superior.,"alumnos que por diferentes motivos abandonan la  educación en el nivel superior, respecto del total de  alumnos que se inscribieron al inicio del curso; a pesar de  que el nombre del indicador se plantea como una tasa,  se multiplica por cien para mostrar el resultado en  porcentaje.",,Descendente,Educativo Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,11.52,10.85,"{""2025"": 12.71, ""2026"": 12.34, ""2027"": 11.97, ""2028"": 11.6, ""2029"": 11.22, ""2030"": 10.85}"
+CGID-PVD25.30-ER1-O01-E04-PS03-O02-E2.4-IE018,1. Veracruz con Bienestar y,"Tasa de variación anual del analfabetismo 
+ Mide la disminución de la población de 15 años o más que
+ no sabe leer ni escribir, respecto al año anterior, basado",en las estimaciones anuales efectuadas por el Instituto  Nacional para la Educación de los Adultos (INEA).,t/Población de 15 años o más analfabeta en el periodo t-  1)-1) *100,,Descendente,año. https://www.gob.mx/inea/documentos/rezago-educativo,2025,2026.0,2026.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E04-PS03-O02-E2.4-IE019,1. Veracruz con Bienestar y,"más en situación de rezago educativo 
+ Mide la disminución de la población de 15 años o más que
+ no ha cursado o concluido la educación secundaria,",respecto al año anterior basado en las estimaciones  anuales efectuadas por el Instituto Nacional para la  Educación de los Adultos (INEA).,15 años o más en condición de rezago educativo en  secundaria en el periodo t-1)-1) *100,,Descendente,año. https://www.gob.mx/inea/documentos/rezagoeducativo,698,1.0,1.0,"{""0745"": 1.0, ""2025"": 2026.0, ""0746"": 1.0, ""2026"": 2027.0, ""2027"": 2028.0, ""0747"": 1.0, ""2028"": 2029.0, ""0748"": 1.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E05-PS04-O01-E1.1-IE020,1. Veracruz con Bienestar y,"Número de inventario cultural registrados 
+ Muestra el registro sistemático de manifestaciones
+ culturales inmateriales que son consideradas como",fundamentales para una comunidad del Estado de   Veracruz.,Inventario del patrimonio cultural inmaterial del Sistema  de Información Cultural (SIC) que es administrado por la  Secretaría de Cultura.,,Ascendente,patrimonio cultural inmaterial. https://sic.cultura.gob.mx/?table=frpintangible&estado _id=30,2024,11.0,100.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E01-ODS10-IE001,1. Veracruz con Bienestar y,"Índice de Gini con transferencias 
+ 
+ Este indicador mide la desigualdad que existe entre los
+ ingresos de los hogares en el Estado. Un valor más
+ cercano a cero representa una menor desigualdad entre","los hogares, mientras que, entre más cercano a uno,  denota una mayor desigualdad entre los ingresos de los  hogares en el Estado. Toma en cuenta las transferencias.","individuos en cada grupo. Para el cálculo del coeficiente  de Gini, para cada grupo la cantidad de individuos u  hogares, y el ingreso total, tienen que estar ordenados  de manera que el valor en grupo sea de manera   ascendente.",,Descendente,Instituto Nacional de Estadística y Geografía (INEGI). Encuesta Nacional de Ingreso y Gasto en los Hogares : A2030 (ENIGH) 2024. Tabulados predefinidos. Tabulados por entidad federativa. Tabulados. https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados,2025,0.367,0.331,"{""2025"": 0.367, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E01-ODS10-IE002,1. Veracruz con Bienestar y,"Índice de Gini sin transferencias 
+ 
+ Este indicador mide la desigualdad que existe entre los
+ ingresos de los hogares en el Estado. Un valor más
+ cercano a cero representa una menor desigualdad entre","los hogares, mientras que, entre más cercano a uno,  denota una mayor desigualdad entre los ingresos de los  hogares en el Estado. No toma en cuenta las   transferencias.","individuos en cada grupo. Para el cálculo del coeficiente  de Gini, para cada grupo la cantidad de individuos u  hogares, y el ingreso total, tienen que estar ordenados  de manera que el valor en grupo sea de manera   ascendente.",,Descendente,(ENIGH) 2024. Tabulados predefinidos. Tabulados por entidad federativa. Tabulados. https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados,2025,0.448,0.422,"{""2025"": 0.448, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E02-ODS03-IE003,1. Veracruz con Bienestar y,"Densidad y distribución del personal sanitario
+ Se refiere al personal sanitario reportado por las","instituciones públicas en el Estado por cada 10,000  habitantes.","públicas / Total de la población en Veracruz para el año  de referencia) *10,000",,Ascendente,http://www.dgis.salud.gob.mx/contenidos/basesdedatos/da_recursos_gobmx.html | https://datos.gob.mx/dataset/proyecciones-de-poblacion/resource/de522924-f4d8-4523-a6fd-6b2efe73f3af,2025,22.33,21.7,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E02-ODS03-IE004,1. Veracruz con Bienestar y,"vectores 
+ Muestra la sumatoria de tasas de los casos registrados y
+ confirmados de las principales enfermedades trasmitidas
+ por vectores en el Estado, es decir, organismos vivos,","generalmente insectos, que pueden transmitir   patógenos infecciosos de una persona a otra o de los  animales al ser humano.",transmitidas por vector = ∑Incidencia de enfermedades  transmitidas por vector,,Descendente,Incidencia. Enfermedad por grupo de edad y entidad federativa. https://epidemiologia.salud.gob.mx/anuario/html/index.html,2025,198.06,120.0,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E02-ODS03-IE005,1. Veracruz con Bienestar y,"Tasa de mortalidad de niños menores de 5 años
+ Muestra el número de defunciones de niños menores de","5 años de edad por cada mil nacidos vivos, en el año de  referencia.","de 5 años de edad en un determinado año, entre los  nacidos vivos del mismo periodo, multiplicado por cada  mil nacidos vivos.",,Descendente,Indicadores nacionales. Tasas de mortalidad. http://sinaiscap.salud.gob.mx:8080/DGIS/# : A2030,2024,16.03,13.5,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E03-ODS04-IE006,1. Veracruz con Bienestar y,"Proporción de escuelas con acceso a internet
+ Mide el porcentaje de escuelas con internet en el nivel",básico al respecto del total de escuelas del Estado en el  mismo nivel educativo.,"datos a inicio de cursos. El resultado se obtiene de la  identificación del número de escuelas de nivel básico con  internet a partir del total de escuelas en ese mismo nivel,  expresado en porcentaje.",,Ascendente,Secretaría de Educación de Veracruz (SEV). Prontuario Estadístico. Información Estadística del Sistema : A2030 Educativo Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,26.0,29.66,"{""2025"": 27.96, ""2026"": 28.3, ""2027"": 28.64, ""2028"": 28.98, ""2029"": 29.32, ""2030"": 29.66}"
+CGID-PVD25.30-ER1-O01-E03-ODS04-IE007,1. Veracruz con Bienestar y,"funcionamiento 
+ Mide el porcentaje de escuelas con computadoras en uso",en el nivel básico al respecto del total de escuelas del  Estado en el mismo nivel educativo.,"datos a inicio de cursos. El resultado se obtiene de la  relación entre el total de escuelas identificadas en el nivel  básico que cuentan con computadoras en uso y el total  de escuelas del mismo nivel en el Estado, expresado en  porcentaje.",,Ascendente,Educativo Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2024,44.46,49.02,"{""2025"": 45.36, ""2026"": 46.1, ""2027"": 46.83, ""2028"": 47.56, ""2029"": 48.29, ""2030"": 49.02}"
+CGID-PVD25.30-ER1-O01-E04-ODS16-IE008,1. Veracruz con Bienestar y,"obligatoria 
+ Es el porcentaje de la población de 18 años y más que
+ habita en áreas urbanas de cien mil habitantes y más
+ usuaria de servicios públicos educativos (primaria,",secundaria y bachillerato) que manifiesta estar muy  satisfecha o satisfecha con su experiencia en los servicios  públicos educativos.,"satisfacción de los usuarios(as) de servicios públicos  bajo demanda; el nivel de satisfacción con la educación  pública obligatoria engloba diversas características del  servicio: personal docente capacitado, buen trabajo,  personal docente suficiente, cumplimiento de temarios,  cumplimiento de días de clases, instalaciones limpias y   : A2030       ordenadas, instalaciones y mobiliario en buen estado,  salones sin saturación de estudiantes y gratuidad.",,Ascendente,(ENCIG). Tabulados predefinidos. Evaluación de servicios públicos bajo demanda. https://www.inegi.org.mx/programas/encig/#tabulados,2024,74.6,79.8,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER1-O01-E03-ODS16-IE009,1. Veracruz con Bienestar y,"universitaria 
+ Es el porcentaje de la población de 18 años y más que
+ habita en áreas urbanas de cien mil habitantes y más
+ usuaria de servicios públicos educativos (universidades",y universidades tecnológicas) que manifiesta estar muy  satisfecha o satisfecha con su experiencia en los servicios  públicos educativos.,"satisfacción de los usuarios(as) de servicios públicos  bajo demanda; el nivel de satisfacción con la educación  pública universitaria engloba diversas características del  servicio: personal docente capacitado, buen trabajo,  personal docente suficiente, cumplimiento de temarios,  cumplimiento de días de clases, instalaciones limpias y   : A2030       ordenadas, instalaciones y mobilario en buen estado y  salones sin saturación de estudiantes.",,Ascendente,(ENCIG). Tabulados predefinidos: “II. Evaluación de servicios públicos bajo demanda”. https://www.inegi.org.mx/programas/encig/#tabulados,2024,78.6,85.3,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E00-IE003,2. Veracruz con Economía y,"Producto Interno Bruto Estatal (PIBE) 
+ Permite conocer anualmente el comportamiento y 
+ composición de las actividades económicas de los estados,",así como la contribución al crecimiento tanto de cada estado  al nacional para cada actividad como de las actividades  económicas en cada estado.,,,Ascendente,INEGI. Producto Interno Bruto por entidad federativa. https://www.inegi.org.mx/programas/pibent/2018/,2024,1.0,1.0,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E00-IE004,2. Veracruz con Economía y,"(ITAEE) 
+ Es el valor promedio de crecimiento anual del ITAEE en el
+ año de referencia. Brinda información de corto plazo que",permite tener un panorama de la evolución económica de las  entidades federativas.,,,Ascendente,de Cuentas Nacionales de México. https://www.inegi.org.mx/temas/itaee/,2024,3.8,4.16,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E00-IE005,2. Veracruz con Economía y,"Índice de Competitividad Estatal: Veracruz 
+ Evalúa tanto las capacidades estructurales como 
+ coyunturales de las Entidades Federativas bajo 10 subíndices:","Derecho, Infraestructura, Innovación y Economía, Mercado  de Trabajo, Sistema político y Gobiernos y Sociedad y Medio  Ambiente.",,,Regular,IMCO. Índice de Competitividad Estatal. https://imco.org.mx/indices/,2024,34.2,34.6,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E07-IE026,2. Veracruz con Economía y,"(ITAEE): Actividades Secundarias 
+ Mide el valor de las actividades económicas que 
+ transforman materia prima en productos, expresada en","índice de volumen físico. El sector secundario abarca la  minería, la manufactura, la construcción, la electricidad  y la producción de gas.",,,Ascendente,(ITAEE) Base 2018. Tabulados. Serie detallada. Actividades económicas por entidad federativa. Actividades Secundarias. https://www.inegi.org.mx/temas/itaee/#tabulados,2025,106.0,108.2,"{""2025"": 106.0, ""2026"": 106.9, ""2027"": 107.0, ""2028"": 107.4, ""2029"": 107.7, ""2030"": 108.2}"
+CGID-PVD25.30-ER2-O02-E07-IE027,2. Veracruz con Economía y,"(ITAEE): Actividades terciarias 
+ Es el valor promedio de crecimiento anual del ITAEE en el
+ año de referencia. Para este indicador, se utiliza el índice de
+ volumen físico (IVF) de las actividades terciarias, reflejando",los cambios en las cantidades físicas de la producción  durante cierto período al haberse eliminado el efecto de las  variaciones en los precios.,,,Ascendente,de Cuentas Nacionales de México. https://www.inegi.org.mx/temas/itaee/,2024,100.6,105.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E08-IE028,2. Veracruz con Economía y,"Tasa de productividad agrícola 
+ Mide el rendimiento promedio por hectárea","cosechada, a partir del volumen de la producción.",(toneladas/hectáreas cosechadas),Tasa (tonelada por hectárea),Ascendente,http://nube.agricultura.gob.mx/cierreagricola/,2024,21.06,26.6,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E09-IE029,2. Veracruz con Economía y,"hospedaje en la entidad 
+ Representa el monto de recursos recaudados por la actividad
+ de los establecimientos de hospedaje en la entidad. Estos
+ recursos son administrados por el Fideicomiso Público de
+ Administración del Impuesto por la Prestación de Servicios de","Hospedaje, sectorizado a la Secretaría de Turismo del  Gobierno del Estado de Veracruz y mide el importe en  millones de pesos recaudados de manera anual en valores  corrientes.",,,Nominal,Sistema Integral de Administración Financiera del Estado de Veracruz (SIAFEV 2.0).,2024,75.0,96.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E10-IE30,2. Veracruz con Economía y,"Efecto Invernadero (GyCEI) 
+ Este indicador mide las emisiones totales 
+ mitigadas reportadas en el año actual, 
+ considerando sectores clave como Energía,","Procesos Industriales y Uso de Productos (PIUP),  Agricultura, Silvicultura y Otros Usos de la Tierra  (ASOUT) y Residuos.",mitigación reportadas anualmente por su factor  de emisión correspondiente),Toneladas de CO equivalente,Ascendente,Cambio Climático de la SEDEMA.,2024,15.0,25.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E11-IE031,2. Veracruz con Economía y,"Tasa de informalidad laboral 
+ La Tasa de informalidad laboral (TIL), es la
+ proporción de la población ocupada de manera
+ general que son laboralmente vulnerables por la","naturaleza de la unidad económica para la que  trabajan, debido a que se encuentran en la   informalidad laboral. Cabe remarcar que existe la TIL  la cual excluye la población del sector agropecuario.","total, da cuenta del porcentaje de ocupados que  carecen de la protección social básica por parte de  su trabajo.",Porcentaje,Descendente,https://www.inegi.org.mx/sistemas/Infoenoe/Default _15mas.aspx,2024,70.1,69.5,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E11-IE032,2. Veracruz con Economía y,"IMSS 
+ Este indicador muestra la cantidad total de personas
+ que están registradas en el IMSS lo que indica",empleo formal. Se puede desglosar en trabajadores  permanentes y eventuales urbanos.,"tiene su trabajo registrado en el IMSS por mes, dicha  suma es dividida entre los doce meses del año.",Puestos de trabajo registrados,Ascendente,ng=UTF- 8&ui.object=XSSSTART*2fcontent*2ffolder*5b*40na me*3d*27Sitio*20STPS*27*5d*2ffolder*5b*40name*3 d*271.*20Asegurados*20en*20el*20IMSS*27*5d*2fre port*5b*40name*3d*27Total*20de*20Trabajadores*2 7*5dXSSEND,2024,779.0,809.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E07-PS05-O01-E1.1-IE021,2. Veracruz con Economía y,"(ITAEE): Industrias Manufactureras 
+ Es el valor promedio de crecimiento anual del ITAEE en
+ el año de referencia. Para este indicador, se utiliza el
+ índice de volumen físico de las actividades secundarias,","en específico de las industrias manufactureras,  reflejando los cambios en las cantidades físicas de la  producción durante cierto período al haberse eliminado  el efecto de las variaciones en los precios.","Para la medición del ITAEE, se desarrollan cálculos a  precios constantes (valoración de las cantidades  mediante la aplicación de precios de un año base) y/o en  términos reales (mediante la deflación de valores  corrientes utilizando un índice de precios apropiado),  según la información disponible.   Los datos del ITAEE se presentan como número índice,  variación trimestral y variación trimestral anual. En este  caso se tomará la variación trimestral anual (acumulada)  calculada por el mismo INEGI, específicamente para la  Industria Manufacturera.",,Ascendente,(ITAEE) Base 2018. Tabulados. Serie detallada. Entidades federativas por actividad económica. https://www.inegi.org.mx/temas/itaee/#tabulados,2025,117.0,120.0,"{""2025"": 117.0, ""2026"": 118.0, ""2027"": 118.5, ""2028"": 119.0, ""2029"": 119.5, ""2030"": 120.0}"
+CGID-PVD25.30-ER2-O02-E07-PS05-O01-E1.2-IE022,2. Veracruz con Economía y,"Estatal (ITAEE): Comercio 
+ Mide el valor del desempeño del sector comercio, que","forma parte de las actividades del sector terciario,  expresado en Índice de volumen físico.","federativa, para el cual utiliza el método de la  producción. El resultado toma en cuenta el valor anual  de los cuatro trimestres del año.",,Ascendente,Trimestral de la Actividad Económica Estatal (ITAEE). Base 2018. Tabulados. Serie detallada. Entidades federativas por actividad económica: Veracruz. https://www.inegi.org.mx/app/tabulados/default.aspx?pr=15&vr=5&in=50&tp=20&wr=1&cno=1&idrt=3259&opc =p,2025,111.1,113.03,"{""2025"": 111.1, ""2026"": 111.92, ""2027"": 112.02, ""2028"": 112.6, ""2029"": 112.95, ""2030"": 113.03}"
+CGID-PVD25.30-ER2-O02-E08-PS06-O01-E1.1-IE023,2. Veracruz con Economía y,"y pesquera 
+ Muestra la situación de la producción total agropecuaria
+ y pesquera del Estado en relación con el año inmediato",interior; de esta manera se mide el crecimiento o  contracción en su volumen de producción.,pesquera= ((Producción total del año actual /  Producción total del año anterior) -1) x 100,,Ascendente,https://nube.agricultura.gob.mx/datosAbiertos/Pecuario.phpComisión Nacional de Acuacultura y Pesca (CONAPESCA). Anuario Estadístico de Acuacultura y Pesca. https://www.gob.mx/conapesca/documentos/anuario-estadistico-de-acuacultura-y-pesca | Servicio de Información Agroalimentaria y Pesquera (SIAP). Estadística de Producción Ganadera: https://nube.agricultura.gob.mx/datosAbiertos/Pecuario.phpComisión Nacional de Acuacultura y Pesca (CONAPESCA). https://www.gob.mx/conapesca/documentos/anuario-estadistico-de-acuacultura-y-pesca,2030,0.38,0.38,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E08-PS06-O01-E1.2-IE024,2. Veracruz con Economía y,"que consideraron los altos costos de producción
+ Indica la proporción del total de unidades de producción
+ activas que presentaron problemas para realizar","actividades agropecuarias, en específico, altos costos de  insumos y servicios.",producción agropecuarias que presentaron problemas  por altos costos de insumos y servicios.,,Descendente,Encuesta Nacional Agropecuaria (ENA). https://www.inegi.org.mx/programas/ena/2019/,2024,89.9,73.8,"{""2025"": 2028.0, ""2022"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E08-PS06-O01-E1.5-IE025,2. Veracruz con Economía y,"Rendimiento promedio de cultivos estratégicos (maíz)
+ Mide el rendimiento promedio por hectárea cosechada","de maíz, a partir del volumen de la producción.",(Producción del cultivo de maíz / Superficie cosechada  de maíz),,Ascendente,Estadística de Producción Agrícola. https://nube.agricultura.gob.mx/cierre_agricola/,2024,2.28,2.41,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E09-PS07-O01-E1.2-IE026,2. Veracruz con Economía y,"Número de guías de turistas acreditados en la entidad
+ Se refiere a la cantidad de personas que se certifican
+ como guías de turistas conforme a las normas nacionales",oficiales de turismo establecidas por Secretaria de  Turismo Nacional.,"procesos de formación necesarios e indispensables para  obtener la acreditación como guías, además de aquellos  que cuentan con credencial vigente.",,Ascendente,Estatal de Información Estadística Turística (SEINET) https://seinet.veracruz.mx/guiasvigentes.php,2024,158.0,189.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E09-PS07-O01-E1.3-IE027,2. Veracruz con Economía y,"entidad 
+ Muestra la cantidad total de turistas que visitan el Estado",de Veracruz procedentes de otras entidades y del  extranjero en el periodo que corresponda.,Geografía (INEGI) y la Secretaría de Turismo (SECTUR).  El valor del indicador considera el total general por  categoría de turismo (1-5 estrellas).,,Ascendente,Turistas noche y Estadía por nacionales y extranjeros según año(s) / mes(es) seleccionado(s). https://datatur.sectur.gob.mx/SitePages/CompendioEstadistico.aspx,2024,5.0,5.0,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E09-PS07-O01-E1.3-IE028,2. Veracruz con Economía y,"alojamiento temporal y de preparación de alimentos y
+ bebidas” 
+ Es la suma del valor de todos los servicios finales y la
+ producción realizada por establecimientos como 
+ hoteles, hostales, restaurantes y bares en un estado o",país en un período determinado. Permite conocer  anualmente la contribución de este sector en la  economía estatal y nacional.,"mercado, de acuerdo al INEGI. Específicamente lo  correspondiente a la rama 72 “Servicios de alojamiento  temporal y de preparación de alimentos y bebidas”.",,Ascendente,Producto Interno Bruto por Entidad Federativa (PIBE) Año Base 2018. PIB de las entidades federativas por actividad económica. Rama 72 “Servicios de alojamiento temporal y de preparación de alimentos y bebidas”. https://www.inegi.org.mx/app/tabulados/default.aspx?pr=18&vr=1&in=78&tp=20&wr=1&cno=1&idrt=3260&opc=p,2024,18.0,18.0,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E09-PS07-O01-E1.5-IE029,2. Veracruz con Economía y,"entidad 
+ Muestra el total al cuarto trimestre de la población
+ ocupada por sector de actividad económica,",particularmente de la ocupación de restaurantes y  servicios de alojamiento dentro de la entidad federativa.,ello se toma el cuarto trimestre del año que corresponda  en específico de la población ocupada en restaurantes y  servicios de alojamiento.,,Ascendente,Encuesta Nacional de Ocupación y Empleo (ENOE). Tabulados. Tabulados predefinidos. Trimestrales. Tabulados por sector de actividad. https://www.inegi.org.mx/sistemas/Infoenoe/Default_15mas.aspx,2025,305.0,324.0,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E10-PS08-O01-E1.4-IE030,2. Veracruz con Economía y,"correcta disposición final 
+ Mide el grado de cumplimiento a la normatividad
+ ambiental de acuerdo al peso total de residuos sólidos","que han sido depositados en rellenos sanitarios (sitios  autorizados), evitando la contaminación del agua por  lixiviados, del aire por emisiones y del suelo por contacto.",correcta disposición final.,,Ascendente,mismo que se encuentra bajo resguardo de la Dirección de Evaluación y Regulación Ambiental.,2024,1.0,2.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E10-PS08-O01-E1.1-IE031,2. Veracruz con Economía y,"una política ambiental 
+ Este indicador hace referencia a la superficie con
+ programas de ordenamiento ecológico decretados a
+ nivel estatal, y de espacios naturales con acciones de
+ protección, restauración y conservación de la","biodiversidad para asegurar sus funciones ecológicas y  servicios ecosistémicos, contribuyendo a mitigar los  efectos del cambio climático en el territorio, a través de  una política pública estatal alineada a la normatividad  ambiental vigente.","ecológico, preservación, conservación o restauración de  ecosistemas.",,Ascendente,naturales-protegidos/ https://www.veracruz.gob.mx/medioambiente/ordenamiento-ecologico/https://www.veracruz.gob.mx/medioambiente/indicadores/,2024,1.0,1.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E10-PS08-O01-E1.4-IE032,2. Veracruz con Economía y,"emisoras de contaminantes 
+ Mide el avance en la incorporación y regulación bajo el
+ marco normativo ambiental, de los establecimientos
+ públicos y privados que realizan actividades","generadoras de sustancias que contaminan al ambiente  (aire, agua y suelo), denominada como Gestión de  Residuos de Manejo Especial (GRME), con el fin de  fortalecer el cumplimiento ambiental.",agua y suelo) bajo el marco normativo.,,Ascendente,bajo resguardo de la Dirección de Evaluación y Regulación Ambiental.,2024,3.0,6.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E11-PS09-O01-E1.1-IE033,2. Veracruz con Economía y,"local por entidad federativa 
+ Muestra el total de arreglos o resoluciones finales que
+ presentan los conflictos de trabajos individuales o","colectivos entre trabajadores y patrones, sin considerar  la forma de resolución.","El año de solución de los conflictos, en algunos casos, no  corresponde al de registro de los conflictos.",,Regular,solucionados de jurisdicción local. https://www.inegi.org.mx/programas/rellaborales/#tabulados,2025,2.0,2.0,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E11-PS09-O01-E1.2-IE034,2. Veracruz con Economía y,"Tasa de desocupación 
+ Mide la proporción de personas de 15 y más años que
+ cuentan con experiencia laboral y actualmente se","encuentran en una búsqueda de empleo formal, en  relación con la población económicamente activa.",población económicamente activa en un rango de edad  de 15 años y más.,,Descendente,Consulta interactiva de indicadores estratégicos. Tasas: Tasa de desocupación. Coberturas y sexo. Entidades: Veracruz. https://www.inegi.org.mx/sistemas/Infoenoe/Default_15mas.aspx,2025,2.3,2.1,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E07-ODS09-IE010,2. Veracruz con Economía y,"Porcentaje de población ocupada por las empresas
+ Muestra la proporción del total de la población ocupada
+ en el ámbito no agropecuario, particularmente en","micronegocios, pequeños, medianos y grandes   establecimientos que se encuentran en el Estado.",(∑Empresas en el Estado / Total de la población ocupada  por ámbito)*100,,Regular,predefinidos. Trimestrales. Indicadores Estratégicos. https://www.inegi.org.mx/programas/enoe/15ymas/#tabulados,2025,87.25,88.12,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E10-ODS12-IE011,2. Veracruz con Economía y,"de manera selectiva respecto del total de residuos
+ sólidos urbanos recolectados 
+ Este indicador resulta de dividir la cantidad de residuos
+ sólidos urbanos recolectados de manera selectiva en los","municipios y demarcaciones territoriales con servicio de  recolección entre el total de residuos sólidos urbanos  recolectados, multiplicado por 100.",recolectados de manera selectiva respecto del total de  residuos sólidos urbanos recolectados.   RSU= Residuos Sólidos Urbanos,,Ascendente,“Residuos sólidos urbanos”. https://www.inegi.org.mx/programas/cngmd/#tabulados,2024,4.5,5.5,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER2-O02-E11-ODS05-IE012,2. Veracruz con Economía y,"Ingreso laboral promedio de mujeres 
+ Muestra el promedio de ingreso en pesos del total de la","población de mujeres, a partir de 12 años y más del  Estado.",ingreso en pesos reportado por mujeres en un rango de  edad de 12 años y más; para ello se calcula el promedio.,,Ascendente,(ENIGH). Tabulados. Tabulados por entidad federativa. Tabulados. https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados : A2030,2025,17.0,18.0,"{""2025"": 17.0, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E00-IE006,3. Veracruz con Infraestructura y,"programable 
+ Se refiere al porcentaje del presupuesto ejercido en gasto de",capital con respecto al gasto programable ejercido por el  Poder Ejecutivo en cada ejercicio fiscal.,,,Ascendente,N/A,2024,7.4,14.78,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E12-IE033,3. Veracruz con Infraestructura y,"carretera de competencia estatal 
+ Mide la variación total de kilómetros de la red
+ carretera del territorio del Estado del periodo
+ actual con respecto al periodo previo, mismo que","aumenta cada vez que se realizan obras de   construcción y/o rehabilitación, dependiendo el  tipo de camino y superficie de rodamiento.",estatal del periodo actual / Longitud de la red  carretera estatal del periodo previo) – 1 x 100,Porcentaje,Regular,"Geográfica del Estado de Veracruz (CEIEG), SEFIPLAN. http://ceieg.veracruz.gob.mx/2024/05/25/integracion-de-informacion-estadistica-y-geografica-de-los-estados-iegemc-2023/",2024,0.03,0.13,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E13-IE034,3. Veracruz con Infraestructura y,"públicos básicos 
+ Mide el grado de satisfacción general de la
+ ciudadanía con los servicios públicos básicos y bajo",demanda en el Estado de Veracruz de Ignacio de la  Llave.,población de 18 años y más de acuerdo a su   experiencia respecto a los servicios públicos  básicos.,Porcentaje,Ascendente,Gubernamental (ENCIG) https://www.inegi.org.mx/programas/encig/2023/,2024,38.2,45.4,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E14-IE035,3. Veracruz con Infraestructura y,"Porcentaje de usuarios de internet en el Estado
+ Descripción o Mide el porcentaje de usuarios que disponen de servicio de
+ definición2.1.3 internet en el Estado de Veracruz. 
+ Dimensión a medir2.1.4 Eficacia 
+ Tipo de indicador para 
+ Estratégico 
+ resultados2.1.5 
+ Tipo valor de la meta2.1.6 Absoluta 
+ La Encuesta Nacional sobre Disponibilidad y Uso de Tecnologías
+ de la Información en los Hogares (ENDUTIH), recaba información
+ sobre la disponibilidad y el uso de las tecnologías de información
+ Fórmula o método de 
+ y comunicaciones en los hogares y su utilización por los
+ cálculo2.1.7 
+ individuos de seis años o más. Para este indicador únicamente se
+ toma el resultado referente a los usuarios que disponen de
+ internet en Veracruz. 
+ Unidad de medida del 
+ Porcentaje 
+ indicador2.1.8 
+ Frecuencia2.1.9 Anual 
+ Sentido del indicador2.1.10 Ascendente 
+ INEGI. Encuesta Nacional sobre Disponibilidad y Uso de
+ Medio de verificación del 
+ Tecnologías de la Información en los Hogares (ENDUTIH).
+ indicador 2.1.11 
+ https://www.inegi.org.mx/programas/endutih/2023/#tabulados
+ III. Características del Indicador 3.1 
+ (Criterios de selección de un buen indicador)
+ Características3.1.1 Calificación3.1.2 Justificación3.1.3 
+ 
+ El Indicador es directo e inequívoco; es decir,
+ Claridad3.1.1.1 Cumple 
+ entendible. 
+ Provee información sobre el objetivo que se quiere
+ Relevancia3.1.1.2 Cumple 
+ medir. 
+ Su generación no implica costo para la 
+ Economía3.1.1.3 Cumple 
+ dependencia. 
+ Los datos del indicador son de libre acceso al
+ público en general y sujetos a una comprobación
+ Monitoreable3.1.1.4 Cumple 
+ independiente. Existe claridad en los medios de
+ verificación. 
+ El indicador aporta una base suficiente de 
+ Adecuado3.1.1.5 Cumple información para emitir un juicio respecto del
+ desempeño para el cual fue creado. 
+ Aporte Marginal3.1.1.6 N/A 
+ IV. Datos de las variables 
+ (llenar este conjunto de datos como número de variables integren
+ 4.1 
+ el indicador) 
+ Nombre de la variable4.1.1 N/A para meta absoluta.",,,,Ascendente,Tecnologías de la Información en los Hogares (ENDUTIH). https://www.inegi.org.mx/programas/endutih/2023/#tabulados,2024,71.8,88.6,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E14-IE036,3. Veracruz con Infraestructura y,"Porcentaje de usuarios de telefonía celular en el Estado
+ Descripción o Mide el porcentaje de personas usuarias de teléfono celular en el
+ definición2.1.3 Estado de Veracruz. 
+ Dimensión a medir2.1.4 Eficacia 
+ Tipo de indicador para 
+ Estratégico 
+ resultados2.1.5 
+ Tipo valor de la meta2.1.6 Absoluta 
+ La Encuesta Nacional sobre Disponibilidad y Uso de Tecnologías
+ de la Información en los Hogares (ENDUTIH), recaba información
+ sobre la disponibilidad y el uso de las tecnologías de información
+ Fórmula o método de 
+ y comunicaciones en los hogares y su utilización por los
+ cálculo2.1.7 
+ individuos de seis años o más. Para este indicador únicamente se
+ toma el resultado referente a los usuarios de telefonía celular en
+ Veracruz. 
+ Unidad de medida del 
+ Porcentaje 
+ indicador2.1.8 
+ Frecuencia2.1.9 Anual 
+ Sentido del indicador2.1.10 Ascendente 
+ INEGI. Encuesta Nacional sobre Disponibilidad y Uso de
+ Medio de verificación del 
+ Tecnologías de la Información en los Hogares (ENDUTIH).
+ indicador 2.1.11 
+ https://www.inegi.org.mx/programas/endutih/2023/#tabulados
+ III. Características del Indicador 3.1 
+ (Criterios de selección de un buen indicador)
+ Características3.1.1 Calificación3.1.2 Justificación3.1.3 
+ 
+ El Indicador es directo e inequívoco; es decir,
+ Claridad3.1.1.1 Cumple 
+ entendible. 
+ Provee información sobre el objetivo que se quiere
+ Relevancia3.1.1.2 Cumple 
+ medir. 
+ Su generación no implica costo para la 
+ Economía3.1.1.3 Cumple 
+ dependencia. 
+ Los datos del indicador son de libre acceso al
+ público en general y sujetos a una comprobación
+ Monitoreable3.1.1.4 Cumple 
+ independiente. Existe claridad en los medios de
+ verificación. 
+ El indicador aporta una base suficiente de 
+ Adecuado3.1.1.5 Cumple información para emitir un juicio respecto del
+ desempeño para el cual fue creado. 
+ Aporte Marginal3.1.1.6 N/A 
+ IV. Datos de las variables 
+ (llenar este conjunto de datos como número de variables integren
+ 4.1 
+ el indicador) 
+ Nombre de la variable4.1.1 N/A para meta absoluta.",,,,Ascendente,Tecnologías de la Información en los Hogares (ENDUTIH). https://www.inegi.org.mx/programas/endutih/2023/#tabulados,2024,75.3,86.7,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E15-IE037,3. Veracruz con Infraestructura y,"calidad y espacios de la vivienda 
+ Mide el porcentaje de población del Estado de Veracruz con
+ la carencia por calidad y espacios de la vivienda, los espacios
+ que contempla la medición de esta carencia son los techos,","los muros y los pisos, cuyo material debe ser de materiales  que protejan a los habitantes de la vivienda del clima y que  no dañen su salud.",,,Descendente,Instituto Nacional de Estadística y Geografía (INEGI). Pobreza Multidimensional. Tabulados. Tabulados predefinidos. https://www.inegi.org.mx/desarrollosocial/pm/#tabulados,2025,11.7,8.8,"{""2025"": 11.7, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E15-IE038,3. Veracruz con Infraestructura y,"acceso a los servicios básicos de la vivienda
+ Mide la relación entre la población del Estado que habita en","viviendas con carencia en el acceso a servicios básicos,  respecto del total de la población en el Estado.",,,Descendente,Multidimensional. Tabulados. Tabulados predefinidos. https://www.inegi.org.mx/desarrollosocial/pm/#tabulados,2025,28.5,24.22,"{""2025"": 28.5, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E00-IE057,3. Veracruz con Infraestructura y,"Variación porcentual de infraestructura pública entregada
+ Se refiere a la variación porcentual que se genera por la
+ construcción y entrega de obras de infraestructura pública",que realiza la Secretaría de Infraestructura y Obras Públicas  en el año actual con respecto al año inmediato anterior.,,,Ascendente,"(OED-AVAN) del cuarto trimestre, del año actual, emitido por el Sistema Integral de Administración Financiera del Estado de Veracruz versión 2.0 (SIAFEV 2.0), ubicados en la Subdirección de Recursos Financieros | inmediato anterior, emitido por el Sistema Integral de Administración Financiera del Estado de Veracruz versión 2.0 (SIAFEV 2.0), ubicados en la Subdirección de Recursos Financieros",2030,7.28,7.28,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E12-PS10-O01-E1.2-IE035,3. Veracruz con Infraestructura y,"atendidos 
+ Mide el porcentaje de los kilómetros atendidos mediante
+ obras de construcción, reconstrucción y rehabilitación,",con respecto al total de kilómetros de la red carretera  estatal.,atendidos/Kilómetros totales de la Red Carretera  Estatal)*100,,Regular,"Caminos y Carreteras Estatales de la Secretaría de Infraestructura y Obras Públicas. | Finanzas y Planeación (SEFIPLAN). Comité Estatal de Información Estadística y Geográfica (CEIEG). Apartado 22, Transporte, Cuadro 22.1. http://ceieg.veracruz.gob.mx",2024,0.95,1.08,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E13-PS10-O02-E2.3-IE036,3. Veracruz con Infraestructura y,"rehabilitadas 
+ El indicador permite medir las obras en la infraestructura
+ física de las unidades médicas, Unidades de Medicina
+ Familiar, Centros de Salud (primer nivel, atención básica","y preventiva), Hospitales Generales de Zona y  Regionales (segundo nivel, hospitalización y   especialidades) y Unidades Médicas de Alta   Especialidad (tercer nivel, padecimientos complejos), en  un periodo determinado de los servicios de salud en el  Estado.",rehabilitadas durante año actual /Unidades médicas  construidas y rehabilitadas durante año inmediato  anterior)-1)*100,,Ascendente,"el Sistema Integral de Administración Financiera del Estado de Veracruz versión 2.0 (SIAFEV 2.0), ubicados en las oficinas de la Dirección General de Construcción de Obras Públicas. | del Estado de Veracruz versión 2.0 (SIAFEV 2.0), ubicados en las oficinas de la Dirección General de Construcción de Obras Públicas.",2024,126.92,15.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E13-PS10-O02-E2.6-IE037,3. Veracruz con Infraestructura y,"potable, drenaje, alcantarillado por habitante
+ Indica la inversión económica promedio destinada en un
+ periodo determinado a la construcción, mejora o","mantenimiento de infraestructura de agua potable,  drenaje, alcantarillado por cada habitante beneficiado.","alcantarillado en el año / Habitantes beneficiados con  obras de agua potable, drenaje y alcantarillado en el  año).",,Regular,"Sistema Integral de Administración Financiera del Estado de Veracruz versión 2.0 (SIAFEV 2.0), ubicados en las oficinas de la Dirección General de Construcción de Obras Públicas.",2024,1.0,1.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E14-PS10-O03-E3.1-IE038,3. Veracruz con Infraestructura y,"infraestructura de telecomunicación 
+ Indica el porcentaje de la población del estado de
+ Veracruz que tiene acceso a servicios de 
+ telecomunicaciones, incluyendo elementos físicos como","torres de telefonía móvil, cables de fibra óptica,  estaciones satelitales y otras redes que permiten la  transmisión de datos y comunicación.",Veracruzana beneficiada/Total de la Población   Veracruzana)*100.,,Ascendente,General de Telecomunicaciones y Desarrollo de Vías de Comunicación. | programas/conciliacion-demografica-de-1950-a-2019-y- proyecciones-de-la-poblacion-de-mexico-y-de-las-entidades- federativas-2020-a-2070,2024,1.02,7.22,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E14-PS10-O03-E3.3-IE039,3. Veracruz con Infraestructura y,"Porcentaje de cobertura de las redes móviles
+ Mide la cobertura con la que cuenta la población que vive
+ en áreas donde hay acceso a una señal móvil de","telefonía, que puede ser de voz y datos en el Estado de  Veracruz, expresado en porcentaje.","Infraestructura y el Subpilar: Cobertura, acceso y calidad;  mediante el Índice de Desarrollo Digital Estatal (IDDE).",,Ascendente,Centro México Digital. Índice de Desarrollo Digital Estatal (IDDE). https://centromexico.digital/iddes/,2024,92.5,95.5,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E15-PS10-O04-E4.1-IE040,3. Veracruz con Infraestructura y,"Estado de Veracruz 
+ Mide el porcentaje total de viviendas a nivel estatal en
+ condiciones de rezago habitacional, respecto del total de","viviendas. Entendiéndose por rezago social aquellas  viviendas con materiales constructivos en deterioro,  regulares y/o con precariedad en los espacios.",Rezago habitacional es el Cuestionario ampliado del  Censo de Población y Vivienda 2020 y se apoya sobre  una muestra probabilística de viviendas para profundizar  en el conocimiento de algunos temas.,,Descendente,Comisión Nacional de Vivienda (CONAVI). https://siesco.conavi.gob.mx/demanda/rezago_estatal.aspx#,2024,43.73,35.08,"{""2025"": 43.73, ""2024"": 2026.0, ""2026"": 2028.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E15-PS10-O04-E4.2-IE041,3. Veracruz con Infraestructura y,"entubada en el Estado de Veracruz 
+ Mide la proporción de hogares en la entidad que cuentan",con acceso a agua potable dentro de la vivienda a través  de tuberías que llegan directamente al interior de la casa.,de Ingresos y Gastos de los Hogares (ENIGH); a partir del  total de viviendas en el Estado identifica aquellas que  cuentan con agua entubada dentro de la misma.,,Ascendente,(ENIGH). Tabulados. Tabulados Predefinidos. Tabulados en Hogares y Viviendas. https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados,2025,63.6,65.6,"{""2025"": 63.6, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E13-PS10-O05-E5.1-IE042,3. Veracruz con Infraestructura y,"beneficiados con obras de Infraestructura urbana
+ Muestra la proporción total de municipios dentro del
+ estado que han recibido alguna obra de infraestructura
+ urbana; como guarniciones, banquetas, rampas, pasos
+ peatonales, pavimentación de calles, avenidas y
+ bulevares, puentes peatonales, señalización y alumbrado","público; es decir todas las obras, redes y servicios físicos  esenciales que permiten el funcionamiento, la   habitabilidad y el desarrollo de una ciudad, incluyendo  además el sistema de transporte, agua, saneamiento,  energía y telecomunicaciones.",(Número de municipios beneficiados con obras de  infraestructura urbana / Total de municipios del Estado  de Veracruz)*100.,,Ascendente,"terminadas durante el ejercicio, ubicados en la Dirección General de Construcción de Obra Públicas de la SIOP. | Artículo 9 de la Ley Orgánica del Municipio Libre.",2024,13.67,82.54,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E13-PS10-O05-E5.2-IE043,3. Veracruz con Infraestructura y,"habitante 
+ Permite conocer el porcentaje de recursos económicos
+ que se invierten en el desarrollo y mantenimiento de las
+ estructuras físicas y servicios esenciales (como vías de","comunicación urbanas, agua, drenaje y alcantarillado,  energía, alumbrado públicos y construcción de espacios  públicos) por habitante beneficiado en un área urbana.",/ Habitantes beneficiados con obras de infraestructura  urbana en el año),,Regular,"ejercicio, ubicados en la Dirección General de Construcción de Obra Públicas de la SIOP.",2024,394.0,394.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E13-ODS04-IE013,3. Veracruz con Infraestructura y,"Proporción de escuelas con acceso a electricidad
+ Mide el porcentaje de escuelas de nivel básico","(preescolar, primaria y secundaria) que cuentan con  servicio de electricidad.",entidad federativa= (Escuelas con energía eléctrica /  Total de escuelas)*100,,Ascendente,Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2025,75.29,76.39,"{""2025"": 75.29, ""2026"": 75.52, ""2027"": 75.74, ""2028"": 75.95, ""2029"": 76.17, ""2030"": 76.39}"
+CGID-PVD25.30-ER3-O03-E13-ODS04-IE014,3. Veracruz con Infraestructura y,"para discapacidad 
+ Es el porcentaje de escuelas por nivel de educación
+ básica (preescolar, primaria y secundaria) con acceso a",instalaciones y servicios determinados para atender a  personas con algún tipo de discapacidad.,con infraestructura adaptada para discapacidad/Total  de escuelas)*100,,Ascendente,Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2025,9.85,10.53,"{""2025"": 9.85, ""2026"": 9.99, ""2027"": 10.13, ""2028"": 10.26, ""2029"": 10.4, ""2030"": 10.53}"
+CGID-PVD25.30-ER3-O03-E13-ODS04-IE015,3. Veracruz con Infraestructura y,"de agua potable 
+ Muestra el porcentaje de escuelas por nivel de 
+ educación básica (preescolar, primaria y secundaria)",que tienen acceso directo a la red de suministro de  agua potable pública.,conexión a la red pública de agua potable/Total de  Escuelas)*100,,Ascendente,Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2025,55.39,60.19,"{""2025"": 55.39, ""2026"": 56.35, ""2027"": 57.31, ""2028"": 58.27, ""2029"": 59.23, ""2030"": 60.19}"
+CGID-PVD25.30-ER3-O03-E13-ODS04-IE016,3. Veracruz con Infraestructura y,"Proporción de escuelas con sanitarios independientes
+ Muestra el porcentaje de escuelas por nivel de","educación básica (preescolar, primaria y secundaria)  que cuentan con sanitarios exclusivos en sus planteles.",por entidad federativa= (Escuelas con sanitarios  independientes/Total de Escuelas)*100,,Ascendente,Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2025,71.12,76.16,"{""2025"": 71.12, ""2026"": 72.14, ""2027"": 73.14, ""2028"": 74.15, ""2029"": 75.16, ""2030"": 76.16}"
+CGID-PVD25.30-ER3-O03-E13-ODS04-IE017,3. Veracruz con Infraestructura y,"Proporción de escuelas con lavabo de manos 
+ Es el porcentaje de escuelas por nivel de educación","básica (preescolar, primaria y secundaria) que cuentan  con lavabo de manos en la institución educativa.",entidad federativa= (Escuelas con lavabo de  manos/Total de Escuelas)*100,,Ascendente,Estatal. Prontuario Estadístico. https://www.sev.gob.mx/v1/servicios/anuario-estadistico/,2025,69.46,74.29,"{""2025"": 69.46, ""2026"": 70.43, ""2027"": 71.4, ""2028"": 72.36, ""2029"": 73.33, ""2030"": 74.29}"
+CGID-PVD25.30-ER3-O03-E12-ODS16-IE018,3. Veracruz con Infraestructura y,"con el servicio de calles y avenidas 
+ Es el porcentaje de población de 18 años y más que
+ habita en áreas urbanas de cien mil habitantes y más,",que manifiesta estar muy satisfecha o satisfecha con las  calles y avenidas.,"toman en cuenta las siguientes características:  semáforos funcionales, señalamientos claros, buen  estado de calles y avenidas y reparación inmediata de  baches y coladeras.",,Ascendente,Encuesta Nacional de Calidad e Impacto Gubernamental (ENCIG). Tabulados. Tabulados predefinidos. Evaluación de servicios básicos. : A2030 https://www.inegi.org.mx/programas/encig/2023/#tabulados,2024,27.2,29.6,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E13-ODS16-IE019,3. Veracruz con Infraestructura y,"con el servicio de parques y jardines públicos
+ Es el porcentaje de población de 18 años y más que
+ habita en áreas urbanas de cien mil habitantes y más",que manifiesta estar muy satisfecha o satisfecha con su  experiencia con el servicio de parques y jardines.,"toman en cuenta las siguientes características: Horario  flexible, cercanía, limpieza y buena imagen, así como  que tan seguros son en términos de delincuencia.",,Ascendente,Encuesta Nacional de Calidad e Impacto Gubernamental (ENCIG). Tabulados. Tabulados : A2030 predefinidos. Evaluación de servicios básicos. https://www.inegi.org.mx/programas/encig/2023/#tabulados,2024,41.7,48.9,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E13-ODS16-IE020,3. Veracruz con Infraestructura y,"con el servicio de agua potable 
+ Es el porcentaje de población de 18 años y más que
+ habita en áreas urbanas de cien mil habitantes y más",que manifiesta estar muy satisfecha o satisfecha con el  servicio de agua potable.,"de la red pública, pureza y claridad, suministro  constante, sin desperdicio por fugas, potabilidad,  proviene de un pozo comunitario o si proviene de un  pozo particular.",,Ascendente,Instituto Nacional de Estadística y Geografía (INEGI). : A2030 Encuesta Nacional de Calidad e Impacto Gubernamental (ENCIG). Tabulados. Tabulados predefinidos. Evaluación de servicios básicos. https://www.inegi.org.mx/programas/encig/2023/#tabulados,2024,42.6,48.9,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E13-ODS16-IE021,3. Veracruz con Infraestructura y,"con el servicio de drenaje y alcantarillado
+ Es el porcentaje de población de 18 años y más que
+ habita en áreas urbanas de cien mil habitantes y más",que manifiesta estar muy satisfecha o satisfecha con su  experiencia con el servicio de drenaje y alcantarillado.,"toman en cuenta las siguientes características: conexión  y descarga adecuada, sin fugas de aguas negras,   mantenimiento frecuente y si recibe limpieza constante.",,Ascendente,Encuesta Nacional de Calidad e Impacto Gubernamental (ENCIG). Tabulados. Tabulados : A2030 predefinidos. Evaluación de servicios básicos. https://www.inegi.org.mx/programas/encig/2023/#tabulados,2024,38.4,47.1,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E13-ODS16-IE022,3. Veracruz con Infraestructura y,"con el servicio de alumbrado público 
+ Es el porcentaje de población de 18 años y más que
+ habita en áreas urbanas de cien mil habitantes y más",que manifiesta estar muy satisfecha o satisfecha con su  experiencia con el servicio de alumbrado público.,"toman en cuenta las siguientes características:  iluminación adecuada, mantenimiento y atención   inmediata de fallas.",,Ascendente,Encuesta Nacional de Calidad e Impacto Gubernamental (ENCIG). Tabulados. Tabulados : A2030 predefinidos. Evaluación de servicios básicos. https://www.inegi.org.mx/programas/encig/2023/#tabulados,2024,41.4,44.1,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER3-O03-E14-ODS17-IE023,3. Veracruz con Infraestructura y,"Proporción de personas que usan internet 
+ Este indicador muestra el porcentaje de personas de 6
+ años en adelante que usaron internet en los 12 meses","anteriores, respecto del total de la población en ese  mismo rango de edad.",de internet/Total de la población estimada de 6 años y  más que usaron internet)*100,,Ascendente,predefinidos. Usuarios de Tecnologías de la Información y las Comunicaciones. Entidad Federativa. https://www.inegi.org.mx/programas/endutih/2024/#tabulados | https://www.gob.mx/conapo/documentos/bases-de-datos-de-la-conciliacion-demografica-1950-a-2019-y-proyecciones-de-la-poblacion-de-mexico-2020-a-2070,2024,77.5,89.13,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E00-IE007,4. Veracruz con Gobernanza y,"Índice de Desarrollo Democrático de México (IDD-MEX)
+ Mide el Desarrollo Democrático entendido como el proceso
+ por el cual el sistema político, con todos sus actores",institucionales y sociales construye soluciones que le  permiten acercarse más a los fines de la democracia.,,,Ascendente,de desarrollo democrático de México (IDD-MEX). https://idd-mex.org/,2024,2.0,3.0,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E00-IE008,4. Veracruz con Gobernanza y,"Índice de Paz México: Veracruz 
+ El Índice de Paz México (IPM) proporciona una medición
+ integral de la paz en México y en sus entidades federativas,
+ que incluye tendencias, análisis y estimaciones del impacto","económico de la violencia, el panorama de la delincuencia  organizada y los impactos de la creciente polarización  política en los esfuerzos de contención de la violencia.",,,Descendente,Instituto para la economía y la paz. Índice de Paz. https://www.indicedepazmexico.org/mapa-mpi-2024,2024,2.37,2.05,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E17-IE040,4. Veracruz con Gobernanza y,"Policía Estatal 
+ Representa el nivel de confianza (“mucha confianza” y “algo
+ de confianza”) que las personas de 18 años y más tienen en
+ las autoridades de seguridad pública, seguridad nacional,
+ procuración e impartición de justicia; para este indicador se",toma en cuenta la Policía Estatal.   La Confianza en las instituciones encargadas de la seguridad  pública puede ser entendida como la expectativa de la  ciudadanía en que estas ajusten su conducta a los   ordenamientos jurídicos correspondientes.,,,Ascendente,sobre Seguridad Pública (ENVIPE) https://www.inegi.org.mx/programas/envipe,2024,57.1,68.17,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E17-IE041,4. Veracruz con Gobernanza y,"entidad federativa: Veracruz 
+ Representa la percepción de la población de 18 años y más,","respecto de la inseguridad pública en su entidad federativa,  en el periodo que se reporta.",,,Descendente,Seguridad Pública (ENVIPE) https://www.inegi.org.mx/programas/envipe,2024,79.3,70.88,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E18-IE042,4. Veracruz con Gobernanza y,"Tasa de incidencia delictiva en Veracruz 
+ Representa la presunta ocurrencia por cada 100 mil
+ habitantes del Estado de Veracruz, de delitos del fuero común
+ registrados en averiguaciones previas iniciadas o carpetas de
+ investigación reportadas por la Fiscalía General del Estado al
+ Secretariado Ejecutivo del Sistema Nacional de Seguridad
+ Pública. Tipos de bienes jurídicos afectados la vida y la
+ integridad corporal (homicidio, lesiones, feminicidio, aborto,
+ otros); la libertad personal (secuestro, tráfico de menores,
+ rapto, otros); la libertad y la seguridad sexual (abuso, acoso y","hostigamiento sexual, violación, incesto, otros); el patrimonio  (robo, fraude, abuso de confianza, extorsión, daño a la  propiedad, despojo, otros); la familia (violencia familiar,  violencia de género en todas sus modalidades distinta a la  violencia familiar, incumplimiento de obligaciones de  asistencia familiar, otros); la sociedad (corrupción de  menores, trata de personas, otros); y otros (narcomenudeo,  amenazas, allanamiento de morada, evasión de presos,  falsedad, falsificación, contra el medio ambiente, delitos  cometidos por servidores públicos, electorales, otros).",,,Descendente,https://www.gob.mx/sesnsp/acciones-y-programas/incidencia-delictiva-del-fuero-comun-nueva-metodologia?state=published. | población de México 2022 a 2070. Bases de datos. https://www.gob.mx/conapo/documentos/bases-de-datos-de-la-conciliacion-demografica-1950-a-2019-y-proyecciones-de-la-poblacion-de-mexico-2020-a-2070?idiom=es,2024,999.1,948.24,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E18-IE043,4. Veracruz con Gobernanza y,"federativa: Veracruz 
+ Representa las víctimas del delito por cada 100
+ habitantes para la población de 18 años y más; para","este caso se retoma la información para el Estado  de Veracruz, de la medición nacional.","medición sobre la prevalencia.   Se calcula al dividir el total de personas víctimas de  por lo menos un delito entre la población de 18 años  y más (objeto de estudio), multiplicado por cien mil  habitantes y se divide entre mil debido a que la tasa  está dada en miles.",Tasa (por cada 100 habitantes),Descendente,Percepción sobre Seguridad Pública (ENVIPE) https://www.inegi.org.mx/programas/envipe,2024,15.5,15.01,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E19-IE044,4. Veracruz con Gobernanza y,"Indicador de Identificación de Riesgos (IR) 
+ El indicador es uno de los cuatro componentes del índice de
+ Gestión de Riesgos (IGR). Mide el conjunto de acciones
+ realizadas en seis rubros de consenso internacional","encaminadas al reconocimiento, medición y representación  del riesgo colectivo, y dirigidas tanto a la sociedad como a las  y los tomadores de decisiones.",,,Nominal,"Llave, que puede consultarse en: https://www.gob.mx/cms/uploads/attachment/file/979810/Doc_Analitico_Indice_Gestion_del_Riesgo_2023.pdf",2024,43.3,50.0,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E19-IE045,4. Veracruz con Gobernanza y,"Indicador de Atención de Emergencias (AE) 
+ El indicador es uno de los cuatro componentes del índice de
+ Gestión de Riesgos (IGR). Mide el conjunto de acciones
+ realizadas en seis rubros de consenso internacional para",responder de manera eficaz y eficiente una vez que un riesgo  se ha materializado y no ha sido posible impedir el impacto  de los fenómenos peligrosos.,,,Nominal,"Llave, que puede consultarse en: https://www.gob.mx/cms/uploads/attachment/file/979810/Doc_Analitico_Indice_Gestion_del_Riesgo_2023.pdf",2024,66.6,73.3,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E16-PS11-O01-E1.1-IE044,4. Veracruz con Gobernanza y,"Índice de Gobierno abierto 
+ Mide el estado actual de la transparencia y participación
+ ciudadana en los gobiernos estatales y municipales de
+ México. 
+ 
+ Este indicador permite evaluar cómo la población","adopta y utiliza las herramientas digitales y el uso  significativo de las TIC; también contempla el desarrollo  de habilidades digitales, la digitalización de servicios  prioritarios y el papel de los gobiernos estatales en  promover un entorno digital inclusivo.","de 3 Pilares del ecosistema digital. Para ello se realiza un  análisis exploratorio de datos, sumando los valores de  cada pilar, cada uno con un valor entre 0 a 100, los cuales  de forma agregada pueden tener un valor entre 0 a 300.  Debido a la importancia de cada pilar, cada uno tiene el  mismo peso en el cálculo del IDDE.",,Ascendente,Digital Estatal (IDDE) 2024: Veracruz. https://centromexico.digital/idde/2024/,2024,0.4,0.75,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E16-PS11-O01-E1.2-IE045,4. Veracruz con Gobernanza y,"realizar el trámite: Veracruz 
+ Este indicador permite conocer el porcentaje de la
+ población de 18 años y más satisfecha con el trato de la
+ persona servidora pública que le atendió al realizar algún","trámite, pago, solicitud de servicio público y otros  contactos con autoridades, de acuerdo con sus   experiencias.",específica y proporcionada por el INEGI. Para el cálculo  del indicador se toma en cuenta a la población de 18 años  y más que respondió: “Muy satisfecho(a)” o   “Satisfecho(a)” con el trato recibido.,,Ascendente,"Estimaciones. Experiencia con pagos, trámites y solicitudes de servicios. https://www.inegi.org.mx/programas/encig/2023/#tabulados",2024,80.27,85.04,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E16-PS11-O01-E1.3-IE046,4. Veracruz con Gobernanza y,"servicios públicos provistos por entidad federativa
+ Este indicador permite conocer el porcentaje de las
+ opiniones emitidas por la población de 18 años y más en
+ áreas urbanas de cien mil habitantes y más sobre su","satisfacción de servicios públicos de los cuales fueron  usuarios y otros contactos con autoridades, de acuerdo  con sus experiencias.",específica y proporcionada por el INEGI. Para el cálculo  del indicador se toma en cuenta a la población de 18 años  y más que respondió: “Muy satisfecho(a)” o   “Satisfecho(a)” con el trato recibido.,,Ascendente,Estimaciones. Evaluación de servicios públicos bajo demanda. https://www.inegi.org.mx/programas/encig/2023/#tabulados,2024,38.2,41.88,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E19-PS13-O01-E1-IE047,4. Veracruz con Gobernanza y,"de normas y códigos de construcción (RR5) 
+ Mide el avance en la actualización de normas y en el
+ desarrollo de lineamientos y especificaciones que",sustentan la verificación técnica de la seguridad de los  diferentes tipos de inmuebles.,"de 0 a 100%, se multiplica por 20 (ponderador) cada  puntaje.   RR5= (Nivel de desempeño)*20",,Ascendente,https://www.gob.mx/cms/uploads/attachment/file/979810/Doc_Analitico_Indice_Gestion_del_Riesgo_2023.pdf,2024,60.0,80.0,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E19-PS13-O01-E4-IE048,4. Veracruz con Gobernanza y,"(IR4) 
+ Mide el porcentaje de avance en cuanto a las fuentes con
+ las que se cuenta para evaluar vulnerabilidad y riesgo,",que es uno de los aspectos de consenso internacional  indispensable para identificar riesgos.,"de 0 a 100%, se multiplica por 20 (ponderador) cada  puntaje.   IR4= (Nivel de desempeño)*20",,Ascendente,https://www.gob.mx/cms/uploads/attachment/file/979810/Doc_Analitico_Indice_Gestion_del_Riesgo_2023.pdf,2024,20.0,40.0,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E19-PS13-O01-E5-IE049,4. Veracruz con Gobernanza y,"respuesta interinstitucional (AE4) 
+ Mide el avance en cuanto al desarrollo y prueba de
+ programas y planes operativos de atención coordinados","con los diversos sectores involucrados, que es uno de los  aspectos de consenso internacional indispensable para  atender situaciones de emergencia.","de 0 a 100%, se multiplica por 20 (ponderador) cada  puntaje.   AE4= (Nivel de desempeño)*20",,Ascendente,https://www.gob.mx/cms/uploads/attachment/file/979810/Doc_Analitico_Indice_Gestion_del_Riesgo_2023.pdf,2024,80.0,100.0,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E18-ODS16-IE024,4. Veracruz con Gobernanza y,"Tasa de defunciones por homicidio 
+ El total de casos de homicidios registrados en el Estado
+ de Veracruz durante el año entre el total de la población,",multiplicado por cien mil habitantes. Los homicidios  pertenecen a la incidencia delictiva del fuero común.,"Población a mitad de año en la entidad  federativa)*100,000",,Descendente,https://www.gob.mx/sesnsp/documentos/historico-de-incidencia-delictiva-del-fuero-comun?idiom=es | 2070. https://www.gob.mx/conapo/acciones-y-programas/conciliacion-demografica-de-1950-a-2019-y-proyecciones-de-la-poblacion-de-mexico-y-de-las-entidades-federativas-2020-a-2070,2024,21.7,2026.0,"{""2024"": 2026.0, ""2025"": 2027.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E17-ODS16-IE025,4. Veracruz con Gobernanza y,"caminar sola por la noche en su zona de residencia
+ Mide el porcentaje de la población de 18 años y más que
+ se siente segura caminando sola por la noche en los",alrededores de su vivienda en el año respecto del total  de la población en el mismo rango de edad.,"su vivienda durante el año, entre la población de 18 años  y más, multiplicada por 100, en el Estado de Veracruz.",,Ascendente,Percepción sobre Seguridad Pública (ENVIPE). Presentación ejecutiva por entidad federativa: Veracruz. https://www.inegi.org.mx/programas/envipe/2024/ : A2030,2025,42.8,42.8,"{""2025"": 42.8}"
+CGID-PVD25.30-ER4-O04-E18-ODS16-IE026,4. Veracruz con Gobernanza y,"Tasa de ocupación carcelaria estatal 
+ Es el total de personas privadas de la libertad en centros
+ penitenciarios estatales y centros especializados de","tratamiento o internamiento para adolescentes como  porcentaje de la capacidad oficial del sistema   penitenciario, en los últimos 12 meses.","penitenciarios estatales, entre la capacidad instalada  (camas disponibles) en el año de referencia, multiplicada  por cada 100 espacios disponibles en el Estado de  Veracruz.",,Descendente,Instituto Nacional de Estadística y Geografía (INEGI). Censo Nacional de Sistema Penitenciario Federal y : A2030 Estatales 2025 (CNSIPEF). Resultados Generales. https://www.inegi.org.mx/programas/cnsipef/2025/,2025,109.0,109.0,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ER4-O04-E18-ODS16-IE027,4. Veracruz con Gobernanza y,"Prevalencia delictiva en unidades económicas
+ Mide el total de las unidades económicas que fueron",víctimas de algún delito durante el año entre el total de  unidades económicas del Estado de Veracruz.,"menos un delito en el año, entre el total de unidades  económicas del Estado de Veracruz, multiplicado por  100 para expresarse como porcentaje.",,Descendente,Encuesta Nacional de Victimización de Empresas (ENVE). Tabulados predefinidos. Estimaciones. Nivel de Victimización. : A2030 https://www.inegi.org.mx/programas/enve/2024/#tabulados,2024,19.4,19.4,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E00-IE009,No encontrado,"Ingresos de Libre Disposición 
+ Es una medida que relaciona la deuda de un ente público con",sus ingresos. Se utiliza para evaluar la sostenibilidad de la  deuda.,,,Descendente,"PLINA_FINANCIERA/Sistema_de_Alertas En ésta, deberá acceder al apartado Sistema de Alertas y seleccionar el ejercicio que se desea consultar.",2024,63.3,43.3,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E00-IE010,No encontrado,"Tasa de prevalencia de corrupción: Veracruz 
+ Mide la experiencia de la población de 18 años y más al
+ realizar trámites, pagos y/o solicitudes de servicios públicos,",entre otras interacciones con autoridades y que presentaron  alguna experiencia de corrupción. Se mide por cada 100 mil  habitantes.,,,Descendente,Gubernamental (ENCIG). https://www.inegi.org.mx/programas/encig/2023/,2024,13.0,10.0,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E00-IE011,No encontrado,"Entorno Regulatorio 
+ Este indicador se desprende del segundo pilar que 
+ contempla el Índice de Desarrollo Digital Estatal, que permite",evaluar el papel de los gobiernos estatales en la promoción  de un entorno digital inclusivo.,,,Ascendente,Centro México Digital. Índice de Desarrollo Digital Estatal (IDDE). https://centromexico.digital/,2024,39.0,51.0,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E20-IE046,No encontrado,"propios 
+ El indicador mide la variación, expresada en 
+ porcentaje, de la recaudación de ingresos propios del","Estado derivados de impuestos, derechos, productos  y aprovechamientos, comparado el ejercicio actual  con un ejercicio anterior.",propios del ejercicio anterior) -1)*100,Porcentaje,Ascendente,Estado de Veracruz a través de la SEFIPLAN.,2030,1.5,1.5,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E21-IE047,No encontrado,"PbR-SED en Entidades federativas 
+ Mide el progreso en la implementación del Presupuesto
+ Basado en Resultados (PbR) y el Sistema de Evaluación del",Desempeño (SED) en las entidades federativas de México. El  dato a considerar será correspondiente a Veracruz.,,,Ascendente,Recuperado de: https://www.transparenciapresupuestaria.gob.mx/es/PTP/EntidadesFederativas#DiagnosticoPbR-SED,2024,74.1,82.4,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E22-IE048,No encontrado,"Ingresos de Libre Disposición 
+ Es una medida que presenta el Servicio de la Deuda y","Obligaciones como proporción de los Ingresos de  Libre Disposición, vinculado con la capacidad de pago.","incluyen los Ingresos locales más las Participaciones  Federales; especificando que, en el caso de las  Entidades Federativas, se restarán de estas   Participaciones, las otorgadas a los Municipios. El valor  del indicador se expresa en una escala de cero a cien.  La fórmula consiste en la división del “Servicio de la  Deuda y Pago de Inversión” entre “Ingresos de Libre  Disposición”.",Porcentaje,Descendente,Financiera. Sistema de Alertas. https://www.disciplinafinanciera.hacienda.gob.mx/,2024,7.8,7.5,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E23-IE049,No encontrado,"estatales: Veracruz 
+ Mide el porcentaje de confianza en el Gobierno del
+ Estado de la población de 18 años y más, tomando",en cuenta las opciones de mucha confianza y algo  de confianza.,"presentando las siguientes posibles respuestas  cuando se les cuestiona si Confían en los   Gobiernos Estatales: mucha confianza, algo de  confianza, algo de desconfianza y mucha   desconfianza.",Porcentaje,Ascendente,Gubernamental (ENCIG) 2023. https://www.inegi.org.mx/programas/encig/2023/,2024,41.6,55.1,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E23-IE050,No encontrado,"corrupción: Veracruz 
+ Mide el porcentaje de la población de 18 que",percibe los actos de corrupción como: muy  frecuentes y frecuentes.,"que habita en áreas urbanas de cien mil habitantes  presentando las siguientes posibles respuestas  cuando se les pregunta si consideran que los actos  de corrupción son frecuentes: Muy frecuente,  Frecuente, Poco Frecuente y Nunca.",Porcentaje,Descendente,Gubernamental (ENCIG) 2023. https://www.inegi.org.mx/programas/encig/2023/,2024,81.5,73.9,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E24-IE051,No encontrado,"Índice de Digitalización de los Servicios Prioritarios
+ Analiza la accesibilidad de herramientas y servicios
+ digitales para la población. Incluye indicadores sobre
+ inclusión financiera, digitalización de registros públicos,
+ participación ciudadana mediante plataformas digitales y","disponibilidad de herramientas para monitorear y proteger  el medio ambiente. También incluye, desde el IDDE 2023,  la evaluación de la digitalización en instituciones de  educación y salud.","ciudadana; Gestión ambiental, residuos electrónicos y atlas  de riesgos; Porcentaje de escuela con computadoras;  Porcentaje de escuelas con internet y; Digitalización en  centros de salud.",,Ascendente,Centro México Digital. Índice de Desarrollo Digital Estatal. https://centromexico.digital/,2024,33.0,51.0,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E25-IE052,No encontrado,"con el gobierno 
+ Este indicador surge de la Encuesta Nacional sobre 
+ Disponibilidad y Uso de Tecnologías de la Información en los
+ Descripción o 
+ Hogares (ENDUTIH), que permite saber el porcentaje de
+ definición2.1.3 
+ personas de 18 años o más que usaron el internet para interactuar
+ con el gobierno de Veracruz. 
+ Dimensión a medir2.1.4 Eficacia 
+ Tipo de indicador para 
+ Estratégico 
+ resultados2.1.5 
+ Tipo valor de la meta2.1.6 Absoluta 
+ El indicador contempla el total de personas que usaron internet
+ Fórmula o método de 
+ para interactuar con el Gobierno Estatal multiplicado por 100
+ cálculo2.1.7 
+ entre el total de usuarios de internet en el Estado. 
+ Unidad de medida del 
+ Porcentaje 
+ indicador2.1.8 
+ Frecuencia2.1.9 Anual 
+ Sentido del indicador2.1.10 Ascendente 
+ INEGI. Programas. Encuesta Nacional sobre Disponibilidad y Uso
+ Medio de verificación del 
+ de Tecnologías de la Información en los Hogares (ENDUTIH).
+ indicador 2.1.11 
+ https://www.inegi.org.mx/programas/endutih/2023/#tabulados
+ III. Características del Indicador 3.1 
+ (Criterios de selección de un buen indicador)
+ Características3.1.1 Calificación3.1.2 Justificación3.1.3 
+ 
+ El indicador es sencillo, preciso y de fácil
+ Claridad3.1.1.1 Cumple 
+ interpretación. 
+ Provee información significativa para el objetivo
+ Relevancia3.1.1.2 Cumple 
+ que quiere medir. 
+ Economía3.1.1.3 Cumple El cálculo del indicador no implica algún costo.
+ Los datos del indicador son de libre acceso al
+ Monitoreable3.1.1.4 Cumple público en general y pueden ser sujetos a una
+ comprobación independiente. 
+ Aporta una base suficiente de información para
+ Adecuado3.1.1.5 Cumple 
+ evaluar el desempeño. 
+ Aporte Marginal3.1.1.6 N/A 
+ 
+ IV. Datos de las variables 
+ (llenar este conjunto de datos como número de variables integren
+ 4.1 
+ el indicador) 
+ Nombre de la variable4.1.1 N/A para meta absoluta.",,,,Ascendente,de Tecnologías de la Información en los Hogares (ENDUTIH). https://www.inegi.org.mx/programas/endutih/2023/#tabulados,2024,34.6,40.5,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E20-PS14-O01-E1.1-IE050,No encontrado,"o impuesto vehicular 
+ Este indicador muestra el porcentaje de satisfacción
+ general (corresponde a las opciones de respuesta ""Muy
+ satisfecho(a)"" y ""Satisfecho(a)""), incluye la realización
+ de trámites, pagos, solicitudes de servicios y otros","contactos que la población de 18 años y más que habita  en áreas urbanas de cien mil habitantes y más que  experimentó personalmente excepto ""Contacto con  autoridades de seguridad pública"". Para el caso  específico: Pago de tenencia o impuesto vehicular.","y servicios públicos proporcionados por los diferentes  niveles de gobierno, con el objetivo de medir la  satisfacción de los usuarios(as) de servicios públicos  bajo demanda.",,Ascendente,"Experiencia con pagos, trámites y solicitudes de servicios. https://www.inegi.org.mx/programas/encig/#tabulados",2024,83.3,89.0,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E21-PS14-O02-E2.1-IE051,No encontrado,"SED en Veracruz: Presupuestación 
+ Mide en una escala de cero a cien puntos porcentuales,
+ el avance en la consolidación de la etapa de 
+ Presupuestación en la entidad. Busca identificar la","adecuada asignación, distribución y destino de los  recursos públicos, considerando tanto a la Planeación  como a la Programación a través del Presupuesto de  Egresos, así como su correlación con la Ley de Ingresos.","siguientes secciones de análisis: Planeación,   Programación, Presupuestación, Ejercicio y Control,  Seguimiento, Evaluación, Rendición de Cuentas,   Consolidación y Buenas Prácticas, a través del   levantamiento de información con un cuestionario de 88  preguntas para entidades federativas; específicamente  la sección de Presupuestación consta de 15 reactivos.",,Ascendente,Transparencia Presupuestaria. Diagnóstico PbR-SED. https://www.transparenciapresupuestaria.gob.mx/Entidades-Federativas,2025,72.5,99.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E21-PS14-O02-E2.1-IE052,No encontrado,"SED en Veracruz: Evaluación 
+ Mide en una escala de cero a cien puntos porcentuales,
+ el avance en la consolidación de la etapa de Evaluación
+ en la entidad. Se valora si las Entidades Federativas","cuentan con el marco normativo, así como los  mecanismos e instrumentos necesarios, para desarrollar  ejercicios de evaluación que proporcionen información  de las políticas y programas.","Planeación, Programación, Presupuestación, Ejercicio y  Control, Seguimiento, Evaluación, Rendición de Cuentas,  Consolidación y Buenas Prácticas, a través del   levantamiento de información con un cuestionario de 88  preguntas para entidades federativas; específicamente  la sección de Evaluación consta de 12 reactivos.",,Regular,Transparencia Presupuestaria. Diagnóstico PbR-SED. https://www.transparenciapresupuestaria.gob.mx/Entidades-Federativas,2025,100.0,100.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E21-PS14-O02-E2.3-IE053,No encontrado,"SED en Veracruz: Seguimiento 
+ Mide en una escala de cero a cien puntos porcentuales el
+ avance en la consolidación de la etapa de seguimiento
+ en la entidad, para ello considera que el ente público
+ genere la información necesaria sobre el avance en las","metas de los indicadores del desempeño y sobre el  ejercicio de los recursos asignados a los programas, que  permita evaluar las estrategias y adecuarlas a las  circunstancias cambiantes.","la que se utiliza a partir de 2020 y establece las  siguientes secciones de análisis: Planeación,   Programación, Presupuestación, Ejercicio y Control,  Seguimiento, Evaluación, Rendición de Cuentas,   Consolidación y Buenas Prácticas, a través del   levantamiento de información con un cuestionario de 88  preguntas para entidades federativas; específicamente  la sección de Seguimiento consta de 10 reactivos.",,Ascendente,Transparencia Presupuestaria. Diagnóstico PbR-SED. https://www.transparenciapresupuestaria.gob.mx/Entidades-Federativas,2025,87.5,95.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E21-PS14-O02-E2.3-IE054,No encontrado,"SED en Veracruz: Rendición de Cuentas 
+ Mide en una escala de cero a cien puntos porcentuales el
+ avance en la consolidación de la rendición de cuentas en
+ la entidad, a partir del establecimiento de normas que",orienten el comportamiento de los entes públicos con la  finalidad de que la ciudadanía pueda dar seguimiento y  hacer uso de la información que generan los ejecutores  del gasto.,"siguientes secciones de análisis: Planeación,   Programación, Presupuestación, Ejercicio y Control,  Seguimiento, Evaluación, Rendición de Cuentas,   Consolidación y Buenas Prácticas, a través del   levantamiento de información con un cuestionario de 88  preguntas para entidades federativas; específicamente  la sección de Seguimiento consta de siete reactivos.",,Ascendente,Transparencia Presupuestaria. Diagnóstico PbR-SED. https://www.transparenciapresupuestaria.gob.mx/Entidades-Federativas,2025,50.0,90.0,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E22-PS14-O03-E3.1-IE055,No encontrado,"bancaria 
+ Este indicador mide la variación porcentual del saldo del
+ ejercicio de la deuda pública bancaria a corto y largo
+ plazo, comparando el 4º trimestre del ejercicio actual","con el 4º trimestre de 2024, este último siempre se  tomará como año base. Permite evaluar si el nivel de  endeudamiento u obligaciones ha aumentado o   disminuido respecto al trimestre base.",ejercicio a evaluar / Saldo de la deuda pública bancaria  al 4to trimestre 2024)−1]×100,,Nominal,“Estado Analítico de la Deuda y Otros Pasivos”. https://www.veracruz.gob.mx/finanzas/transparencia/transparencia-proactiva/contabilidad-gubernamental/cuenta-publica/ | Pública. Informes Trimestrales del Gasto Público. 4° Informe trimestral de Finanzas Públicas del ejercicio 2024. Anexos. “Estado Analítico de la Deuda y Otros Pasivos”. https://www.veracruz.gob.mx/finanzas/wp-content/uploads/sites/2/2025/03/4to-informe-trimestral-version-final.pdf,2024,2026.0,2026.0,"{""2024"": 2026.0, ""2025"": 2027.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E22-PS14-O03-E3.2-IE056,No encontrado,"Tasa de variación de pasivos del Poder Ejecutivo
+ Este indicador mide la variación porcentual del saldo
+ total del ejercicio de “otros pasivos” sumando el pasivo
+ circulante y el pasivo no circulante (no incluye la deuda
+ pública a largo plazo), comparando el 4º trimestre del","ejercicio actual con el 4º trimestre de 2024, este último  siempre se tomará como año base. Permite evaluar si el  nivel de endeudamiento u obligaciones ha aumentado o  disminuido respecto al trimestre base.",Saldo de otros pasivos 4º trimestre 2024)−1]×100,,Nominal,“Estado Analítico de la Deuda y Otros Pasivos”. https://www.veracruz.gob.mx/finanzas/transparencia/transparencia-proactiva/contabilidad-gubernamental/cuenta-publica/ | “Estado Analítico de la Deuda y Otros Pasivos”. https://www.veracruz.gob.mx/finanzas/wp-content/uploads/sites/2/2025/03/4to-informe-trimestral-version-final.pdf,2024,2026.0,2026.0,"{""2024"": 2026.0, ""2025"": 2027.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E22-PS14-O03-E3.3-IE057,No encontrado,"Ejecutivo 
+ Este indicador mide la variación porcentual en el saldo
+ total del ejercicio de la cuenta de orden contable","denominada ""Operaciones en Proceso de Aprobación"",  entre el 4º trimestre del ejercicio actual y el 4º trimestre  de 2024, este último siempre se tomará como año base.",4º trimestre 2024)−1]×100,,Nominal,"(Cuentas de Orden). https://www.veracruz.gob.mx/finanzas/transparencia/transparencia-proactiva/contabilidad-gubernamental/cuenta-publica/ | Estados Financieros”, b) Notas de memoria (Cuentas de Orden). https://www.veracruz.gob.mx/finanzas/wp-content/uploads/sites/2/2025/03/4to-informe-trimestral-version-final.pdf",2024,2026.0,2026.0,"{""2024"": 2026.0, ""2025"": 2027.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E24-PE17-O01-E1.1-IE058,No encontrado,"estatales 
+ Mide el número de temas prioritarios con al menos un
+ programa proyecto o acción digital en los planes","estatales de Desarrollo. El resultado del indicador  muestra que, a mayor valor, mayor digitalización.","información relacionadas con el desarrollo digital, para  este indicador se refiere al porcentaje de temas con al  menos un programa, proyecto o acción digital.",,Ascendente,Centro México Digital. Índice de Desarrollo Digital Estatal (IDDE) Veracruz. https://centromexico.digital/,2024,68.8,75.0,"{""2025"": 2027.0, ""2024"": 2026.0, ""2026"": 2028.0, ""2027"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E24-PE17-O01-E1.3-IE059,No encontrado,"medios electrónicos 
+ Mide el porcentaje de la población de 18 años o más que
+ habita en áreas urbanas de 100 mil habitantes y más con
+ al menos una interacción con el gobierno a través de","internet. En las consultas realizadas a las páginas de  internet del gobierno, él(la) informante pudo haber  elegido más de una opción.",niveles de gobierno con lo cual se generan estimaciones  sobre el grado de interacción de la población con las  autoridades gubernamentales a través de medios   electrónicos.,,Ascendente,(ENCIG). Tabulados predefinidos. Estimaciones. Gobierno Electrónico. https://www.inegi.org.mx/programas/encig,2024,47.1,55.0,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ET5-O05-E23-ODS16-IE028,No encontrado,"soborno 
+ Muestra el porcentaje de personas que pagaron al
+ menos un soborno (le dieron dinero, hicieron un
+ regalo o favor) a un servidor público, o un servidor","público les pidió un soborno, respecto de las personas  que tuvieron al menos un contacto con un servidor  público en el mismo periodo.","y fue víctima de actos de corrupción en algún trámite  realizado, entre la población de 18 años y más que  realizó al menos un trámite, pago, solicitud de servicio  o cualquier tipo de contacto presencial con un(a)  servidor(a) público(a) y multiplicado por cien.",Porcentaje,Descendente,Gubernamental (ENCIG). Tabulados predefinidos. Estimaciones. Corrupción. https://www.inegi.org.mx/programas/encig/,2024,13.71,10.9,"{""2025"": 2028.0, ""2023"": 2026.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ER6-O06-E00-IE012,No encontrado,"fundamentales 
+ Corresponde al cuarto factor del Índice de Estado de
+ Derecho en México y mide, específicamente, el respeto a
+ derechos fundamentales reconocidos a nivel internacional,","como ausencia de discriminación, derecho a la vida, respeto  al debido proceso, libertad de expresión, libertad religiosa,  derecho a la privacidad, libertad de asociación, y derechos  laborales.",,,Regular,México https://index.worldjusticeproject.mx/factor/f4/MX00,2024,0.4,0.42,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ER6-O06-E00-IE013,No encontrado,"vida 
+ Mide la proporción de mujeres de 15 años y más que
+ han sufrido al menos un incidente de violencia de","cualquier tipo y en cualquier ámbito, a lo largo de su  vida, con respecto al total de mujeres de 15 años y  más.","Hogares (ENDIREH), cuya metodología de  levantamiento y análisis es específica y   proporcionada por el INEGI.",Porcentaje,Descendente,Relaciones en los Hogares (ENDIREH). https://www.inegi.org.mx/programas/endireh/2021/,2024,68.2,64.79,"{""2025"": 68.2, ""2021"": 2026.0, ""2026"": 2030.0}"
+CGID-PVD25.30-ET6-O06-E26-IE053,No encontrado,"Índice de límites al poder gubernamental 
+ Mide si quienes gobiernan están sujetos a la ley, y si existen
+ frenos y contrapesos que obliguen a quienes gobiernan a","estar sujetos a la ley y rendir cuentas. Incluye controles no  gubernamentales, como una prensa libre e independiente.",,,Regular,"México 2023-2024. Factor 1 Límites al poder gubernamental, en Índice de Estado de Derecho México, https://worldjusticeproject.mx/",2024,0.35,0.36,"{""2025"": 0.35, ""2026"": 0.35, ""2027"": 0.36, ""2028"": 0.36, ""2029"": 0.36, ""2030"": 0.36}"
+CGID-PVD25.30-ET6-O06-E27-IE054,No encontrado,"Número de feminicidios en Veracruz 
+ Expresa la incidencia delictiva de presuntos
+ feminicidios ocurridos en el estado de Veracruz",registrados en carpetas de investigación iniciadas  por Ministerios Públicos y reportadas a la Fiscalía  General del Estado.,"de género priva de la vida a una mujer. Se  establecen como presuntos, mientras el órgano  jurisdiccional competente no emita una sentencia.  El número de presuntos feminicidios es registrado  por la Fiscalía General del Estado en el Sistema  Nacional de Seguridad Pública.",Presuntos feminicidios,Descendente,https://www.gob.mx/sesnsp/acciones-y-programas/incidencia-delictiva-del-fuero-comun-nueva-metodologia?state=published,2024,53.0,40.0,"{""2025"": 51.0, ""2026"": 49.0, ""2027"": 47.0, ""2028"": 44.0, ""2029"": 42.0, ""2030"": 40.0}"
+CGID-PVD25.30-ET6-O06-E28-IE055,No encontrado,"indígenas 
+ Exclusión social de la población indígena en
+ cuanto al acceso a la educación (alfabetismo) y al
+ trabajo (producción). Una buena democracia debe
+ asegurarse que todos sus ciudadanos sean 
+ considerados iguales con los mismos derechos y
+ protección legal. Este constituye un buen","indicador de la “progresiva ampliación de mayor  igualdad política, social y económica” de la que  habla Morlino (2005) y es una buena señal de  democracia de calidad. Las condiciones de 23  igualdades se logran sólo si se aseguran   oportunidades de acceso igualitarias para la  población, sin exclusión por raza o religión.",combinado con el diferencial resultante entre  porcentaje de participación económica del total  de población y porcentaje de la participación  económica de la población indígena. De la   ponderación de ambos diferenciales surge el  indicador Exclusión de derechos y libertades a  indígenas.,Índice (puntaje),Descendente,derechos y libertades a indígenas en Índice de Desarrollo Democrático https://idd-mex.org/estudios-y-datos/,2024,2.0,1.0,"{""2025"": 2.0, ""2026"": 2.0, ""2027"": 2.0, ""2028"": 1.0, ""2029"": 1.0, ""2030"": 1.0}"
+CGID-PVD25.30-ET6-O06-E29-IE056,No encontrado,"de negación de derechos de manera injustificada:
+ Veracruz 
+ De acuerdo a la Encuesta Nacional Sobre 
+ Discriminación (ENADIS) mide a la población de 18 a","29 años que expresaron haber sido víctimas de, por  lo menos, alguna negación de sus derechos de  manera injustificada en los últimos 5 años.","experiencia personal de negación injustificada de la  renta de un lugar para vivir, como departamento,  vivienda o cuarto.",Porcentaje,Nominal,(ENADIS). https://www.inegi.org.mx/programas/enadis/2022/,2024,20.4,20.0,"{""2025"": 20.4, ""2022"": 2027.0, ""2027"": 2030.0}"
+CGID-PVD25.30-ET6-O06-E26-PS18-O01-E1.6-IE060,No encontrado,"garantiza efectivamente 
+ Este indicador forma parte del Factor 4. Derechos
+ Fundamentales del índice de Estado de Derecho en","México y, como su nombre lo indica, se orienta a medir a  través de un puntaje la garantía de la libertad de opinión  y expresión.","a fuentes terciarias. Este indicador subfactor se  compone de cinco sub-subfactores: ciudadanía,   organizaciones de la sociedad civil, prensa y partidos  políticos.",,Ascendente,México. Veracruz. https://worldjusticeproject.mx/reportes-estatales-iedmx/#,2024,0.41,0.42,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ET6-O06-E26-PS18-O01-E1.7-IE061,No encontrado,"garantiza efectivamente 
+ Este indicador forma parte del Factor 4. Derechos
+ Fundamentales del índice de Estado de Derecho en",México y muestra el nivel en el que se garantiza la  libertad religiosa y de culto.,cuestionarios a la población en general y a especialistas.  Este indicador subfactor contempla que a nivel estatal y  municipal las personas puedan profesar libremente la  religión que deseen.,,Regular,México. Veracruz. https://worldjusticeproject.mx/reportes-estatales-iedmx/#,2024,0.68,0.7,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ET6-O6-E27-ODS01-IE029,No encontrado,"guarderías como prestación laboral 
+ Mide el porcentaje de la población de 12 años o más
+ subordinada y remunerada en su trabajo principal que",cuentan como prestación laboral el servicio de   guarderías y estancias infantiles en el Estado.,"principal que tiene acceso a guarderías y estancias  infantiles; se expresa en porcentaje y no considera a los  trabajadores domésticos, a sus familiares y a los  huéspedes.",,Ascendente,(ENIGH) 2024. Tabulados predefinidos. Tabulados de personas. Tabulados. https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados : A2030,2025,10.4,10.8,"{""2025"": 10.4, ""2024"": 2027.0, ""2026"": 2029.0, ""2028"": 2030.0}"
+CGID-PVD25.30-ET6-O6-E29-ODS04-IE030,No encontrado,"enseñanza y formación académica y no académica
+ Mide el porcentaje de jóvenes y adultos en un rango de
+ edad de 15 a 24 años que participan del aprendizaje,","formal o informal, o entrenamiento y capacitación  durante los últimos 12 meses.","indica que gran parte de la población, en el grupo de  edad determinado, participa en la educación formal o  informal, y en la capacitación o entrenamiento, durante  los últimos 12 meses.",,Regular,de Información de los Objetivos de Desarrollo Sostenibles (SIODS).https://agenda2030.mx/ODSind.html?ind=ODS004000300010&cveind=154&cveCob=99&lang=es#/Indicator : A2030,2024,33.7,34.51,"{""2025"": 2026.0, ""2026"": 2027.0, ""2027"": 2028.0, ""2028"": 2029.0, ""2029"": 2030.0}"
+CGID-PVD25.30-ET6-O6-E26-ODS08-IE031,No encontrado,"una ocupación infantil no permitida 
+ Mide el porcentaje de la población de 5 a 17 años en el
+ Estado que se encuentra en ocupación no permitida, en",relación con el total de personas en el mismo grupo de  edad.,ocupación no permitida / Total de la población en el  mismo rango de edad)*100,,Regular,Nacional de Trabajo Infantil (ENTI). Tabulados. Tabulados. https://www.inegi.org.mx/programas/enti/2022/#tabulados,2024,8.7,8.0,"{""2025"": 2029.0, ""2022"": 2026.0, ""2028"": 2030.0}"

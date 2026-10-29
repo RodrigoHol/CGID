@@ -1,0 +1,25 @@
+{
+  "institucion": "INEGI",
+  "programa": "Pobreza Multidimensional (PM)",
+  "fecha_publicacion": "2025-08-13",
+  "url_origen": "https://www.inegi.org.mx/desarrollosocial/pm/#tabulados",
+  "periodo_datos": "2016-2024",
+  "entidad_objetivo": "Veracruz",
+  "indicadores_catalogo": [
+    "CGID-PVD25.30-ER1-O01-E00-IE001"
+  ],
+  "archivos": [
+    {
+      "archivo": "pm_ef_2024.xlsx",
+      "uso": "Fuente principal del histórico estatal por entidad federativa"
+    },
+    {
+      "archivo": "pm_cc_2024.xlsx",
+      "uso": "Complemento para componentes de carencias sociales"
+    },
+    {
+      "archivo": "pm_ip_2024.xlsx",
+      "uso": "Complemento para indicadores de pobreza"
+    }
+  ]
+}

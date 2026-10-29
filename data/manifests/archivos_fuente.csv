@@ -1,0 +1,5 @@
+id_fuente,nombre,institucion,url,archivo_local,fecha_descarga,hash_archivo,estado,observaciones
+SRC-PVD-001,Catalogo de Indicadores PVD 2025-2030,Gobierno del Estado de Veracruz,,data/raw/catalogos/pvd_2025_2030/Indicadores_PVD_Catalogo.pdf,,,original
+SRC-INEGI-PM-EF-2024,Pobreza Multidimensional: entidad federativa 2016-2024,INEGI,https://www.inegi.org.mx/desarrollosocial/pm/#tabulados,data/raw/fuentes/inegi/pobreza_multidimensional/2024/pm_ef_2024.xlsx,2026-10-28,,original,Fuente principal del histórico del indicador IE001 para Veracruz
+SRC-INEGI-PM-CC-2024,Pobreza Multidimensional: componentes de las carencias 2016-2024,INEGI,https://www.inegi.org.mx/desarrollosocial/pm/#tabulados,data/raw/fuentes/inegi/pobreza_multidimensional/2024/pm_cc_2024.xlsx,2026-10-28,,original,Fuente complementaria
+SRC-INEGI-PM-IP-2024,Pobreza Multidimensional: indicadores de pobreza 2016-2024,INEGI,https://www.inegi.org.mx/desarrollosocial/pm/#tabulados,data/raw/fuentes/inegi/pobreza_multidimensional/2024/pm_ip_2024.xlsx,2026-10-28,,original,Fuente complementaria

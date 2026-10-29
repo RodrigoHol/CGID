@@ -1,0 +1,8 @@
+catalogo:
+  archivo: data/raw/catalogos/pvd_2025_2030/Indicadores_PVD_Catalogo.pdf
+  salida: data/processed/catalogo/indicadores.csv
+
+historicos:
+  directorio_raw: data/raw/fuentes
+  directorio_procesado: data/processed/historicos
+  formato_principal: largo
