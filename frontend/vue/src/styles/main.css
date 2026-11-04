@@ -48,6 +48,7 @@ button { font: inherit; }
 .topbar__context { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding: 9px 13px; border: 1px solid #d9c4a8; border-radius: 99px; color: var(--muted); background: #fff; font-size: 11px; white-space: nowrap; box-shadow: 0 4px 14px #4c28300a; }
 .context-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 4px #159e951b; }
 .page-content { max-width: 1280px; margin: 0 auto; padding: 0 46px 50px; }
+.page-content--detail { max-width: none; padding: 0; }
 .welcome-card { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 168px; padding: 29px 35px; border-radius: 4px; color: #fff; background: radial-gradient(circle at 82% 10%, #a34a68 0, transparent 30%), linear-gradient(120deg, #7a1737, #922c50); box-shadow: 0 15px 34px #7a173725; overflow: hidden; }
 .welcome-card h2 { max-width: 620px; margin: 0; font-size: clamp(21px, 3vw, 30px); letter-spacing: -.04em; }
 .welcome-card p { max-width: 660px; margin: 10px 0 0; color: #f5dfe6; font-size: 13px; }
@@ -104,6 +105,8 @@ button { font: inherit; }
 .indicator-table__header { display: grid; grid-template-columns: minmax(340px, 1.6fr) minmax(170px, .8fr) 180px; gap: 18px; padding: 0 18px 5px 86px; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
 .indicator-row { display: grid; grid-template-columns: minmax(340px, 1.6fr) minmax(170px, .8fr) 180px; align-items: center; gap: 18px; padding: 19px 18px; border: 1px solid var(--line); border-radius: 6px; background: #fff; transition: border-color .2s, box-shadow .2s; }
 .indicator-row:hover, .source-row:hover { border-color: #caaabb; box-shadow: 0 5px 16px #7a173712; }
+.indicator-row[tabindex] { cursor: pointer; }
+.indicator-row[tabindex]:focus { outline: 2px solid #7a1737; outline-offset: 2px; }
 .indicator-row__identity { display: flex; align-items: center; gap: 18px; min-width: 0; }
 .indicator-row__key { width: 50px; height: 38px; display: grid; place-items: center; flex: 0 0 50px; border-radius: 5px; color: var(--blue); background: var(--blue-soft); font-size: 13px; font-weight: 700; }
 .indicator-row__body { min-width: 0; flex: 1; }

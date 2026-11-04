@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import AppHeader from './components/layout/AppHeader.vue'
 import AppSidebar from './components/layout/AppSidebar.vue'
 import StatusState from './components/common/StatusState.vue'
+import IndicatorDetailView from './views/IndicatorDetailView.vue'
 import { loadFrontendData } from './services/data.service'
 import type { FrontendData } from './types/contract'
 
@@ -15,6 +17,9 @@ const activeView = ref<View>('dashboard')
 const indicatorSearch = ref('')
 const coverageFilter = ref<'todos' | 'procesado' | 'fuente_identificada'>('todos')
 const historyFilter = ref<'todos' | 'con_historico' | 'sin_historico'>('todos')
+const route = useRoute()
+const router = useRouter()
+const isDetail = computed(() => route.path.startsWith('/indicadores/'))
 
 onMounted(() => {
   try {
@@ -70,14 +75,19 @@ function resetIndicatorFilters() {
   coverageFilter.value = 'todos'
   historyFilter.value = 'todos'
 }
+
+function navigate(view: View) {
+  activeView.value = view
+  router.push(view === 'dashboard' ? '/' : `/${view}`)
+}
 </script>
 
 <template>
   <div class="app-shell">
-    <AppSidebar :active="activeView" @navigate="activeView = $event" />
+    <AppSidebar :active="isDetail ? 'indicadores' : activeView" @navigate="navigate" />
     <div class="app-content">
-      <AppHeader :title="page.title" :subtitle="page.subtitle" />
-      <main class="page-content">
+      <AppHeader v-if="!isDetail" :title="page.title" :subtitle="page.subtitle" />
+      <main class="page-content" :class="{ 'page-content--detail': isDetail }">
         <StatusState
           v-if="loading"
           type="loading"
@@ -96,6 +106,7 @@ function resetIndicatorFilters() {
           title="Sin información disponible"
           message="No hay datos procesados para mostrar."
         />
+        <IndicatorDetailView v-else-if="isDetail" />
         <template v-else>
           <template v-if="activeView === 'dashboard'">
             <section class="welcome-card">
@@ -223,7 +234,7 @@ function resetIndicatorFilters() {
                 <span>Eje rector</span>
                 <span>Cobertura</span>
               </div>
-              <div v-for="indicator in filteredIndicators" :key="indicator.id" class="indicator-row" role="row">
+              <div v-for="indicator in filteredIndicators" :key="indicator.id" class="indicator-row" role="row" tabindex="0" @click="router.push(`/indicadores/${indicator.id}`)" @keydown.enter="router.push(`/indicadores/${indicator.id}`)">
                 <div class="indicator-row__identity">
                   <div class="indicator-row__key">{{ indicator.clave.split('-').at(-1) }}</div>
                   <div class="indicator-row__body">
