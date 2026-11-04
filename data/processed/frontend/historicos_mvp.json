@@ -1,33 +1,4 @@
 {
-  "CGID-PVD25.30-ER1-O01-E02-IE016": {
-    "entidad": "Veracruz",
-    "datos": [
-      {
-        "anio": 2015,
-        "valor": 38.6
-      },
-      {
-        "anio": 2017,
-        "valor": 43.9
-      },
-      {
-        "anio": 2019,
-        "valor": 50.5
-      },
-      {
-        "anio": 2021,
-        "valor": 65.5
-      },
-      {
-        "anio": 2023,
-        "valor": 65.0
-      },
-      {
-        "anio": 2025,
-        "valor": 46.6
-      }
-    ]
-  },
   "CGID-PVD25.30-ER1-O01-E00-IE001": {
     "entidad": "Veracruz",
     "datos": [
@@ -125,6 +96,35 @@
       {
         "anio": 2024,
         "valor": 40.7247601574
+      }
+    ]
+  },
+  "CGID-PVD25.30-ER1-O01-E02-IE016": {
+    "entidad": "Veracruz",
+    "datos": [
+      {
+        "anio": 2015,
+        "valor": 38.6
+      },
+      {
+        "anio": 2017,
+        "valor": 43.9
+      },
+      {
+        "anio": 2019,
+        "valor": 50.5
+      },
+      {
+        "anio": 2021,
+        "valor": 65.5
+      },
+      {
+        "anio": 2023,
+        "valor": 65.0
+      },
+      {
+        "anio": 2025,
+        "valor": 46.6
       }
     ]
   }

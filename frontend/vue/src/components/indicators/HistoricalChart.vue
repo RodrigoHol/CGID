@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import type { Baseline, HistoricalPoint } from '../../types/contract'
 
 const props = defineProps<{
@@ -8,6 +8,7 @@ const props = defineProps<{
   target: number | null
   direction: string
 }>()
+const hoveredYear = ref<number | null>(null)
 
 const width = 760
 const height = 315
@@ -33,38 +34,50 @@ const y = (value: number) => padding.top + plotHeight - ((value - minValue.value
 const linePath = computed(() => props.points.map((point, index) => `${index === 0 ? 'M' : 'L'} ${x(index)} ${y(point.valor)}`).join(' '))
 const gridLines = computed(() => Array.from({ length: 5 }, (_, index) => {
   const value = minValue.value + ((maxValue.value - minValue.value) * index) / 4
-  return { value: Math.round(value * 10) / 10, y: y(value) }
+  return { value: Math.round(value * 10000) / 10000, y: y(value) }
 }))
 const pointsWithLabels = computed(() => props.points.map((point, index) => ({
   ...point,
   x: x(index),
   y: y(point.valor),
 })))
+const hoveredPoint = computed(() => pointsWithLabels.value.find((point) => point.anio === hoveredYear.value))
+const formatValue = (value: number) => value.toLocaleString('es-MX', {
+  maximumFractionDigits: 4,
+  minimumFractionDigits: 0,
+})
 </script>
 
 <template>
   <div v-if="points.length" class="chart-wrap">
     <div class="chart-legend">
       <span><i class="legend-line legend-line--history"></i>Valor observado</span>
-      <span v-if="baseline.valor !== null"><i class="legend-line legend-line--baseline"></i>Línea base {{ baseline.anio }}</span>
-      <span v-if="target !== null"><i class="legend-line legend-line--target"></i>Meta 2030</span>
+      <span v-if="baseline.valor !== null"><i class="legend-line legend-line--baseline"></i>Línea base {{ baseline.anio }}: {{ formatValue(baseline.valor) }}</span>
+      <span v-if="target !== null"><i class="legend-line legend-line--target"></i>Meta 2030: {{ formatValue(target) }}</span>
     </div>
-    <div class="chart-scroll">
+    <div class="chart-scroll" @mouseleave="hoveredYear = null">
       <svg :viewBox="`0 0 ${width} ${height}`" role="img" aria-label="Gráfica histórica del indicador">
         <g class="chart-grid">
           <line v-for="line in gridLines" :key="line.value" :x1="padding.left" :x2="width - padding.right" :y1="line.y" :y2="line.y" />
-          <text v-for="line in gridLines" :key="`label-${line.value}`" :x="padding.left - 10" :y="line.y + 4" text-anchor="end">{{ line.value }}</text>
+          <text v-for="line in gridLines" :key="`label-${line.value}`" :x="padding.left - 10" :y="line.y + 4" text-anchor="end">{{ formatValue(line.value) }}</text>
         </g>
         <line v-if="baseline.valor !== null" class="chart-reference chart-reference--baseline" :x1="padding.left" :x2="width - padding.right" :y1="y(baseline.valor)" :y2="y(baseline.valor)" />
         <line v-if="target !== null" class="chart-reference chart-reference--target" :x1="padding.left" :x2="width - padding.right" :y1="y(target)" :y2="y(target)" />
         <path class="chart-path" :d="linePath" />
         <g v-for="point in pointsWithLabels" :key="point.anio">
-          <circle class="chart-point" :cx="point.x" :cy="point.y" r="5" />
-          <text class="chart-value" :x="point.x" :y="point.y - 12" text-anchor="middle">{{ point.valor }}</text>
+          <line v-if="hoveredYear === point.anio" class="chart-hover-guide" :x1="point.x" :x2="point.x" :y1="padding.top" :y2="height - padding.bottom" />
+          <circle class="chart-point" :class="{ 'chart-point--active': hoveredYear === point.anio }" :cx="point.x" :cy="point.y" r="5" @mouseenter="hoveredYear = point.anio" @focus="hoveredYear = point.anio" @blur="hoveredYear = null" tabindex="0" role="button" :aria-label="`${point.anio}: ${formatValue(point.valor)}`" />
+          <text class="chart-value" :x="point.x" :y="point.y - 12" text-anchor="middle">{{ formatValue(point.valor) }}</text>
           <text class="chart-year" :x="point.x" :y="height - 15" text-anchor="middle">{{ point.anio }}</text>
+        </g>
+        <g v-if="hoveredPoint" class="chart-tooltip" :transform="`translate(${Math.min(hoveredPoint.x + 12, width - 145)} ${Math.max(hoveredPoint.y - 65, 8)})`">
+          <rect width="132" height="48" rx="4" />
+          <text x="10" y="19">{{ hoveredPoint.anio }}</text>
+          <text x="10" y="37">{{ formatValue(hoveredPoint.valor) }}</text>
         </g>
       </svg>
     </div>
+    <button v-if="hoveredYear !== null" class="chart-clear" @click="hoveredYear = null">Mostrar todos los valores</button>
     <p class="chart-note">La gráfica muestra únicamente los periodos publicados por la fuente. No se interpolan años faltantes.</p>
   </div>
   <div v-else class="chart-empty">Este indicador aún no cuenta con una serie histórica procesada.</div>
@@ -86,8 +99,13 @@ svg { display: block; min-width: 650px; width: 100%; height: auto; }
 .chart-reference--baseline { stroke: #b28854; }
 .chart-reference--target { stroke: #267c78; }
 .chart-path { fill: none; stroke: #7a1737; stroke-linecap: round; stroke-linejoin: round; stroke-width: 3; }
-.chart-point { fill: #fff; stroke: #7a1737; stroke-width: 3; }
+.chart-point { fill: #fff; stroke: #7a1737; stroke-width: 3; cursor: pointer; outline: none; }
+.chart-point:hover, .chart-point--active { fill: #b28854; stroke-width: 4; }
 .chart-value { fill: #7a1737; font-size: 11px; font-weight: 700; }
+.chart-hover-guide { stroke: #b28854; stroke-dasharray: 3 4; stroke-width: 1; }
+.chart-tooltip rect { fill: #7a1737; }
+.chart-tooltip text { fill: #fff; font-size: 11px; font-weight: 700; }
+.chart-clear { margin-top: 5px; padding: 0; border: 0; color: #7a1737; background: none; cursor: pointer; font-size: 11px; font-weight: 700; }
 .chart-year { fill: #6e6e6e; font-size: 11px; }
 .chart-note { margin: 8px 0 0; color: #858585; font-size: 11px; }
 .chart-empty { padding: 55px 20px; color: #6e6e6e; text-align: center; }

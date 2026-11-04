@@ -2,12 +2,12 @@
   {
     "id": "CGID-PVD25.30-ER1-O01-E00-IE001",
     "clave": "CGID-PVD25.30-ER1-O01-E00-IE001",
-    "nombre": "Población en situación de pobreza Mide la proporción de personas que tienen al menos una carencia social (en los seis indicadores de rezago educativo, acceso a servicios de salud, acceso a la seguridad social, calidad y espacios de la vivienda, servicios básicos en la",
-    "descripcion": "vivienda y acceso a la alimentación) y su ingreso es insuficiente para adquirir los bienes y servicios que requiere para satisfacer sus necesidades alimentarias y no alimentarias.",
+    "nombre": "Población en situación de pobreza",
+    "descripcion": "Mide la proporción de personas que tienen al menos una carencia social (en los seis indicadores de rezago educativo, acceso a servicios de salud, acceso a la seguridad social, calidad y espacios de la vivienda, servicios básicos en la vivienda y acceso a la alimentación) y su ingreso es insuficiente para adquirir los bienes y servicios que requiere para satisfacer sus necesidades alimentarias y no alimentarias.",
     "formula": "",
     "unidadMedida": "",
     "sentido": "Descendente",
-    "ejeRector": "1. Veracruz con Bienestar y",
+    "ejeRector": "1. Veracruz con Bienestar y Humanismo.",
     "lineaBase": {
       "anio": 2025,
       "valor": 44.5
@@ -38,12 +38,12 @@
   {
     "id": "CGID-PVD25.30-ER1-O01-E00-IE002",
     "clave": "CGID-PVD25.30-ER1-O01-E00-IE002",
-    "nombre": "mínimos de protección social Considera la situación de no carencia por acceso a la seguridad social, específicamente a la población que cumple alguno de los siguientes criterios: Población económicamente activa asalariada que dispone de las prestaciones establecidas en el artículo 2° de la Ley de Seguridad Social por parte de su trabajo. Personas que disponen de servicios médicos como",
-    "descripcion": "prestación laboral o por contratación voluntaria al régimen obligatorio del IMSS. Población jubilada o pensionada o es familiar de una persona dentro o fuera del hogar con acceso a la seguridad social. Población de 65 años o más beneficiaria de algún programa social de pensiones para adultos equivalente o superior al promedio de la Línea de Pobreza Extrema por Ingresos rural y urbana.",
+    "nombre": "Proporción de la población cubierta por sistemas o niveles mínimos de protección social",
+    "descripcion": "Considera la situación de no carencia por acceso a la seguridad social, específicamente a la población que cumple alguno de los siguientes criterios: Población económicamente activa asalariada que dispone de las prestaciones establecidas en el artículo 2° de la Ley de Seguridad Social por parte de su trabajo. Personas que disponen de servicios médicos como prestación laboral o por contratación voluntaria al régimen obligatorio del IMSS. Población jubilada o pensionada o es familiar de una persona dentro o fuera del hogar con acceso a la seguridad social. Población de 65 años o más beneficiaria de algún programa social de pensiones para adultos equivalente o superior al promedio de la Línea de Pobreza Extrema por Ingresos rural y urbana.",
     "formula": "",
     "unidadMedida": "",
     "sentido": "Ascendente",
-    "ejeRector": "1. Veracruz con Bienestar y",
+    "ejeRector": "1. Veracruz con Bienestar y Humanismo.",
     "lineaBase": {
       "anio": 2025,
       "valor": 39.8
@@ -74,12 +74,12 @@
   {
     "id": "CGID-PVD25.30-ER1-O01-E01-IE014",
     "clave": "CGID-PVD25.30-ER1-O01-E01-IE014",
-    "nombre": "Porcentaje de población en situación de pobreza extrema Población con ingreso inferior a la Línea de Pobreza Extrema",
-    "descripcion": "por Ingresos y que presenta más de 3 carencias establecidas para la medición multidimensional de la pobreza.",
+    "nombre": "Porcentaje de población en situación de pobreza extrema",
+    "descripcion": "Población con ingreso inferior a la Línea de Pobreza Extrema por Ingresos y que presenta más de 3 carencias establecidas para la medición multidimensional de la pobreza.",
     "formula": "",
     "unidadMedida": "",
     "sentido": "Descendente",
-    "ejeRector": "1. Veracruz con Bienestar y",
+    "ejeRector": "1. Veracruz con Bienestar y Humanismo.",
     "lineaBase": {
       "anio": 2025,
       "valor": 8.8
@@ -110,12 +110,12 @@
   {
     "id": "CGID-PVD25.30-ER1-O01-E02-IE015",
     "clave": "CGID-PVD25.30-ER1-O01-E02-IE015",
-    "nombre": "servicios de salud Mide el porcentaje de personas que no cuenta con adscripción o afiliación a las instituciones públicas de seguridad social (IMSS, ISSSTE federal o estatal, Pemex, Ejército o Marina), a servicios médicos privados, o bien, no se",
-    "descripcion": "encuentra afiliado o inscrito al Seguro Popular, o no reportó tener derecho a recibir los servicios que presta el Instituto de Salud para el Bienestar (INSABI, actualmente IMSS- Bienestar), respecto a la población total del Estado.",
+    "nombre": "Porcentaje de población con carencia por acceso a los servicios de salud",
+    "descripcion": "Mide el porcentaje de personas que no cuenta con adscripción o afiliación a las instituciones públicas de seguridad social (IMSS, ISSSTE federal o estatal, Pemex, Ejército o Marina), a servicios médicos privados, o bien, no se encuentra afiliado o inscrito al Seguro Popular, o no reportó tener derecho a recibir los servicios que presta el Instituto de Salud para el Bienestar (INSABI, actualmente IMSS- Bienestar), respecto a la población total del Estado.",
     "formula": "",
     "unidadMedida": "",
     "sentido": "Descendente",
-    "ejeRector": "1. Veracruz con Bienestar y",
+    "ejeRector": "1. Veracruz con Bienestar y Humanismo.",
     "lineaBase": {
       "anio": 2025,
       "valor": 40.7
@@ -146,12 +146,12 @@
   {
     "id": "CGID-PVD25.30-ER1-O01-E02-IE016",
     "clave": "CGID-PVD25.30-ER1-O01-E02-IE016",
-    "nombre": "salud estatal Mide la satisfacción de los usuarios de los Servicios de Salud de Veracruz correspondientes a INSABI",
-    "descripcion": "y/o IMSS-Bienestar. Únicamente considera los niveles de satisfacción “Muy Satisfactorio” o “Satisfactorio”.",
+    "nombre": "Porcentaje de satisfacción con el servicio de salud estatal",
+    "descripcion": "Mide la satisfacción de los usuarios de los Servicios de Salud de Veracruz correspondientes a INSABI y/o IMSS-Bienestar. Únicamente considera los niveles de satisfacción “Muy Satisfactorio” o “Satisfactorio”.",
     "formula": "Gubernamental (ENCIG), toma en cuenta la población de 18 años y más de acuerdo a su experiencia respecto a los servicios de salud estatales.",
     "unidadMedida": "Porcentaje",
     "sentido": "Ascendente",
-    "ejeRector": "1. Veracruz con Bienestar y",
+    "ejeRector": "1. Veracruz con Bienestar y Humanismo.",
     "lineaBase": {
       "anio": 2024,
       "valor": 65.0
@@ -182,12 +182,12 @@
   {
     "id": "CGID-PVD25.30-ER1-O01-E03-IE017",
     "clave": "CGID-PVD25.30-ER1-O01-E03-IE017",
-    "nombre": "Tasa de cobertura en educación básica Mide el número de alumnos en educación preescolar, primaria y secundaria al inicio del",
-    "descripcion": "ciclo escolar, por cada cien en el rango de edad de 3 a 14 años de la población.",
+    "nombre": "Tasa de cobertura en educación básica",
+    "descripcion": "Mide el número de alumnos en educación preescolar, primaria y secundaria al inicio del ciclo escolar, por cada cien en el rango de edad de 3 a 14 años de la población.",
     "formula": "𝑏𝑎𝑠 𝑃𝑜𝑏 3_14",
     "unidadMedida": "Tasa (alumnos)",
     "sentido": "Regular",
-    "ejeRector": "1. Veracruz con Bienestar y",
+    "ejeRector": "1. Veracruz con Bienestar y Humanismo.",
     "lineaBase": {
       "anio": 2024,
       "valor": 86.13
@@ -213,12 +213,12 @@
   {
     "id": "CGID-PVD25.30-ER1-O01-E03-IE018",
     "clave": "CGID-PVD25.30-ER1-O01-E03-IE018",
-    "nombre": "Tasa de cobertura en educación media superior Mide el número de alumnos en bachillerato y profesional técnico al inicio del ciclo escolar, por",
-    "descripcion": "cada cien en el rango de edad de 15 a 17 años de la población.",
+    "nombre": "Tasa de cobertura en educación media superior",
+    "descripcion": "Mide el número de alumnos en bachillerato y profesional técnico al inicio del ciclo escolar, por cada cien en el rango de edad de 15 a 17 años de la población.",
     "formula": "𝑚𝑒𝑑 𝑃𝑜𝑏 15_17",
     "unidadMedida": "Tasa (alumnos)",
     "sentido": "Ascendente",
-    "ejeRector": "1. Veracruz con Bienestar y",
+    "ejeRector": "1. Veracruz con Bienestar y Humanismo.",
     "lineaBase": {
       "anio": 2024,
       "valor": 73.94
@@ -244,12 +244,12 @@
   {
     "id": "CGID-PVD25.30-ER1-O01-E03-IE019",
     "clave": "CGID-PVD25.30-ER1-O01-E03-IE019",
-    "nombre": "Tasa de cobertura en educación superior Mide el número de alumnos que estudian el nivel de técnico superior universitario, normal o",
-    "descripcion": "licenciatura al inicio del ciclo escolar, por cada cien en el rango de edad de 18 a 22 años de la población.",
+    "nombre": "Tasa de cobertura en educación superior",
+    "descripcion": "Mide el número de alumnos que estudian el nivel de técnico superior universitario, normal o licenciatura al inicio del ciclo escolar, por cada cien en el rango de edad de 18 a 22 años de la población.",
     "formula": "𝑠𝑢𝑝 𝑃𝑜𝑏 18_22",
     "unidadMedida": "Tasa (alumnos)",
     "sentido": "Ascendente",
-    "ejeRector": "1. Veracruz con Bienestar y",
+    "ejeRector": "1. Veracruz con Bienestar y Humanismo.",
     "lineaBase": {
       "anio": 2024,
       "valor": 26.46
@@ -275,12 +275,12 @@
   {
     "id": "CGID-PVD25.30-ER1-O01-E04-IE020",
     "clave": "CGID-PVD25.30-ER1-O01-E04-IE020",
-    "nombre": "Tasa de eficiencia terminal en primaria Refiere al número de alumnos que egresan en educación primaria en un ciclo escolar, por cada",
-    "descripcion": "cien alumnos inscritos en la cohorte escolar inicial del mismo nivel.",
+    "nombre": "Tasa de eficiencia terminal en primaria",
+    "descripcion": "Refiere al número de alumnos que egresan en educación primaria en un ciclo escolar, por cada cien alumnos inscritos en la cohorte escolar inicial del mismo nivel.",
     "formula": "prim Nvo Ing 1º ciclo n−5",
     "unidadMedida": "Tasa (alumnos)",
     "sentido": "Ascendente",
-    "ejeRector": "1. Veracruz con Bienestar y",
+    "ejeRector": "1. Veracruz con Bienestar y Humanismo.",
     "lineaBase": {
       "anio": 2024,
       "valor": 97.56
@@ -306,12 +306,12 @@
   {
     "id": "CGID-PVD25.30-ER1-O01-E04-IE021",
     "clave": "CGID-PVD25.30-ER1-O01-E04-IE021",
-    "nombre": "Tasa de eficiencia terminal en secundaria Refiere al número de alumnos que egresan en educación secundaria en un ciclo escolar, por cada",
-    "descripcion": "cien alumnos inscritos en la cohorte escolar inicial del mismo nivel.",
+    "nombre": "Tasa de eficiencia terminal en secundaria",
+    "descripcion": "Refiere al número de alumnos que egresan en educación secundaria en un ciclo escolar, por cada cien alumnos inscritos en la cohorte escolar inicial del mismo nivel.",
     "formula": "sec Nvo Ing 1º ciclo n−2",
     "unidadMedida": "Tasa (alumnos)",
     "sentido": "Ascendente",
-    "ejeRector": "1. Veracruz con Bienestar y",
+    "ejeRector": "1. Veracruz con Bienestar y Humanismo.",
     "lineaBase": {
       "anio": 2024,
       "valor": 88.57
@@ -337,12 +337,12 @@
   {
     "id": "CGID-PVD25.30-ER1-O01-E04-IE022",
     "clave": "CGID-PVD25.30-ER1-O01-E04-IE022",
-    "nombre": "Tasa de eficiencia terminal en media superior Refiere al número de alumnos que egresan en profesional técnico o bachillerato en un ciclo escolar,",
-    "descripcion": "por cada cien alumnos inscritos en la cohorte escolar inicial de esos mismos niveles.",
+    "nombre": "Tasa de eficiencia terminal en media superior",
+    "descripcion": "Refiere al número de alumnos que egresan en profesional técnico o bachillerato en un ciclo escolar, por cada cien alumnos inscritos en la cohorte escolar inicial de esos mismos niveles.",
     "formula": "med Nvo Ing 1º ciclo n−2",
     "unidadMedida": "Tasa (alumnos)",
     "sentido": "Ascendente",
-    "ejeRector": "1. Veracruz con Bienestar y",
+    "ejeRector": "1. Veracruz con Bienestar y Humanismo.",
     "lineaBase": {
       "anio": 2024,
       "valor": 76.41
@@ -368,12 +368,12 @@
   {
     "id": "CGID-PVD25.30-ER1-O01-E05-IE023",
     "clave": "CGID-PVD25.30-ER1-O01-E05-IE023",
-    "nombre": "artística y cultural Muestra la variación del número de actividades,",
-    "descripcion": "eventos artísticos y culturales en la Secretaría de Cultura.",
+    "nombre": "Tasa de variación de actividades de difusión artística y cultural",
+    "descripcion": "Muestra la variación del número de actividades, eventos artísticos y culturales en la Secretaría de Cultura.",
     "formula": "año t/ Número de actividades de difusión cultural artística y cultural en el año t-1) -1) *100",
     "unidadMedida": "Porcentaje",
     "sentido": "Ascendente",
-    "ejeRector": "1. Veracruz con Bienestar y",
+    "ejeRector": "1. Veracruz con Bienestar y Humanismo.",
     "lineaBase": {
       "anio": 2024,
       "valor": 0.77
@@ -399,12 +399,12 @@
   {
     "id": "CGID-PVD25.30-ER1-O01-E05-IE024",
     "clave": "CGID-PVD25.30-ER1-O01-E05-IE024",
-    "nombre": "administrados por la SECVER Muestra el promedio de asistentes a eventos artísticos y culturales realizados en los diecisiete recintos culturales de la SECVER, ubicados en los",
-    "descripcion": "municipios de Boca del Río, Coatepec, Huatusco, Orizaba, Papantla, Tlacotalpan, Veracruz y Xalapa.",
+    "nombre": "Promedio de asistentes a los recintos culturales administrados por la SECVER",
+    "descripcion": "Muestra el promedio de asistentes a eventos artísticos y culturales realizados en los diecisiete recintos culturales de la SECVER, ubicados en los municipios de Boca del Río, Coatepec, Huatusco, Orizaba, Papantla, Tlacotalpan, Veracruz y Xalapa.",
     "formula": "la SECVER/ Número de recintos culturales administrados por la SECVER).",
     "unidadMedida": "Asistentes",
     "sentido": "Ascendente",
-    "ejeRector": "1. Veracruz con Bienestar y",
+    "ejeRector": "1. Veracruz con Bienestar y Humanismo.",
     "lineaBase": {
       "anio": 2024,
       "valor": 15.0
@@ -430,12 +430,12 @@
   {
     "id": "CGID-PVD25.30-ER1-O01-E06-IE025",
     "clave": "CGID-PVD25.30-ER1-O01-E06-IE025",
-    "nombre": "sociales en Veracruz Mide la proporción de personas que cuentan con al menos tres carencias sociales: rezago educativo, acceso",
-    "descripcion": "a los servicios de salud, acceso a la seguridad social, calidad y espacios de la vivienda, acceso a los servicios básicos de la vivienda, y acceso a la alimentación.",
+    "nombre": "Porcentaje de población con al menos tres carencias sociales en Veracruz",
+    "descripcion": "Mide la proporción de personas que cuentan con al menos tres carencias sociales: rezago educativo, acceso a los servicios de salud, acceso a la seguridad social, calidad y espacios de la vivienda, acceso a los servicios básicos de la vivienda, y acceso a la alimentación.",
     "formula": "pobreza multidimensional extrema, la población con ingresos superiores a la línea de pobreza por ingresos que tiene al menos una carencia, y la población con al menos una carencia social.",
     "unidadMedida": "",
     "sentido": "Descendente",
-    "ejeRector": "1. Veracruz con Bienestar y",
+    "ejeRector": "1. Veracruz con Bienestar y Humanismo.",
     "lineaBase": {
       "anio": 2025,
       "valor": 32.1
@@ -460,12 +460,12 @@
   {
     "id": "CGID-PVD25.30-ER1-O01-E01-PS01-O01-E1.4-IE001",
     "clave": "CGID-PVD25.30-ER1-O01-E01-PS01-O01-E1.4-IE001",
-    "nombre": "alcantarillado sanitario Mide el porcentaje de viviendas que cuentan con infraestructura de alcantarillado sanitario para recolectar",
-    "descripcion": "y conducir las aguas residuales que se encuentran conectadas a la red pública, en relación con el total de viviendas en el Estado.",
+    "nombre": "Proporción de viviendas particulares con servicio de alcantarillado sanitario",
+    "descripcion": "Mide el porcentaje de viviendas que cuentan con infraestructura de alcantarillado sanitario para recolectar y conducir las aguas residuales que se encuentran conectadas a la red pública, en relación con el total de viviendas en el Estado.",
     "formula": "de servicio de alcantarillado sanitario en relación con el número total de viviendas en el Estado. El valor obtenido se expresa en porcentaje.",
     "unidadMedida": "",
     "sentido": "Ascendente",
-    "ejeRector": "1. Veracruz con Bienestar y",
+    "ejeRector": "1. Veracruz con Bienestar y Humanismo.",
     "lineaBase": {
       "anio": 2025,
       "valor": 99.3

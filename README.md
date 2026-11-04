@@ -47,7 +47,36 @@ Los estados de cobertura son `procesado`, `fuente_identificada` y
 `pendiente_revision`. No se deben completar años faltantes con ceros o
 estimaciones no documentadas.
 
-## Ejecutar la vista web
+## Ejecutar la aplicación web
+
+La aplicación Vue 3 + TypeScript + Vite vive en `frontend/vue`. Para
+instalar dependencias y abrir el entorno de desarrollo:
+
+```powershell
+Set-Location frontend/vue
+npm install
+npm run dev
+```
+
+Abrir la URL que muestre Vite (habitualmente
+<http://127.0.0.1:5173/>). Para validar una compilación de producción:
+
+```powershell
+npm run build
+```
+
+La aplicación consume los cuatro archivos del contrato en
+`data/processed/frontend/` a través de `src/services/data.service.ts`. Esta
+capa mantiene desacoplada la UI de la fuente de datos y podrá sustituirse por
+una API sin reescribir los componentes.
+
+El catálogo enlaza cada indicador con su detalle en
+`/indicadores/:id`. El detalle presenta la serie histórica disponible, línea
+base, meta 2030, último valor, variación observada, tabla de periodos y fuente
+de procedencia. Los años que no están publicados por la fuente no se
+interpolan.
+
+## Servidor estático legado
 
 Desde la raíz del proyecto:
 
@@ -55,9 +84,12 @@ Desde la raíz del proyecto:
 .\venv\Scripts\python.exe tools\servidor.py
 ```
 
-Abrir:
+Abrir la vista anterior en:
 
 <http://127.0.0.1:8000/frontend/vue/index.html>
+
+Este servidor se conserva para compatibilidad con el flujo anterior; el
+desarrollo de la aplicación nueva debe hacerse con Vite.
 
 Los históricos deberán almacenarse en formato largo en
 `data/processed/historicos/hechos/valores_indicadores.csv`, conservando la

@@ -13,10 +13,10 @@ const source = computed(() => indicator.value ? data.fuentes.find((item) => item
 const latest = computed(() => series.value.at(-1))
 const first = computed(() => series.value[0])
 const variation = computed(() => latest.value && first.value ? latest.value.valor - first.value.valor : null)
-const variationLabel = computed(() => variation.value === null ? 'Sin histórico' : `${variation.value > 0 ? '+' : ''}${variation.value.toFixed(1)} puntos`)
+const variationLabel = computed(() => variation.value === null ? 'Sin histórico' : `${variation.value > 0 ? '+' : ''}${variation.value.toFixed(4)} puntos`)
 
 function formatValue(value: number | null | undefined) {
-  return value === null || value === undefined ? '—' : `${value.toLocaleString('es-MX', { maximumFractionDigits: 1 })}${indicator.value?.unidadMedida ? ` ${indicator.value.unidadMedida}` : ''}`
+  return value === null || value === undefined ? '—' : `${value.toLocaleString('es-MX', { maximumFractionDigits: 4 })}${indicator.value?.unidadMedida ? ` ${indicator.value.unidadMedida}` : ''}`
 }
 </script>
 

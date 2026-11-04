@@ -99,7 +99,10 @@ def procesar_pdf_completo(pdf_path):
     try:
         with pdfplumber.open(pdf_path) as pdf:
             for page in pdf.pages:
-                texto_pagina = page.extract_text(layout=True)
+                # El modo lineal respeta el orden de lectura del formulario.
+                # layout=True intercala las columnas y mezcla títulos con
+                # descripciones en varias fichas.
+                texto_pagina = page.extract_text(layout=False)
                 if texto_pagina:
                     texto_completo += texto_pagina + "\n"
     except Exception as e:
@@ -132,15 +135,52 @@ def procesar_pdf_completo(pdf_path):
         m_clave = re.search(r'Clave\s*2\.1\.1\s*([A-Z0-9\-\.]+)', ficha)
         indicador['clave'] = m_clave.group(1).strip() if m_clave else f"Pendiente_{i}"
         
-        m_eje = re.search(r'Eje Rector (?:o Transversal\s*1\.1\.1\s*Eje Rector )?(\d\.[^\n]+)', ficha)
-        indicador['eje_rector'] = m_eje.group(1).strip() if m_eje else "No encontrado"
-        
-        m_nombre = re.search(r'Nombre\s*2\.1\.2(.*?)Descripción o definición', ficha, re.DOTALL)
-        indicador['nombre'] = m_nombre.group(1).strip() if m_nombre else "No encontrado"
+        m_eje = re.search(
+            r'Eje Rector\s+(\d+\.[^\n]+)\n'
+            r'(?:Eje Rector o Transversal1\.1\.1|Eje Transversal1\.1\.1)\n'
+            r'([^\n]+)',
+            ficha,
+            re.IGNORECASE,
+        )
+        if m_eje:
+            indicador['eje_rector'] = ' '.join(
+                f'{m_eje.group(1)} {m_eje.group(2)}'.split()
+            )
+        else:
+            indicador['eje_rector'] = "No encontrado"
+
+        # En el texto lineal del PDF, el valor de Nombre está en la misma
+        # línea que su etiqueta. La descripción empieza en las líneas
+        # siguientes y su propia etiqueta aparece al final del bloque.
+        m_nombre = re.search(r'Nombre[ \t]*2\.1\.2', ficha, re.IGNORECASE)
+        nombre = ""
+        if m_nombre:
+            linea_siguiente = ficha[m_nombre.end():].splitlines()[0].strip()
+            if linea_siguiente:
+                nombre = linea_siguiente
+            else:
+                # Algunos formularios parten el nombre justo antes de la
+                # etiqueta y continúan en la línea posterior.
+                lineas_previas = ficha[:m_nombre.start()].rstrip().splitlines()
+                nombre = ' '.join(
+                    [lineas_previas[-1] if lineas_previas else "", *ficha[m_nombre.end():].splitlines()[1:2]]
+                )
+        indicador['nombre'] = ' '.join(nombre.split()) if nombre else "No encontrado"
         
         # --- 2. TEXTOS LARGOS (Expediente) ---
-        m_desc = re.search(r'Descripción o definición\s*2\.1\.3(.*?)Dimensión a medir', ficha, re.DOTALL)
-        indicador['descripcion'] = m_desc.group(1).strip().replace('\n', ' ') if m_desc else ""
+        m_desc = re.search(
+            r'Nombre[ \t]*2\.1\.2[ \t]*(?:\n[ \t]*)?[^\n]+\n(.*?)Dimensión a medir',
+            ficha,
+            re.DOTALL | re.IGNORECASE,
+        )
+        descripcion = m_desc.group(1) if m_desc else ""
+        descripcion = re.sub(
+            r'Descripción\s+o\s+definición\s*2\.1\.3',
+            ' ',
+            descripcion,
+            flags=re.IGNORECASE,
+        )
+        indicador['descripcion'] = ' '.join(descripcion.split())
         
         m_form = re.search(r'Fórmula o método de\s*cálculo\s*2\.1\.7(.*?)Unidad de medida', ficha, re.DOTALL)
         indicador['formula'] = m_form.group(1).strip().replace('\n', ' ') if m_form else ""

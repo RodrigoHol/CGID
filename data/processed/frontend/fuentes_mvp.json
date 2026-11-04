@@ -2,7 +2,7 @@
   {
     "idIndicador": "CGID-PVD25.30-ER1-O01-E00-IE001",
     "institucion": "INEGI",
-    "nombre": "Población en situación de pobreza Mide la proporción de personas que tienen al menos una carencia social (en los seis indicadores de rezago educativo, acceso a servicios de salud, acceso a la seguridad social, calidad y espacios de la vivienda, servicios básicos en la",
+    "nombre": "Población en situación de pobreza",
     "url": "https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
     "archivoCrudo": "data/raw/fuentes/inegi/pobreza_multidimensional/2024/pm_ef_2024.xlsx",
     "archivoProcesado": "data/processed/historicos/hechos/historico_pobreza.csv",
@@ -20,7 +20,7 @@
   {
     "idIndicador": "CGID-PVD25.30-ER1-O01-E00-IE002",
     "institucion": "INEGI",
-    "nombre": "mínimos de protección social Considera la situación de no carencia por acceso a la seguridad social, específicamente a la población que cumple alguno de los siguientes criterios: Población económicamente activa asalariada que dispone de las prestaciones establecidas en el artículo 2° de la Ley de Seguridad Social por parte de su trabajo. Personas que disponen de servicios médicos como",
+    "nombre": "Proporción de la población cubierta por sistemas o niveles mínimos de protección social",
     "url": "https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
     "archivoCrudo": "data/raw/fuentes/inegi/pobreza_multidimensional/2024/pm_ef_2024.xlsx",
     "archivoProcesado": "data/processed/historicos/hechos/historico_pobreza.csv",
@@ -38,7 +38,7 @@
   {
     "idIndicador": "CGID-PVD25.30-ER1-O01-E01-IE014",
     "institucion": "INEGI",
-    "nombre": "Porcentaje de población en situación de pobreza extrema Población con ingreso inferior a la Línea de Pobreza Extrema",
+    "nombre": "Porcentaje de población en situación de pobreza extrema",
     "url": "https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
     "archivoCrudo": "data/raw/fuentes/inegi/pobreza_multidimensional/2024/pm_ef_2024.xlsx",
     "archivoProcesado": "data/processed/historicos/hechos/historico_pobreza.csv",
@@ -56,7 +56,7 @@
   {
     "idIndicador": "CGID-PVD25.30-ER1-O01-E02-IE015",
     "institucion": "INEGI",
-    "nombre": "servicios de salud Mide el porcentaje de personas que no cuenta con adscripción o afiliación a las instituciones públicas de seguridad social (IMSS, ISSSTE federal o estatal, Pemex, Ejército o Marina), a servicios médicos privados, o bien, no se",
+    "nombre": "Porcentaje de población con carencia por acceso a los servicios de salud",
     "url": "https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
     "archivoCrudo": "data/raw/fuentes/inegi/pobreza_multidimensional/2024/pm_ef_2024.xlsx",
     "archivoProcesado": "data/processed/historicos/hechos/historico_pobreza.csv",
@@ -74,7 +74,7 @@
   {
     "idIndicador": "CGID-PVD25.30-ER1-O01-E02-IE016",
     "institucion": "INEGI",
-    "nombre": "salud estatal Mide la satisfacción de los usuarios de los Servicios de Salud de Veracruz correspondientes a INSABI",
+    "nombre": "Porcentaje de satisfacción con el servicio de salud estatal",
     "url": "https://www.inegi.org.mx/programas/encig/2023/",
     "archivoCrudo": "data/raw/fuentes/inegi/encig/tabulado_interactivo_veracruz_ie016.csv",
     "archivoProcesado": "data/processed/historicos/hechos/historico_ie016_encig.csv",
@@ -93,7 +93,7 @@
   {
     "idIndicador": "CGID-PVD25.30-ER1-O01-E03-IE017",
     "institucion": "INEGI",
-    "nombre": "Tasa de cobertura en educación básica Mide el número de alumnos en educación preescolar, primaria y secundaria al inicio del",
+    "nombre": "Tasa de cobertura en educación básica",
     "url": "https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx | poblacion-de-mexico-y-de-las-entidades-federativas-2016- 2050",
     "archivoCrudo": "",
     "archivoProcesado": "",
@@ -105,7 +105,7 @@
   {
     "idIndicador": "CGID-PVD25.30-ER1-O01-E03-IE018",
     "institucion": "INEGI",
-    "nombre": "Tasa de cobertura en educación media superior Mide el número de alumnos en bachillerato y profesional técnico al inicio del ciclo escolar, por",
+    "nombre": "Tasa de cobertura en educación media superior",
     "url": "https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx | poblacion-de-mexico-y-de-las-entidades-federativas-2016- 2050",
     "archivoCrudo": "",
     "archivoProcesado": "",
@@ -117,7 +117,7 @@
   {
     "idIndicador": "CGID-PVD25.30-ER1-O01-E03-IE019",
     "institucion": "INEGI",
-    "nombre": "Tasa de cobertura en educación superior Mide el número de alumnos que estudian el nivel de técnico superior universitario, normal o",
+    "nombre": "Tasa de cobertura en educación superior",
     "url": "https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx | poblacion-de-mexico-y-de-las-entidades-federativas-2016- 2050",
     "archivoCrudo": "",
     "archivoProcesado": "",
@@ -129,7 +129,7 @@
   {
     "idIndicador": "CGID-PVD25.30-ER1-O01-E04-IE020",
     "institucion": "INEGI",
-    "nombre": "Tasa de eficiencia terminal en primaria Refiere al número de alumnos que egresan en educación primaria en un ciclo escolar, por cada",
+    "nombre": "Tasa de eficiencia terminal en primaria",
     "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
     "archivoCrudo": "",
     "archivoProcesado": "",
@@ -141,7 +141,7 @@
   {
     "idIndicador": "CGID-PVD25.30-ER1-O01-E04-IE021",
     "institucion": "INEGI",
-    "nombre": "Tasa de eficiencia terminal en secundaria Refiere al número de alumnos que egresan en educación secundaria en un ciclo escolar, por cada",
+    "nombre": "Tasa de eficiencia terminal en secundaria",
     "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
     "archivoCrudo": "",
     "archivoProcesado": "",
@@ -153,7 +153,7 @@
   {
     "idIndicador": "CGID-PVD25.30-ER1-O01-E04-IE022",
     "institucion": "INEGI",
-    "nombre": "Tasa de eficiencia terminal en media superior Refiere al número de alumnos que egresan en profesional técnico o bachillerato en un ciclo escolar,",
+    "nombre": "Tasa de eficiencia terminal en media superior",
     "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
     "archivoCrudo": "",
     "archivoProcesado": "",
@@ -165,7 +165,7 @@
   {
     "idIndicador": "CGID-PVD25.30-ER1-O01-E05-IE023",
     "institucion": "INEGI",
-    "nombre": "artística y cultural Muestra la variación del número de actividades,",
+    "nombre": "Tasa de variación de actividades de difusión artística y cultural",
     "url": "",
     "archivoCrudo": "",
     "archivoProcesado": "",
@@ -177,7 +177,7 @@
   {
     "idIndicador": "CGID-PVD25.30-ER1-O01-E05-IE024",
     "institucion": "INEGI",
-    "nombre": "administrados por la SECVER Muestra el promedio de asistentes a eventos artísticos y culturales realizados en los diecisiete recintos culturales de la SECVER, ubicados en los",
+    "nombre": "Promedio de asistentes a los recintos culturales administrados por la SECVER",
     "url": "https://culturaveracruz.gob.mx/ | https://culturaveracruz.gob.mx/#/directorio | https://transparencia.veracruzcultura.com/organigrama.php",
     "archivoCrudo": "",
     "archivoProcesado": "",
@@ -189,7 +189,7 @@
   {
     "idIndicador": "CGID-PVD25.30-ER1-O01-E06-IE025",
     "institucion": "INEGI",
-    "nombre": "sociales en Veracruz Mide la proporción de personas que cuentan con al menos tres carencias sociales: rezago educativo, acceso",
+    "nombre": "Porcentaje de población con al menos tres carencias sociales en Veracruz",
     "url": "https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
     "archivoCrudo": "",
     "archivoProcesado": "",
@@ -201,7 +201,7 @@
   {
     "idIndicador": "CGID-PVD25.30-ER1-O01-E01-PS01-O01-E1.4-IE001",
     "institucion": "INEGI",
-    "nombre": "alcantarillado sanitario Mide el porcentaje de viviendas que cuentan con infraestructura de alcantarillado sanitario para recolectar",
+    "nombre": "Proporción de viviendas particulares con servicio de alcantarillado sanitario",
     "url": "https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados",
     "archivoCrudo": "",
     "archivoProcesado": "",
