@@ -16,10 +16,17 @@ HISTORIC_ID = "CGID-PVD25.30-ER1-O01-E00-IE001"
 HISTORIC_IDS = {
     "CGID-PVD25.30-ER1-O01-E00-IE001",
     "CGID-PVD25.30-ER1-O01-E00-IE002",
+    "CGID-PVD25.30-ER1-O01-E01-IE014",
+    "CGID-PVD25.30-ER1-O01-E02-IE015",
 }
+ENCIG_HISTORIC_IDS = {"CGID-PVD25.30-ER1-O01-E02-IE016"}
 HISTORIC_FILE = (
     "data/processed/historicos/hechos/historico_pobreza.csv"
 )
+ENCIG_HISTORIC_FILE = (
+    "data/processed/historicos/hechos/historico_ie016_encig.csv"
+)
+ENCIG_PERIODS = "2015,2017,2019,2021,2023,2025"
 RAW_FILE = (
     "data/raw/fuentes/inegi/pobreza_multidimensional/2024/pm_ef_2024.xlsx"
 )
@@ -60,18 +67,44 @@ def build_coverage(catalog: pd.DataFrame, ids: list[str]) -> pd.DataFrame:
                 f"en el catálogo maestro; coincidencias: {len(row)}."
             )
         item = row.iloc[0]
-        if indicator_id in HISTORIC_IDS:
+        if indicator_id in ENCIG_HISTORIC_IDS:
+            status = "procesado"
+            raw_file = (
+                "data/raw/fuentes/inegi/encig/"
+                "tabulado_interactivo_veracruz_ie016.csv"
+            )
+            periods = ENCIG_PERIODS
+            processed_file = ENCIG_HISTORIC_FILE
+            observations = (
+                "Serie estatal del tabulador interactivo ENCIG para Centros de "
+                "salud y hospitales del gobierno de su estado; población urbana "
+                "de 100 mil habitantes o más. El Excel ENCIG 2023 valida el "
+                "periodo 2023."
+            )
+        elif indicator_id in HISTORIC_IDS:
             status = "procesado"
             raw_file = RAW_FILE
             periods = PERIODS
             processed_file = HISTORIC_FILE
-            observations = (
-                "Histórico estatal de Veracruz extraído de la hoja Ver.; "
-                "IE002 se calculó como 100 menos la carencia por acceso a la "
-                "seguridad social."
-                if indicator_id.endswith("IE002")
-                else "Histórico estatal de Veracruz extraído de la hoja Ver."
-            )
+            if indicator_id.endswith("IE002"):
+                observations = (
+                    "Histórico estatal de Veracruz extraído de la hoja Ver.; "
+                    "IE002 se calculó como 100 menos la carencia por acceso a "
+                    "la seguridad social."
+                )
+            elif indicator_id.endswith("IE014"):
+                observations = (
+                    "Histórico estatal de Veracruz extraído directamente de "
+                    "la fila de pobreza extrema en la hoja Ver."
+                )
+            elif indicator_id.endswith("IE015"):
+                observations = (
+                    "Histórico estatal de Veracruz extraído directamente de "
+                    "la fila de carencia por acceso a los servicios de salud "
+                    "en la hoja Ver."
+                )
+            else:
+                observations = "Histórico estatal de Veracruz extraído de la hoja Ver."
         elif item["medio_verificacion"].strip():
             status = "fuente_identificada"
             raw_file = ""

@@ -1,0 +1,28 @@
+{
+  "institucion": "INEGI",
+  "programa": "Encuesta Nacional de Calidad e Impacto Gubernamental (ENCIG) 2023",
+  "fecha_consulta": "2026-11-03",
+  "url_origen": "https://www.inegi.org.mx/programas/encig/2023/",
+  "entidad_objetivo": "Veracruz de Ignacio de la Llave",
+  "indicador_catalogo": "CGID-PVD25.30-ER1-O01-E02-IE016",
+  "tabla": "2.5",
+  "variable": "Satisfecha2",
+  "medida": "Relativos",
+  "serie_historica": {
+    "archivo": "../tabulado_interactivo_veracruz_ie016.csv",
+    "servicio": "Centros de salud y hospitales del gobierno de su estado",
+    "periodos": [2015, 2017, 2019, 2021, 2023, 2025],
+    "nota": "La serie fue capturada del tabulador interactivo; el Excel de estimaciones valida el periodo 2023."
+  },
+  "cobertura_poblacional": "Población de 18 años y más que habita en áreas urbanas de cien mil habitantes y más",
+  "archivos": [
+    {
+      "archivo": "II_evaluacion_servicios_bajo_demanda_encig2023_est.xlsx",
+      "uso": "Estimación puntual de IE016"
+    },
+    {
+      "archivo": "II_evaluacion_servicios_bajo_demanda_encig2023_int.xlsx",
+      "uso": "Intervalo de confianza; no usado como valor puntual"
+    }
+  ]
+}

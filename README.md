@@ -63,10 +63,10 @@ Los históricos deberán almacenarse en formato largo en
 `data/processed/historicos/hechos/valores_indicadores.csv`, conservando la
 fuente, el periodo, la entidad, la URL y la procedencia del archivo original.
 
-## Extraer el primer histórico
+## Extraer históricos de pobreza
 
-El histórico del indicador `CGID-PVD25.30-ER1-O01-E00-IE001` se extrae de la
-hoja `Ver.` de `pm_ef_2024.xlsx`:
+Los históricos de `IE001`, `IE002`, `IE014` e `IE015` se extraen de la hoja `Ver.` de
+`pm_ef_2024.xlsx`:
 
 ```powershell
 .\venv\Scripts\python.exe etl\historicos\extraer_historico_pobreza.py
@@ -79,6 +79,14 @@ data/processed/historicos/hechos/historico_pobreza.csv
 ```
 
 El archivo usa formato largo y contiene únicamente:
-`id_indicador`, `anio` y `valor_real`. El valor corresponde al porcentaje de
-población en situación de pobreza de Veracruz para los años publicados por
-INEGI (2016, 2018, 2020, 2022 y 2024).
+`id_indicador`, `anio` y `valor_real`, con cinco años por indicador. IE002 se
+calcula como el complemento de la carencia por acceso a la seguridad social;
+IE001, IE014 e IE015 se extraen directamente del bloque de porcentajes.
+
+IE016 se procesa por separado desde el tabulador interactivo ENCIG, filtrando
+exclusivamente `Veracruz de Ignacio de la Llave` y el servicio `Centros de
+salud y hospitales del gobierno de su estado`. Su salida es
+`data/processed/historicos/hechos/historico_ie016_encig.csv` y contiene los
+periodos 2015, 2017, 2019, 2021, 2023 y 2025. El Excel `_est.xlsx` valida el
+periodo 2023 y el archivo `_int.xlsx` se conserva como referencia de precisión;
+ninguno sustituye la serie capturada del tabulador interactivo.
