@@ -90,3 +90,22 @@ salud y hospitales del gobierno de su estado`. Su salida es
 periodos 2015, 2017, 2019, 2021, 2023 y 2025. El Excel `_est.xlsx` valida el
 periodo 2023 y el archivo `_int.xlsx` se conserva como referencia de precisión;
 ninguno sustituye la serie capturada del tabulador interactivo.
+
+## Contrato de datos para Vue
+
+Para generar los artefactos de consumo del frontend:
+
+```powershell
+.\venv\Scripts\python.exe etl\frontend\generar_datos_frontend.py
+```
+
+La salida queda en `data/processed/frontend/`:
+
+- `indicadores_mvp.json`: las 15 fichas técnicas y su estado de cobertura.
+- `historicos_mvp.json`: series disponibles, sin rellenar periodos faltantes.
+- `fuentes_mvp.json`: procedencia y enlaces por indicador.
+- `resumen_mvp.json`: métricas agregadas para el dashboard.
+
+El contrato distingue `lineaBase` y `meta2030` de `historicos_mvp`; la línea
+base del PVD no se trata como una observación histórica. Los indicadores sin
+serie permanecen en `indicadores_mvp.json` con `tieneHistorico: false`.

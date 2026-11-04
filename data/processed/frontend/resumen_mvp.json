@@ -1,0 +1,24 @@
+{
+  "entidad": "Veracruz",
+  "totalIndicadores": 15,
+  "indicadoresConHistorico": 5,
+  "indicadoresSinHistorico": 10,
+  "indicadoresConMeta2030": 15,
+  "porEstadoHistorico": {
+    "fuente_identificada": 10,
+    "procesado": 5
+  },
+  "periodosHistoricos": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ]
+}

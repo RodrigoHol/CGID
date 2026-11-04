@@ -1,0 +1,490 @@
+[
+  {
+    "id": "CGID-PVD25.30-ER1-O01-E00-IE001",
+    "clave": "CGID-PVD25.30-ER1-O01-E00-IE001",
+    "nombre": "Población en situación de pobreza Mide la proporción de personas que tienen al menos una carencia social (en los seis indicadores de rezago educativo, acceso a servicios de salud, acceso a la seguridad social, calidad y espacios de la vivienda, servicios básicos en la",
+    "descripcion": "vivienda y acceso a la alimentación) y su ingreso es insuficiente para adquirir los bienes y servicios que requiere para satisfacer sus necesidades alimentarias y no alimentarias.",
+    "formula": "",
+    "unidadMedida": "",
+    "sentido": "Descendente",
+    "ejeRector": "1. Veracruz con Bienestar y",
+    "lineaBase": {
+      "anio": 2025,
+      "valor": 44.5
+    },
+    "meta2030": 41.5,
+    "metasIntermedias": {
+      "2025": 44.5,
+      "2024": 2027.0,
+      "2026": 2029.0,
+      "2028": 2030.0
+    },
+    "estadoHistorico": "procesado",
+    "periodosDisponibles": [
+      2016,
+      2018,
+      2020,
+      2022,
+      2024
+    ],
+    "tieneHistorico": true,
+    "fuente": {
+      "url": "https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
+      "medioVerificacion": "Presentación de resultados. https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
+      "archivoCrudo": "data/raw/fuentes/inegi/pobreza_multidimensional/2024/pm_ef_2024.xlsx",
+      "observaciones": "Histórico estatal de Veracruz extraído de la hoja Ver."
+    }
+  },
+  {
+    "id": "CGID-PVD25.30-ER1-O01-E00-IE002",
+    "clave": "CGID-PVD25.30-ER1-O01-E00-IE002",
+    "nombre": "mínimos de protección social Considera la situación de no carencia por acceso a la seguridad social, específicamente a la población que cumple alguno de los siguientes criterios: Población económicamente activa asalariada que dispone de las prestaciones establecidas en el artículo 2° de la Ley de Seguridad Social por parte de su trabajo. Personas que disponen de servicios médicos como",
+    "descripcion": "prestación laboral o por contratación voluntaria al régimen obligatorio del IMSS. Población jubilada o pensionada o es familiar de una persona dentro o fuera del hogar con acceso a la seguridad social. Población de 65 años o más beneficiaria de algún programa social de pensiones para adultos equivalente o superior al promedio de la Línea de Pobreza Extrema por Ingresos rural y urbana.",
+    "formula": "",
+    "unidadMedida": "",
+    "sentido": "Ascendente",
+    "ejeRector": "1. Veracruz con Bienestar y",
+    "lineaBase": {
+      "anio": 2025,
+      "valor": 39.8
+    },
+    "meta2030": 41.0,
+    "metasIntermedias": {
+      "2025": 39.8,
+      "2024": 2027.0,
+      "2026": 2029.0,
+      "2028": 2030.0
+    },
+    "estadoHistorico": "procesado",
+    "periodosDisponibles": [
+      2016,
+      2018,
+      2020,
+      2022,
+      2024
+    ],
+    "tieneHistorico": true,
+    "fuente": {
+      "url": "https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
+      "medioVerificacion": "Presentación de resultados. https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
+      "archivoCrudo": "data/raw/fuentes/inegi/pobreza_multidimensional/2024/pm_ef_2024.xlsx",
+      "observaciones": "Histórico estatal de Veracruz extraído de la hoja Ver.; IE002 se calculó como 100 menos la carencia por acceso a la seguridad social."
+    }
+  },
+  {
+    "id": "CGID-PVD25.30-ER1-O01-E01-IE014",
+    "clave": "CGID-PVD25.30-ER1-O01-E01-IE014",
+    "nombre": "Porcentaje de población en situación de pobreza extrema Población con ingreso inferior a la Línea de Pobreza Extrema",
+    "descripcion": "por Ingresos y que presenta más de 3 carencias establecidas para la medición multidimensional de la pobreza.",
+    "formula": "",
+    "unidadMedida": "",
+    "sentido": "Descendente",
+    "ejeRector": "1. Veracruz con Bienestar y",
+    "lineaBase": {
+      "anio": 2025,
+      "valor": 8.8
+    },
+    "meta2030": 7.76,
+    "metasIntermedias": {
+      "2025": 8.8,
+      "2024": 2027.0,
+      "2026": 2029.0,
+      "2028": 2030.0
+    },
+    "estadoHistorico": "procesado",
+    "periodosDisponibles": [
+      2016,
+      2018,
+      2020,
+      2022,
+      2024
+    ],
+    "tieneHistorico": true,
+    "fuente": {
+      "url": "https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
+      "medioVerificacion": "Presentación de resultados. https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
+      "archivoCrudo": "data/raw/fuentes/inegi/pobreza_multidimensional/2024/pm_ef_2024.xlsx",
+      "observaciones": "Histórico estatal de Veracruz extraído directamente de la fila de pobreza extrema en la hoja Ver."
+    }
+  },
+  {
+    "id": "CGID-PVD25.30-ER1-O01-E02-IE015",
+    "clave": "CGID-PVD25.30-ER1-O01-E02-IE015",
+    "nombre": "servicios de salud Mide el porcentaje de personas que no cuenta con adscripción o afiliación a las instituciones públicas de seguridad social (IMSS, ISSSTE federal o estatal, Pemex, Ejército o Marina), a servicios médicos privados, o bien, no se",
+    "descripcion": "encuentra afiliado o inscrito al Seguro Popular, o no reportó tener derecho a recibir los servicios que presta el Instituto de Salud para el Bienestar (INSABI, actualmente IMSS- Bienestar), respecto a la población total del Estado.",
+    "formula": "",
+    "unidadMedida": "",
+    "sentido": "Descendente",
+    "ejeRector": "1. Veracruz con Bienestar y",
+    "lineaBase": {
+      "anio": 2025,
+      "valor": 40.7
+    },
+    "meta2030": 24.3,
+    "metasIntermedias": {
+      "2025": 40.7,
+      "2024": 2027.0,
+      "2026": 2029.0,
+      "2028": 2030.0
+    },
+    "estadoHistorico": "procesado",
+    "periodosDisponibles": [
+      2016,
+      2018,
+      2020,
+      2022,
+      2024
+    ],
+    "tieneHistorico": true,
+    "fuente": {
+      "url": "https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
+      "medioVerificacion": "Presentación de resultados. https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
+      "archivoCrudo": "data/raw/fuentes/inegi/pobreza_multidimensional/2024/pm_ef_2024.xlsx",
+      "observaciones": "Histórico estatal de Veracruz extraído directamente de la fila de carencia por acceso a los servicios de salud en la hoja Ver."
+    }
+  },
+  {
+    "id": "CGID-PVD25.30-ER1-O01-E02-IE016",
+    "clave": "CGID-PVD25.30-ER1-O01-E02-IE016",
+    "nombre": "salud estatal Mide la satisfacción de los usuarios de los Servicios de Salud de Veracruz correspondientes a INSABI",
+    "descripcion": "y/o IMSS-Bienestar. Únicamente considera los niveles de satisfacción “Muy Satisfactorio” o “Satisfactorio”.",
+    "formula": "Gubernamental (ENCIG), toma en cuenta la población de 18 años y más de acuerdo a su experiencia respecto a los servicios de salud estatales.",
+    "unidadMedida": "Porcentaje",
+    "sentido": "Ascendente",
+    "ejeRector": "1. Veracruz con Bienestar y",
+    "lineaBase": {
+      "anio": 2024,
+      "valor": 65.0
+    },
+    "meta2030": 75.3,
+    "metasIntermedias": {
+      "2025": 2028.0,
+      "2023": 2026.0,
+      "2027": 2030.0
+    },
+    "estadoHistorico": "procesado",
+    "periodosDisponibles": [
+      2015,
+      2017,
+      2019,
+      2021,
+      2023,
+      2025
+    ],
+    "tieneHistorico": true,
+    "fuente": {
+      "url": "https://www.inegi.org.mx/programas/encig/2023/",
+      "medioVerificacion": "Gubernamental (ENCIG), publicada en el enlace: https://www.inegi.org.mx/programas/encig/2023/",
+      "archivoCrudo": "data/raw/fuentes/inegi/encig/tabulado_interactivo_veracruz_ie016.csv",
+      "observaciones": "Serie estatal del tabulador interactivo ENCIG para Centros de salud y hospitales del gobierno de su estado; población urbana de 100 mil habitantes o más. El Excel ENCIG 2023 valida el periodo 2023."
+    }
+  },
+  {
+    "id": "CGID-PVD25.30-ER1-O01-E03-IE017",
+    "clave": "CGID-PVD25.30-ER1-O01-E03-IE017",
+    "nombre": "Tasa de cobertura en educación básica Mide el número de alumnos en educación preescolar, primaria y secundaria al inicio del",
+    "descripcion": "ciclo escolar, por cada cien en el rango de edad de 3 a 14 años de la población.",
+    "formula": "𝑏𝑎𝑠 𝑃𝑜𝑏 3_14",
+    "unidadMedida": "Tasa (alumnos)",
+    "sentido": "Regular",
+    "ejeRector": "1. Veracruz con Bienestar y",
+    "lineaBase": {
+      "anio": 2024,
+      "valor": 86.13
+    },
+    "meta2030": 86.17,
+    "metasIntermedias": {
+      "2025": 2026.0,
+      "2026": 2027.0,
+      "2027": 2028.0,
+      "2028": 2029.0,
+      "2029": 2030.0
+    },
+    "estadoHistorico": "fuente_identificada",
+    "periodosDisponibles": [],
+    "tieneHistorico": false,
+    "fuente": {
+      "url": "https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx | poblacion-de-mexico-y-de-las-entidades-federativas-2016- 2050",
+      "medioVerificacion": "SEP. Serie histórica y pronósticos de la estadística del Sistema Educativo Nacional https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx | poblacion-de-mexico-y-de-las-entidades-federativas-2016- 2050",
+      "archivoCrudo": "",
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    }
+  },
+  {
+    "id": "CGID-PVD25.30-ER1-O01-E03-IE018",
+    "clave": "CGID-PVD25.30-ER1-O01-E03-IE018",
+    "nombre": "Tasa de cobertura en educación media superior Mide el número de alumnos en bachillerato y profesional técnico al inicio del ciclo escolar, por",
+    "descripcion": "cada cien en el rango de edad de 15 a 17 años de la población.",
+    "formula": "𝑚𝑒𝑑 𝑃𝑜𝑏 15_17",
+    "unidadMedida": "Tasa (alumnos)",
+    "sentido": "Ascendente",
+    "ejeRector": "1. Veracruz con Bienestar y",
+    "lineaBase": {
+      "anio": 2024,
+      "valor": 73.94
+    },
+    "meta2030": 86.57,
+    "metasIntermedias": {
+      "2025": 2026.0,
+      "2026": 2027.0,
+      "2027": 2028.0,
+      "2028": 2029.0,
+      "2029": 2030.0
+    },
+    "estadoHistorico": "fuente_identificada",
+    "periodosDisponibles": [],
+    "tieneHistorico": false,
+    "fuente": {
+      "url": "https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx | poblacion-de-mexico-y-de-las-entidades-federativas-2016- 2050",
+      "medioVerificacion": "SEP. Serie histórica y pronósticos de la estadística del Sistema Educativo Nacional https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx | poblacion-de-mexico-y-de-las-entidades-federativas-2016- 2050",
+      "archivoCrudo": "",
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    }
+  },
+  {
+    "id": "CGID-PVD25.30-ER1-O01-E03-IE019",
+    "clave": "CGID-PVD25.30-ER1-O01-E03-IE019",
+    "nombre": "Tasa de cobertura en educación superior Mide el número de alumnos que estudian el nivel de técnico superior universitario, normal o",
+    "descripcion": "licenciatura al inicio del ciclo escolar, por cada cien en el rango de edad de 18 a 22 años de la población.",
+    "formula": "𝑠𝑢𝑝 𝑃𝑜𝑏 18_22",
+    "unidadMedida": "Tasa (alumnos)",
+    "sentido": "Ascendente",
+    "ejeRector": "1. Veracruz con Bienestar y",
+    "lineaBase": {
+      "anio": 2024,
+      "valor": 26.46
+    },
+    "meta2030": 30.56,
+    "metasIntermedias": {
+      "2025": 2026.0,
+      "2026": 2027.0,
+      "2027": 2028.0,
+      "2028": 2029.0,
+      "2029": 2030.0
+    },
+    "estadoHistorico": "fuente_identificada",
+    "periodosDisponibles": [],
+    "tieneHistorico": false,
+    "fuente": {
+      "url": "https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx | poblacion-de-mexico-y-de-las-entidades-federativas-2016- 2050",
+      "medioVerificacion": "SEP. Serie histórica y pronósticos de la estadística del Sistema Educativo Nacional https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx | poblacion-de-mexico-y-de-las-entidades-federativas-2016- 2050",
+      "archivoCrudo": "",
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    }
+  },
+  {
+    "id": "CGID-PVD25.30-ER1-O01-E04-IE020",
+    "clave": "CGID-PVD25.30-ER1-O01-E04-IE020",
+    "nombre": "Tasa de eficiencia terminal en primaria Refiere al número de alumnos que egresan en educación primaria en un ciclo escolar, por cada",
+    "descripcion": "cien alumnos inscritos en la cohorte escolar inicial del mismo nivel.",
+    "formula": "prim Nvo Ing 1º ciclo n−5",
+    "unidadMedida": "Tasa (alumnos)",
+    "sentido": "Ascendente",
+    "ejeRector": "1. Veracruz con Bienestar y",
+    "lineaBase": {
+      "anio": 2024,
+      "valor": 97.56
+    },
+    "meta2030": 98.59,
+    "metasIntermedias": {
+      "2025": 2027.0,
+      "2024": 2026.0,
+      "2026": 2028.0,
+      "2027": 2029.0,
+      "2028": 2030.0
+    },
+    "estadoHistorico": "fuente_identificada",
+    "periodosDisponibles": [],
+    "tieneHistorico": false,
+    "fuente": {
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "medioVerificacion": "x SEV. Prontuario Estadístico https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "archivoCrudo": "",
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    }
+  },
+  {
+    "id": "CGID-PVD25.30-ER1-O01-E04-IE021",
+    "clave": "CGID-PVD25.30-ER1-O01-E04-IE021",
+    "nombre": "Tasa de eficiencia terminal en secundaria Refiere al número de alumnos que egresan en educación secundaria en un ciclo escolar, por cada",
+    "descripcion": "cien alumnos inscritos en la cohorte escolar inicial del mismo nivel.",
+    "formula": "sec Nvo Ing 1º ciclo n−2",
+    "unidadMedida": "Tasa (alumnos)",
+    "sentido": "Ascendente",
+    "ejeRector": "1. Veracruz con Bienestar y",
+    "lineaBase": {
+      "anio": 2024,
+      "valor": 88.57
+    },
+    "meta2030": 97.42,
+    "metasIntermedias": {
+      "2025": 2027.0,
+      "2024": 2026.0,
+      "2026": 2028.0,
+      "2027": 2029.0,
+      "2028": 2030.0
+    },
+    "estadoHistorico": "fuente_identificada",
+    "periodosDisponibles": [],
+    "tieneHistorico": false,
+    "fuente": {
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "medioVerificacion": "x SEV. Prontuario Estadístico https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "archivoCrudo": "",
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    }
+  },
+  {
+    "id": "CGID-PVD25.30-ER1-O01-E04-IE022",
+    "clave": "CGID-PVD25.30-ER1-O01-E04-IE022",
+    "nombre": "Tasa de eficiencia terminal en media superior Refiere al número de alumnos que egresan en profesional técnico o bachillerato en un ciclo escolar,",
+    "descripcion": "por cada cien alumnos inscritos en la cohorte escolar inicial de esos mismos niveles.",
+    "formula": "med Nvo Ing 1º ciclo n−2",
+    "unidadMedida": "Tasa (alumnos)",
+    "sentido": "Ascendente",
+    "ejeRector": "1. Veracruz con Bienestar y",
+    "lineaBase": {
+      "anio": 2024,
+      "valor": 76.41
+    },
+    "meta2030": 90.28,
+    "metasIntermedias": {
+      "2025": 2027.0,
+      "2024": 2026.0,
+      "2026": 2028.0,
+      "2027": 2029.0,
+      "2028": 2030.0
+    },
+    "estadoHistorico": "fuente_identificada",
+    "periodosDisponibles": [],
+    "tieneHistorico": false,
+    "fuente": {
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "medioVerificacion": "x SEV. Prontuario Estadístico https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "archivoCrudo": "",
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    }
+  },
+  {
+    "id": "CGID-PVD25.30-ER1-O01-E05-IE023",
+    "clave": "CGID-PVD25.30-ER1-O01-E05-IE023",
+    "nombre": "artística y cultural Muestra la variación del número de actividades,",
+    "descripcion": "eventos artísticos y culturales en la Secretaría de Cultura.",
+    "formula": "año t/ Número de actividades de difusión cultural artística y cultural en el año t-1) -1) *100",
+    "unidadMedida": "Porcentaje",
+    "sentido": "Ascendente",
+    "ejeRector": "1. Veracruz con Bienestar y",
+    "lineaBase": {
+      "anio": 2024,
+      "valor": 0.77
+    },
+    "meta2030": 1.57,
+    "metasIntermedias": {
+      "2025": 2026.0,
+      "2026": 2027.0,
+      "2027": 2028.0,
+      "2028": 2029.0,
+      "2029": 2030.0
+    },
+    "estadoHistorico": "fuente_identificada",
+    "periodosDisponibles": [],
+    "tieneHistorico": false,
+    "fuente": {
+      "url": "",
+      "medioVerificacion": "Patrimonio, Dirección de Desarrollo Cultural Regional, Dirección de Planeación y Vinculación, Archivo digital de evidencias fotográficas.",
+      "archivoCrudo": "",
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    }
+  },
+  {
+    "id": "CGID-PVD25.30-ER1-O01-E05-IE024",
+    "clave": "CGID-PVD25.30-ER1-O01-E05-IE024",
+    "nombre": "administrados por la SECVER Muestra el promedio de asistentes a eventos artísticos y culturales realizados en los diecisiete recintos culturales de la SECVER, ubicados en los",
+    "descripcion": "municipios de Boca del Río, Coatepec, Huatusco, Orizaba, Papantla, Tlacotalpan, Veracruz y Xalapa.",
+    "formula": "la SECVER/ Número de recintos culturales administrados por la SECVER).",
+    "unidadMedida": "Asistentes",
+    "sentido": "Ascendente",
+    "ejeRector": "1. Veracruz con Bienestar y",
+    "lineaBase": {
+      "anio": 2024,
+      "valor": 15.0
+    },
+    "meta2030": 17.0,
+    "metasIntermedias": {
+      "2025": 2026.0,
+      "2026": 2027.0,
+      "2027": 2028.0,
+      "2028": 2029.0,
+      "2029": 2030.0
+    },
+    "estadoHistorico": "fuente_identificada",
+    "periodosDisponibles": [],
+    "tieneHistorico": false,
+    "fuente": {
+      "url": "https://culturaveracruz.gob.mx/ | https://culturaveracruz.gob.mx/#/directorio | https://transparencia.veracruzcultura.com/organigrama.php",
+      "medioVerificacion": "Patrimonio, Dirección de Planeación y Vinculación, Archivo digital de evidencias fotográficas, registro de asistencia. | Web de la SECVER: https://culturaveracruz.gob.mx/https://culturaveracruz.gob.mx/#/directorio;https://transparencia.veracruzcultura.com/organigrama.php",
+      "archivoCrudo": "",
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    }
+  },
+  {
+    "id": "CGID-PVD25.30-ER1-O01-E06-IE025",
+    "clave": "CGID-PVD25.30-ER1-O01-E06-IE025",
+    "nombre": "sociales en Veracruz Mide la proporción de personas que cuentan con al menos tres carencias sociales: rezago educativo, acceso",
+    "descripcion": "a los servicios de salud, acceso a la seguridad social, calidad y espacios de la vivienda, acceso a los servicios básicos de la vivienda, y acceso a la alimentación.",
+    "formula": "pobreza multidimensional extrema, la población con ingresos superiores a la línea de pobreza por ingresos que tiene al menos una carencia, y la población con al menos una carencia social.",
+    "unidadMedida": "",
+    "sentido": "Descendente",
+    "ejeRector": "1. Veracruz con Bienestar y",
+    "lineaBase": {
+      "anio": 2025,
+      "valor": 32.1
+    },
+    "meta2030": 31.1,
+    "metasIntermedias": {
+      "2025": 32.1,
+      "2024": 2027.0,
+      "2026": 2029.0,
+      "2028": 2030.0
+    },
+    "estadoHistorico": "fuente_identificada",
+    "periodosDisponibles": [],
+    "tieneHistorico": false,
+    "fuente": {
+      "url": "https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
+      "medioVerificacion": "Presentación de resultados. https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
+      "archivoCrudo": "",
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    }
+  },
+  {
+    "id": "CGID-PVD25.30-ER1-O01-E01-PS01-O01-E1.4-IE001",
+    "clave": "CGID-PVD25.30-ER1-O01-E01-PS01-O01-E1.4-IE001",
+    "nombre": "alcantarillado sanitario Mide el porcentaje de viviendas que cuentan con infraestructura de alcantarillado sanitario para recolectar",
+    "descripcion": "y conducir las aguas residuales que se encuentran conectadas a la red pública, en relación con el total de viviendas en el Estado.",
+    "formula": "de servicio de alcantarillado sanitario en relación con el número total de viviendas en el Estado. El valor obtenido se expresa en porcentaje.",
+    "unidadMedida": "",
+    "sentido": "Ascendente",
+    "ejeRector": "1. Veracruz con Bienestar y",
+    "lineaBase": {
+      "anio": 2025,
+      "valor": 99.3
+    },
+    "meta2030": 99.5,
+    "metasIntermedias": {
+      "2025": 99.3,
+      "2024": 2027.0,
+      "2026": 2029.0,
+      "2028": 2030.0
+    },
+    "estadoHistorico": "fuente_identificada",
+    "periodosDisponibles": [],
+    "tieneHistorico": false,
+    "fuente": {
+      "url": "https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados",
+      "medioVerificacion": "Instituto Nacional de Estadística y Geografía (INEGI). Encuesta Nacional de Ingresos y Gastos de los Hogares (ENIGH) 2024. Tabulados. Tabulados predefinidos. Tabulados de hogares y viviendas. Tabulados. https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados",
+      "archivoCrudo": "",
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    }
+  }
+]
