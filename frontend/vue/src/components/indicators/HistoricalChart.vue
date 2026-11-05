@@ -41,6 +41,8 @@ const pointsWithLabels = computed(() => props.points.map((point, index) => ({
   x: x(index),
   y: y(point.valor),
 })))
+const showPointLabels = computed(() => props.points.length <= 12)
+const yearLabelStep = computed(() => Math.max(1, Math.ceil(props.points.length / 8)))
 const hoveredPoint = computed(() => pointsWithLabels.value.find((point) => point.anio === hoveredYear.value))
 const formatValue = (value: number) => value.toLocaleString('es-MX', {
   maximumFractionDigits: 4,
@@ -64,11 +66,11 @@ const formatValue = (value: number) => value.toLocaleString('es-MX', {
         <line v-if="baseline.valor !== null" class="chart-reference chart-reference--baseline" :x1="padding.left" :x2="width - padding.right" :y1="y(baseline.valor)" :y2="y(baseline.valor)" />
         <line v-if="target !== null" class="chart-reference chart-reference--target" :x1="padding.left" :x2="width - padding.right" :y1="y(target)" :y2="y(target)" />
         <path class="chart-path" :d="linePath" />
-        <g v-for="point in pointsWithLabels" :key="point.anio">
+        <g v-for="(point, index) in pointsWithLabels" :key="point.anio">
           <line v-if="hoveredYear === point.anio" class="chart-hover-guide" :x1="point.x" :x2="point.x" :y1="padding.top" :y2="height - padding.bottom" />
           <circle class="chart-point" :class="{ 'chart-point--active': hoveredYear === point.anio }" :cx="point.x" :cy="point.y" r="5" @mouseenter="hoveredYear = point.anio" @focus="hoveredYear = point.anio" @blur="hoveredYear = null" tabindex="0" role="button" :aria-label="`${point.anio}: ${formatValue(point.valor)}`" />
-          <text class="chart-value" :x="point.x" :y="point.y - 12" text-anchor="middle">{{ formatValue(point.valor) }}</text>
-          <text class="chart-year" :x="point.x" :y="height - 15" text-anchor="middle">{{ point.anio }}</text>
+          <text v-if="showPointLabels || hoveredYear === point.anio" class="chart-value" :x="point.x" :y="point.y - 12" text-anchor="middle">{{ formatValue(point.valor) }}</text>
+          <text v-if="index % yearLabelStep === 0 || index === pointsWithLabels.length - 1" class="chart-year" :x="point.x" :y="height - 15" text-anchor="middle">{{ point.anio }}</text>
         </g>
         <g v-if="hoveredPoint" class="chart-tooltip" :transform="`translate(${Math.min(hoveredPoint.x + 12, width - 145)} ${Math.max(hoveredPoint.y - 65, 8)})`">
           <rect width="132" height="48" rx="4" />

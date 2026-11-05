@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import HistoricalChart from '../components/indicators/HistoricalChart.vue'
 import { loadFrontendData } from '../services/data.service'
@@ -14,6 +14,11 @@ const latest = computed(() => series.value.at(-1))
 const first = computed(() => series.value[0])
 const variation = computed(() => latest.value && first.value ? latest.value.valor - first.value.valor : null)
 const variationLabel = computed(() => variation.value === null ? 'Sin histórico' : `${variation.value > 0 ? '+' : ''}${variation.value.toFixed(4)} puntos`)
+const observationsExpanded = ref(false)
+const recentSeries = computed(() => [...series.value].reverse())
+const visibleObservations = computed(() => observationsExpanded.value
+  ? recentSeries.value
+  : recentSeries.value.slice(0, 3))
 
 function formatValue(value: number | null | undefined) {
   return value === null || value === undefined ? '—' : `${value.toLocaleString('es-MX', { maximumFractionDigits: 4 })}${indicator.value?.unidadMedida ? ` ${indicator.value.unidadMedida}` : ''}`
@@ -51,11 +56,24 @@ function formatValue(value: number | null | undefined) {
 
     <div class="detail-columns">
       <section class="detail-card">
-        <div class="detail-card__header"><div><span class="detail-kicker">OBSERVACIONES</span><h2>Datos publicados</h2></div></div>
+        <div class="detail-card__header">
+          <div><span class="detail-kicker">OBSERVACIONES</span><h2>Datos publicados</h2></div>
+          <span class="observation-count">{{ series.length }} periodos</span>
+        </div>
         <div class="observation-table">
           <div class="observation-table__head"><span>Periodo</span><span>Valor</span></div>
-          <div v-for="point in [...series].reverse()" :key="point.anio" class="observation-row"><strong>{{ point.anio }}</strong><span>{{ formatValue(point.valor) }}</span></div>
+          <div v-for="point in visibleObservations" :key="point.anio" class="observation-row"><strong>{{ point.anio }}</strong><span>{{ formatValue(point.valor) }}</span></div>
         </div>
+        <button
+          v-if="series.length > 3"
+          class="observation-toggle"
+          type="button"
+          :aria-expanded="observationsExpanded"
+          @click="observationsExpanded = !observationsExpanded"
+        >
+          {{ observationsExpanded ? 'Mostrar solo los 3 más recientes' : `Mostrar los ${series.length} periodos` }}
+          <span aria-hidden="true">{{ observationsExpanded ? '↑' : '↓' }}</span>
+        </button>
       </section>
       <section class="detail-card detail-facts">
         <div class="detail-card__header"><div><span class="detail-kicker">FICHA TÉCNICA</span><h2>Interpretación</h2></div></div>
@@ -103,6 +121,9 @@ function formatValue(value: number | null | undefined) {
 .observation-table__head, .observation-row { display: grid; grid-template-columns: 1fr 1fr; padding: 12px 9px; border-bottom: 1px solid #eee; font-size: 13px; }
 .observation-table__head { color: #6e6e6e; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
 .observation-row span { color: #7a1737; font-weight: 700; }
+.observation-count { color: #858585; font-size: 12px; }
+.observation-toggle { margin-top: 15px; padding: 0; border: 0; color: #7a1737; background: none; cursor: pointer; font-size: 12px; font-weight: 700; }
+.observation-toggle span { display: inline-block; margin-left: 6px; font-size: 14px; }
 .detail-facts dl { margin: 0; }
 .detail-facts dl div { display: grid; grid-template-columns: 105px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid #eee; }
 .detail-facts dt { color: #6e6e6e; font-size: 12px; }
