@@ -97,7 +97,7 @@ fuente, el periodo, la entidad, la URL y la procedencia del archivo original.
 
 ## Extraer históricos de pobreza
 
-Los históricos de `IE001`, `IE002`, `IE014` e `IE015` se extraen de la hoja `Ver.` de
+Los históricos de `IE001`, `IE002`, `IE014`, `IE015` e `IE025` se extraen de la hoja `Ver.` de
 `pm_ef_2024.xlsx`:
 
 ```powershell
@@ -113,7 +113,8 @@ data/processed/historicos/hechos/historico_pobreza.csv
 El archivo usa formato largo y contiene únicamente:
 `id_indicador`, `anio` y `valor_real`, con cinco años por indicador. IE002 se
 calcula como el complemento de la carencia por acceso a la seguridad social;
-IE001, IE014 e IE015 se extraen directamente del bloque de porcentajes.
+IE001, IE014, IE015 e IE025 se extraen directamente del bloque de porcentajes.
+IE025 corresponde a la fila `Población con al menos tres carencias sociales`.
 
 IE016 se procesa por separado desde el tabulador interactivo ENCIG, filtrando
 exclusivamente `Veracruz de Ignacio de la Llave` y el servicio `Centros de
@@ -122,6 +123,23 @@ salud y hospitales del gobierno de su estado`. Su salida es
 periodos 2015, 2017, 2019, 2021, 2023 y 2025. El Excel `_est.xlsx` valida el
 periodo 2023 y el archivo `_int.xlsx` se conserva como referencia de precisión;
 ninguno sustituye la serie capturada del tabulador interactivo.
+
+## Extraer históricos educativos SEP
+
+`IE017`, `IE018` e `IE019` se extraen del libro XLSM de indicadores educativos
+de la SEP:
+
+```powershell
+.\venv\Scripts\python.exe etl\historicos\extraer_historico_educacion_sep.py
+```
+
+El extractor lee las tablas base de las hojas `1` y `2`, sin depender de la
+ejecución de macros. Filtra la entidad Veracruz (clave `33`) y conserva los
+ciclos escolares 1990-1991 a 2025-2026; en el contrato histórico se representa
+cada ciclo por su año inicial. IE017 usa la clave SEP `129` (cobertura básica),
+IE018 la `133` (cobertura media superior) e IE019 la `224` (cobertura superior
+sin posgrado). La salida es
+`data/processed/historicos/hechos/historico_educacion_sep.csv`.
 
 ## Contrato de datos para Vue
 

@@ -1,9 +1,9 @@
 """Extrae el histórico estatal del indicador de pobreza multidimensional.
 
 La fuente pm_ef_2024.xlsx contiene una hoja por entidad y tres bloques de
-variables: población, porcentaje y carencias promedio. Este ETL extrae el
-porcentaje de pobreza de IE001, calcula IE002 como el complemento de la
-carencia por acceso a la seguridad social y extrae directamente IE014.
+variables: población, porcentaje y carencias promedio. Este ETL extrae los
+indicadores de pobreza, carencias y población con al menos tres carencias
+para Veracruz.
 """
 
 from __future__ import annotations
@@ -37,10 +37,12 @@ INDICATOR_ID_IE001 = "CGID-PVD25.30-ER1-O01-E00-IE001"
 INDICATOR_ID_IE002 = "CGID-PVD25.30-ER1-O01-E00-IE002"
 INDICATOR_ID_IE014 = "CGID-PVD25.30-ER1-O01-E01-IE014"
 INDICATOR_ID_IE015 = "CGID-PVD25.30-ER1-O01-E02-IE015"
+INDICATOR_ID_IE025 = "CGID-PVD25.30-ER1-O01-E06-IE025"
 INDICATOR_LABEL_IE001 = "Población en situación de pobreza"
 INDICATOR_LABEL_IE002 = "Carencia por acceso a la seguridad social"
 INDICATOR_LABEL_IE014 = "Población en situación de pobreza extrema"
 INDICATOR_LABEL_IE015 = "Carencia por acceso a los servicios de salud"
+INDICATOR_LABEL_IE025 = "Población con al menos tres carencias sociales"
 YEARS = (2016, 2018, 2020, 2022, 2024)
 
 
@@ -115,7 +117,7 @@ def extraer_historico(
     input_path: Path = DEFAULT_INPUT,
     sheet_name: str = "Ver.",
 ) -> pd.DataFrame:
-    """Lee la fuente cruda y devuelve IE001, IE002, IE014 e IE015."""
+    """Lee la fuente cruda y devuelve los cinco indicadores de pobreza."""
     if not input_path.exists():
         raise FileNotFoundError(f"No existe el archivo fuente: {input_path}")
 
@@ -135,6 +137,7 @@ def extraer_historico(
         (INDICATOR_ID_IE002, INDICATOR_LABEL_IE002, True),
         (INDICATOR_ID_IE014, INDICATOR_LABEL_IE014, False),
         (INDICATOR_ID_IE015, INDICATOR_LABEL_IE015, False),
+        (INDICATOR_ID_IE025, INDICATOR_LABEL_IE025, False),
     )
     for indicator_id, label, complement in definitions:
         row_index = encontrar_fila_indicador(frame, label)

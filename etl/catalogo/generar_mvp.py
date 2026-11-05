@@ -18,10 +18,22 @@ HISTORIC_IDS = {
     "CGID-PVD25.30-ER1-O01-E00-IE002",
     "CGID-PVD25.30-ER1-O01-E01-IE014",
     "CGID-PVD25.30-ER1-O01-E02-IE015",
+    "CGID-PVD25.30-ER1-O01-E06-IE025",
+    "CGID-PVD25.30-ER1-O01-E03-IE017",
+    "CGID-PVD25.30-ER1-O01-E03-IE018",
+    "CGID-PVD25.30-ER1-O01-E03-IE019",
+}
+EDUCATION_HISTORIC_IDS = {
+    "CGID-PVD25.30-ER1-O01-E03-IE017",
+    "CGID-PVD25.30-ER1-O01-E03-IE018",
+    "CGID-PVD25.30-ER1-O01-E03-IE019",
 }
 ENCIG_HISTORIC_IDS = {"CGID-PVD25.30-ER1-O01-E02-IE016"}
 HISTORIC_FILE = (
     "data/processed/historicos/hechos/historico_pobreza.csv"
+)
+EDUCATION_HISTORIC_FILE = (
+    "data/processed/historicos/hechos/historico_educacion_sep.csv"
 )
 ENCIG_HISTORIC_FILE = (
     "data/processed/historicos/hechos/historico_ie016_encig.csv"
@@ -31,6 +43,7 @@ RAW_FILE = (
     "data/raw/fuentes/inegi/pobreza_multidimensional/2024/pm_ef_2024.xlsx"
 )
 PERIODS = "2016,2018,2020,2022,2024"
+EDUCATION_PERIODS = ",".join(str(year) for year in range(1990, 2026))
 
 
 def load_ids(path: Path) -> list[str]:
@@ -83,28 +96,50 @@ def build_coverage(catalog: pd.DataFrame, ids: list[str]) -> pd.DataFrame:
             )
         elif indicator_id in HISTORIC_IDS:
             status = "procesado"
-            raw_file = RAW_FILE
-            periods = PERIODS
-            processed_file = HISTORIC_FILE
-            if indicator_id.endswith("IE002"):
-                observations = (
-                    "Histórico estatal de Veracruz extraído de la hoja Ver.; "
-                    "IE002 se calculó como 100 menos la carencia por acceso a "
-                    "la seguridad social."
+            if indicator_id in EDUCATION_HISTORIC_IDS:
+                raw_file = (
+                    "data/raw/fuentes/sep/educacion/2026/"
+                    "reporte_indicadores_educativos_sep_2026.xlsm"
                 )
-            elif indicator_id.endswith("IE014"):
+                periods = EDUCATION_PERIODS
+                processed_file = EDUCATION_HISTORIC_FILE
                 observations = (
-                    "Histórico estatal de Veracruz extraído directamente de "
-                    "la fila de pobreza extrema en la hoja Ver."
-                )
-            elif indicator_id.endswith("IE015"):
-                observations = (
-                    "Histórico estatal de Veracruz extraído directamente de "
-                    "la fila de carencia por acceso a los servicios de salud "
-                    "en la hoja Ver."
+                    "Serie histórica estatal de Veracruz extraída de las tablas "
+                    "base del libro SEP; se usan ciclos escolares 1990-1991 a "
+                    "2025-2026, representados por su año inicial. IE019 usa "
+                    "cobertura superior sin posgrado."
                 )
             else:
-                observations = "Histórico estatal de Veracruz extraído de la hoja Ver."
+                raw_file = RAW_FILE
+                periods = PERIODS
+                processed_file = HISTORIC_FILE
+                if indicator_id.endswith("IE002"):
+                    observations = (
+                        "Histórico estatal de Veracruz extraído de la hoja Ver.; "
+                        "IE002 se calculó como 100 menos la carencia por acceso a "
+                        "la seguridad social."
+                    )
+                elif indicator_id.endswith("IE014"):
+                    observations = (
+                        "Histórico estatal de Veracruz extraído directamente de "
+                        "la fila de pobreza extrema en la hoja Ver."
+                    )
+                elif indicator_id.endswith("IE015"):
+                    observations = (
+                        "Histórico estatal de Veracruz extraído directamente de "
+                        "la fila de carencia por acceso a los servicios de salud "
+                        "en la hoja Ver."
+                    )
+                elif indicator_id.endswith("IE025"):
+                    observations = (
+                        "Histórico estatal de Veracruz extraído directamente de "
+                        "la fila de población con al menos tres carencias "
+                        "sociales en la hoja Ver."
+                    )
+                else:
+                    observations = (
+                        "Histórico estatal de Veracruz extraído de la hoja Ver."
+                    )
         elif item["medio_verificacion"].strip():
             status = "fuente_identificada"
             raw_file = ""

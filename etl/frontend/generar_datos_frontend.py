@@ -67,10 +67,15 @@ def load_history(paths: set[str]) -> dict[str, list[dict[str, float | int]]]:
 def build_sources(coverage: pd.DataFrame) -> list[dict[str, object]]:
     sources = []
     for row in coverage.itertuples(index=False):
+        institution = (
+            "SEP"
+            if "sep" in clean(row.archivo_crudo).casefold()
+            else "INEGI"
+        )
         sources.append(
             {
                 "idIndicador": row.id_indicador,
-                "institucion": "INEGI",
+                "institucion": institution,
                 "nombre": clean(row.nombre),
                 "url": clean(row.url_fuente),
                 "archivoCrudo": clean(row.archivo_crudo),
