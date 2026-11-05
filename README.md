@@ -61,6 +61,17 @@ npm run dev
 Abrir la URL que muestre Vite (habitualmente
 <http://127.0.0.1:5173/>). Para validar una compilación de producción:
 
+## Publicar en GitHub Pages
+
+El workflow `.github/workflows/deploy-pages.yml` publica automáticamente la
+aplicación en GitHub Pages cada vez que se actualiza `main`. En la configuración
+del repositorio, selecciona **Settings > Pages > Source: GitHub Actions**.
+
+La aplicación usa `/CGID/` como base de producción y hash history para que las
+rutas de indicadores funcionen al recargar la página. Las imágenes se importan
+desde `frontend/vue/src/assets`, por lo que Vite ajusta sus URLs al publicar
+bajo el subdirectorio del repositorio. Para validar una compilación de producción:
+
 ```powershell
 npm run build
 ```

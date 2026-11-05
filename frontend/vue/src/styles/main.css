@@ -26,7 +26,7 @@ body { margin: 0; min-width: 320px; background: #c8a9a8; font-size: 15px; }
 button { font: inherit; }
 
 .app-shell { position: relative; isolation: isolate; min-height: 100vh; background: #c8a9a8; }
-.app-shell::before { position: fixed; z-index: -1; inset: 0; content: ''; background-image: linear-gradient(180deg, #7a1737c7 0%, #7a1737d9 35%, #c8a9a8 82%), url('/images/paisaje-veracruz.jpg'); background-position: center top; background-size: cover; background-attachment: fixed; backdrop-filter: blur(2px); }
+.app-shell::before { position: fixed; z-index: -1; inset: 0; content: ''; background-image: linear-gradient(180deg, #7a1737c7 0%, #7a1737d9 35%, #c8a9a8 82%), url('../assets/paisaje-veracruz.jpg'); background-position: center top; background-size: cover; background-attachment: fixed; backdrop-filter: blur(2px); }
 .app-navigation { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 30px; max-width: 1240px; margin: 0 auto; padding: 24px 34px; color: #fff; }
 .app-navigation__brand { display: flex; align-items: center; gap: 10px; padding: 0; border: 0; color: #fff; background: none; cursor: pointer; text-align: left; }
 .app-navigation__brand > span:last-child { display: grid; gap: 2px; }
