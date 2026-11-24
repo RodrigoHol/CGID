@@ -66,6 +66,7 @@ export interface Summary {
   indicadoresConMeta2030: number
   porEstadoHistorico: Record<string, number>
   periodosHistoricos: number[]
+  fechaActualizacion?: string
 }
 
 export interface FrontendData {

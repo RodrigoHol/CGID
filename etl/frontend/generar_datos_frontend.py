@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from datetime import date
 from pathlib import Path
 
 import pandas as pd
@@ -164,6 +165,7 @@ def main() -> None:
         "periodosHistoricos": sorted(
             {record["anio"] for records in history.values() for record in records}
         ),
+        "fechaActualizacion": date.today().isoformat(),
     }
 
     OUTPUT.mkdir(parents=True, exist_ok=True)
