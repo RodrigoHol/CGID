@@ -2,6 +2,7 @@ venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.env
 data/staging/
 frontend/vue/node_modules/
 frontend/vue/dist/

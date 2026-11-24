@@ -58,7 +58,11 @@ const lastPeriod = computed(() => data.resumen.periodosHistoricos.at(-1) ?? '—
         </span>
         <strong>{{ CATALOGO_TOTAL_INDICADORES }}</strong>
         <span class="metric-card__detail">
-          {{ data.resumen.totalIndicadores }} prioritarios en esta etapa
+          {{
+            data.resumen.totalIndicadores >= CATALOGO_TOTAL_INDICADORES
+              ? 'Catálogo completo publicado'
+              : `${data.resumen.totalIndicadores} prioritarios en esta etapa`
+          }}
         </span>
       </article>
 

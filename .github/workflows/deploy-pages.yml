@@ -21,6 +21,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install ETL validation dependencies
+        run: pip install pandas openpyxl
+
+      - name: Validate ETL manifest and processed data
+        run: python etl/run_etl.py --check
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:

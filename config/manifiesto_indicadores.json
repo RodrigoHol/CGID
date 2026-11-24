@@ -1,0 +1,1450 @@
+{
+  "version": 1,
+  "entidad": "Veracruz",
+  "catalogo_maestro": "data/processed/catalogo/indicadores.csv",
+  "catalogo_salida": "data/processed/catalogo/mvp_indicadores.csv",
+  "cobertura_salida": "data/manifests/mvp_indicadores.csv",
+  "directorio_frontend": "data/processed/frontend",
+  "fuentes": {
+    "inegi_pm_2024": {
+      "institucion": "INEGI",
+      "nombre": "Pobreza Multidimensional: entidad federativa 2016-2024",
+      "url": "https://www.inegi.org.mx/desarrollosocial/pm/#documentacion",
+      "extractor": "inegi_pobreza_excel",
+      "archivo_crudo": "data/raw/fuentes/inegi/pobreza_multidimensional/2024/pm_ef_2024.xlsx",
+      "archivo_salida": "data/processed/historicos/hechos/historico_pobreza.csv",
+      "params": {
+        "sheet": "Ver.",
+        "years": [
+          2016,
+          2018,
+          2020,
+          2022,
+          2024
+        ]
+      }
+    },
+    "inegi_encig_ie016": {
+      "institucion": "INEGI",
+      "nombre": "ENCIG: satisfacción de servicios por entidad y año",
+      "url": "https://www.inegi.org.mx/programas/encig/2023/",
+      "extractor": "csv_estandar",
+      "archivo_crudo": "data/raw/fuentes/inegi/encig/tabulado_interactivo_veracruz_ie016.csv",
+      "archivo_salida": "data/processed/historicos/hechos/historico_ie016_encig.csv",
+      "params": {
+        "year_column": "anio",
+        "value_column": "valor_relativo",
+        "min_value": 0,
+        "max_value": 100
+      }
+    },
+    "inegi_api_bise": {
+      "institucion": "INEGI",
+      "nombre": "Banco de Indicadores INEGI (API BISE v2.0)",
+      "url": "https://www.inegi.org.mx/app/indicadores/",
+      "extractor": "inegi_api",
+      "archivo_crudo": "",
+      "archivo_salida": "data/processed/historicos/hechos/historico_inegi_api.csv",
+      "params": {
+        "area_geo": "30",
+        "banco": "BISE",
+        "idioma": "es",
+        "delay_s": 0.15
+      }
+    },
+    "sep_educacion_2026": {
+      "institucion": "SEP",
+      "nombre": "Serie histórica y pronósticos de la estadística del Sistema Educativo Nacional",
+      "url": "https://www.planeacion.sep.gob.mx/estadisticaeducativas.aspx",
+      "extractor": "sep_educacion_xlsm",
+      "archivo_crudo": "data/raw/fuentes/sep/educacion/2026/reporte_indicadores_educativos_sep_2026.xlsm",
+      "archivo_salida": "data/processed/historicos/hechos/historico_educacion_sep.csv",
+      "params": {
+        "veracruz_code": "30",
+        "last_cycle": 36
+      }
+    },
+    "sev_prontuario": {
+      "institucion": "SEV",
+      "nombre": "Prontuario Estadístico SEV",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "secver_cultural": {
+      "institucion": "SECVER",
+      "nombre": "Registros e informes culturales SECVER",
+      "url": "https://culturaveracruz.gob.mx/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "inegi_enigh_2024": {
+      "institucion": "INEGI",
+      "nombre": "ENIGH 2024: Tabulados de hogares y viviendas",
+      "url": "https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "inegi_pendientes": {
+      "institucion": "INEGI",
+      "nombre": "Tabulados e indicadores INEGI (por clasificar)",
+      "url": "https://www.inegi.org.mx/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "salud_federal": {
+      "institucion": "Secretaría de Salud",
+      "nombre": "Sistema de Información en Salud (Secretaría de Salud)",
+      "url": "https://www.gob.mx/salud",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "gob_mx_federal": {
+      "institucion": "Gobierno de México",
+      "nombre": "Portales del Gobierno de México (gob.mx)",
+      "url": "https://www.gob.mx/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "cultura_sic": {
+      "institucion": "Secretaría de Cultura",
+      "nombre": "Sistema de Información Cultural (SIC)",
+      "url": "https://sic.cultura.gob.mx/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "imco": {
+      "institucion": "IMCO",
+      "nombre": "Instituto Mexicano para la Competitividad (IMCO)",
+      "url": "https://imco.org.mx/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "sader_agricultura": {
+      "institucion": "SADER",
+      "nombre": "Secretaría de Agricultura y Desarrollo Rural (SADER)",
+      "url": "https://nube.agricultura.gob.mx/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "sefiplan_siafev": {
+      "institucion": "SEFIPLAN",
+      "nombre": "SIAFEV / SEFIPLAN Veracruz",
+      "url": "",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "sedema_veracruz": {
+      "institucion": "SEDEMA",
+      "nombre": "Secretaría de Medio Ambiente (SEDEMA)",
+      "url": "",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "stps_federal": {
+      "institucion": "STPS",
+      "nombre": "Secretaría del Trabajo y Previsión Social (STPS)",
+      "url": "",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "gob_veracruz": {
+      "institucion": "Gobierno del Estado de Veracruz",
+      "nombre": "Portales del Gobierno del Estado de Veracruz",
+      "url": "https://www.veracruz.gob.mx/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "sectur_datatur": {
+      "institucion": "SECTUR",
+      "nombre": "DataTur (Secretaría de Turismo)",
+      "url": "https://datatur.sectur.gob.mx/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "sin_fuente_definida": {
+      "institucion": "Por definir",
+      "nombre": "Indicadores sin fuente o medio de verificación definido",
+      "url": "",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "ceieg_veracruz": {
+      "institucion": "CEIEG Veracruz",
+      "nombre": "Comité Estatal de Información Estadística y Geográfica (CEIEG)",
+      "url": "http://ceieg.veracruz.gob.mx/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "otra_fuente_veracruz": {
+      "institucion": "Gobierno del Estado de Veracruz",
+      "nombre": "Fuentes estatales pendientes de enlace o registro",
+      "url": "",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "centro_mexico_digital": {
+      "institucion": "Centro México Digital",
+      "nombre": "Centro México Digital",
+      "url": "https://centromexico.digital/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "conavi_siesco": {
+      "institucion": "CONAVI",
+      "nombre": "Sistema de Información Estadística CONAVI",
+      "url": "https://siesco.conavi.gob.mx/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "siop_veracruz": {
+      "institucion": "SIOP",
+      "nombre": "Secretaría de Infraestructura y Obras Públicas (SIOP)",
+      "url": "",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "idd_mex": {
+      "institucion": "IDD-Mex",
+      "nombre": "Índice de Desarrollo Democrático de México",
+      "url": "https://idd-mex.org/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "ie_paz_mexico": {
+      "institucion": "IEP",
+      "nombre": "Índice de Paz México",
+      "url": "https://www.indicedepazmexico.org/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "shcp_disciplina": {
+      "institucion": "SHCP",
+      "nombre": "Disciplina Financiera y Sistema de Alertas SHCP",
+      "url": "https://www.disciplinafinanciera.hacienda.gob.mx/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "shcp_transparencia": {
+      "institucion": "SHCP",
+      "nombre": "Transparencia Presupuestaria SHCP",
+      "url": "https://www.transparenciapresupuestaria.gob.mx/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "wjp_mexico": {
+      "institucion": "World Justice Project",
+      "nombre": "Índice de Estado de Derecho en México (WJP)",
+      "url": "https://worldjusticeproject.mx/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    },
+    "agenda2030_mx": {
+      "institucion": "Agenda 2030 México",
+      "nombre": "Plataforma Agenda 2030 México",
+      "url": "https://agenda2030.mx/",
+      "extractor": null,
+      "archivo_crudo": "",
+      "archivo_salida": "",
+      "params": {}
+    }
+  },
+  "indicadores": [
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E00-IE001",
+      "fuente_id": "inegi_pm_2024",
+      "params": {
+        "label": "Población en situación de pobreza",
+        "complement": false
+      },
+      "observaciones": "Histórico estatal de Veracruz extraído de la hoja Ver."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E00-IE002",
+      "fuente_id": "inegi_pm_2024",
+      "params": {
+        "label": "Carencia por acceso a la seguridad social",
+        "complement": true
+      },
+      "observaciones": "Histórico estatal de Veracruz extraído de la hoja Ver.; IE002 se calculó como 100 menos la carencia por acceso a la seguridad social."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E01-IE014",
+      "fuente_id": "inegi_pm_2024",
+      "params": {
+        "label": "Población en situación de pobreza extrema",
+        "complement": false
+      },
+      "observaciones": "Histórico estatal de Veracruz extraído directamente de la fila de pobreza extrema en la hoja Ver."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E02-IE015",
+      "fuente_id": "inegi_pm_2024",
+      "params": {
+        "label": "Carencia por acceso a los servicios de salud",
+        "complement": false
+      },
+      "observaciones": "Histórico estatal de Veracruz extraído directamente de la fila de carencia por acceso a los servicios de salud en la hoja Ver."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E02-IE016",
+      "fuente_id": "inegi_encig_ie016",
+      "params": {
+        "filters": {
+          "entidad": "Veracruz de Ignacio de la Llave",
+          "servicio": "Centros de salud y hospitales del gobierno de su estado"
+        }
+      },
+      "observaciones": "Serie estatal del tabulador interactivo ENCIG para Centros de salud y hospitales del gobierno de su estado; población urbana de 100 mil habitantes o más. El Excel ENCIG 2023 valida el periodo 2023."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E03-IE017",
+      "fuente_id": "sep_educacion_2026",
+      "params": {
+        "sheet": "1",
+        "code": "129"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base del libro SEP; se usan ciclos escolares 1990-1991 a 2025-2026, representados por su año inicial."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E03-IE018",
+      "fuente_id": "sep_educacion_2026",
+      "params": {
+        "sheet": "1",
+        "code": "133"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base del libro SEP; se usan ciclos escolares 1990-1991 a 2025-2026, representados por su año inicial."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E03-IE019",
+      "fuente_id": "sep_educacion_2026",
+      "params": {
+        "sheet": "2",
+        "code": "224"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base del libro SEP; se usan ciclos escolares 1990-1991 a 2025-2026, representados por su año inicial. IE019 usa cobertura superior sin posgrado."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E04-IE020",
+      "fuente_id": "sep_educacion_2026",
+      "params": {
+        "sheet": "1",
+        "code": "119"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base oficiales SEP/Sistema Educativo Nacional (reporte_indicadores_educativos_sep_2026.xlsm, entidad 30)."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E04-IE021",
+      "fuente_id": "sep_educacion_2026",
+      "params": {
+        "sheet": "1",
+        "code": "120"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base oficiales SEP/Sistema Educativo Nacional (reporte_indicadores_educativos_sep_2026.xlsm, entidad 30)."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E04-IE022",
+      "fuente_id": "sep_educacion_2026",
+      "params": {
+        "sheet": "1",
+        "code": "121"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base oficiales SEP/Sistema Educativo Nacional (reporte_indicadores_educativos_sep_2026.xlsm, entidad 30)."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E05-IE023",
+      "fuente_id": "secver_cultural",
+      "url": "",
+      "params": {},
+      "observaciones": "Fuente identificada sin URL directa en ficha; pendiente de gestión y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E05-IE024",
+      "fuente_id": "secver_cultural",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E06-IE025",
+      "fuente_id": "inegi_pm_2024",
+      "params": {
+        "label": "Población con al menos tres carencias sociales",
+        "complement": false
+      },
+      "observaciones": "Histórico estatal de Veracruz extraído directamente de la fila de población con al menos tres carencias sociales en la hoja Ver."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E01-PS01-O01-E1.4-IE001",
+      "fuente_id": "inegi_enigh_2024",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E01-PS01-O01-E1.4-IE002",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E02-PS02-O01-E1.1-IE003",
+      "fuente_id": "salud_federal",
+      "url": "https://calidad.salud.gob.mx/site/calidad/INDICAS_reportes.html",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E02-PS02-O01-E1.2-IE004",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/app/estatal/?ag=07000030",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E02-PS02-O01-E1.3-IE005",
+      "fuente_id": "salud_federal",
+      "url": "http://www.dgis.salud.gob.mx/contenidos/basesdedatos/da_sicuentas_gobmx.html",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E06-PS02-O02-E2.3-IE006",
+      "fuente_id": "inegi_pm_2024",
+      "params": {
+        "label": "Carencia por acceso a la alimentación nutritiva y de calidad",
+        "complement": false
+      },
+      "observaciones": "Histórico estatal de Veracruz extraído directamente de la hoja Ver. del libro de Pobreza Multidimensional 2024."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E03-PS03-O01-E1.4-IE007",
+      "fuente_id": "sep_educacion_2026",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {
+        "sheet": "1",
+        "code": "105"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base oficiales SEP/Sistema Educativo Nacional (reporte_indicadores_educativos_sep_2026.xlsm, entidad 30)."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E03-PS03-O01-E1.4-IE008",
+      "fuente_id": "sep_educacion_2026",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {
+        "sheet": "1",
+        "code": "106"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base oficiales SEP/Sistema Educativo Nacional (reporte_indicadores_educativos_sep_2026.xlsm, entidad 30)."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E03-PS03-O01-E1.4-IE009",
+      "fuente_id": "sep_educacion_2026",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {
+        "sheet": "2",
+        "code": "240"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base oficiales SEP/Sistema Educativo Nacional (reporte_indicadores_educativos_sep_2026.xlsm, entidad 30)."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E03-PS03-O01-E1.11-IE010",
+      "fuente_id": "sep_educacion_2026",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {
+        "sheet": "2",
+        "code": "209"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base oficiales SEP/Sistema Educativo Nacional (reporte_indicadores_educativos_sep_2026.xlsm, entidad 30)."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E03-PS03-O01-E1.11-IE011",
+      "fuente_id": "sep_educacion_2026",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {
+        "sheet": "2",
+        "code": "210"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base oficiales SEP/Sistema Educativo Nacional (reporte_indicadores_educativos_sep_2026.xlsm, entidad 30)."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E03-PS03-O01-E1.11-IE012",
+      "fuente_id": "sep_educacion_2026",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {
+        "sheet": "2",
+        "code": "211"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base oficiales SEP/Sistema Educativo Nacional (reporte_indicadores_educativos_sep_2026.xlsm, entidad 30)."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E03-PS03-O01-E1.11-IE013",
+      "fuente_id": "sep_educacion_2026",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {
+        "sheet": "2",
+        "code": "212"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base oficiales SEP/Sistema Educativo Nacional (reporte_indicadores_educativos_sep_2026.xlsm, entidad 30)."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E04-PS03-O02-E2.1-IE014",
+      "fuente_id": "sep_educacion_2026",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {
+        "sheet": "1",
+        "code": "109"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base oficiales SEP/Sistema Educativo Nacional (reporte_indicadores_educativos_sep_2026.xlsm, entidad 30)."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E04-PS03-O02-E2.1-IE015",
+      "fuente_id": "sep_educacion_2026",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {
+        "sheet": "1",
+        "code": "110"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base oficiales SEP/Sistema Educativo Nacional (reporte_indicadores_educativos_sep_2026.xlsm, entidad 30)."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E04-PS03-O02-E2.1-IE016",
+      "fuente_id": "sep_educacion_2026",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {
+        "sheet": "1",
+        "code": "111"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base oficiales SEP/Sistema Educativo Nacional (reporte_indicadores_educativos_sep_2026.xlsm, entidad 30)."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E04-PS03-O02-E2.1-IE017",
+      "fuente_id": "sep_educacion_2026",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {
+        "sheet": "2",
+        "code": "222"
+      },
+      "observaciones": "Serie histórica estatal de Veracruz extraída de las tablas base oficiales SEP/Sistema Educativo Nacional (reporte_indicadores_educativos_sep_2026.xlsm, entidad 30)."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E04-PS03-O02-E2.4-IE018",
+      "fuente_id": "gob_mx_federal",
+      "url": "https://www.gob.mx/inea/documentos/rezago-educativo",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E04-PS03-O02-E2.4-IE019",
+      "fuente_id": "gob_mx_federal",
+      "url": "https://www.gob.mx/inea/documentos/rezagoeducativo",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E05-PS04-O01-E1.1-IE020",
+      "fuente_id": "cultura_sic",
+      "url": "https://sic.cultura.gob.mx/?table=frpintangible&estado",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E01-ODS10-IE001",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E01-ODS10-IE002",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E02-ODS03-IE003",
+      "fuente_id": "salud_federal",
+      "url": "http://www.dgis.salud.gob.mx/contenidos/basesdedatos/da_recursos_gobmx.html",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E02-ODS03-IE004",
+      "fuente_id": "salud_federal",
+      "url": "https://epidemiologia.salud.gob.mx/anuario/html/index.html",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E02-ODS03-IE005",
+      "fuente_id": "salud_federal",
+      "url": "http://sinaiscap.salud.gob.mx:8080/DGIS/#",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E03-ODS04-IE006",
+      "fuente_id": "sev_prontuario",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E03-ODS04-IE007",
+      "fuente_id": "sev_prontuario",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E04-ODS16-IE008",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/encig/#tabulados",
+      "params": {
+        "serie_id": "6200032265"
+      },
+      "observaciones": "Serie estatal ENCIG (BISE 6200032265) obtenida vía API oficial del INEGI para Veracruz."
+    },
+    {
+      "id": "CGID-PVD25.30-ER1-O01-E03-ODS16-IE009",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/encig/#tabulados",
+      "params": {
+        "serie_id": "6200032263"
+      },
+      "observaciones": "Serie estatal ENCIG (BISE 6200032263) obtenida vía API oficial del INEGI para Veracruz."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E00-IE003",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/pibent/2018/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E00-IE004",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/temas/itaee/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E00-IE005",
+      "fuente_id": "imco",
+      "url": "https://imco.org.mx/indices/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E07-IE026",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/temas/itaee/#tabulados",
+      "params": {
+        "serie_id": "6207137758",
+        "agregacion": "promedio"
+      },
+      "observaciones": "Serie estatal ITAEE base 2018 Actividades Secundarias (BISE 6207137758, promedio anual de trimestres) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E07-IE027",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/temas/itaee/",
+      "params": {
+        "serie_id": "6207137762",
+        "agregacion": "promedio"
+      },
+      "observaciones": "Serie estatal ITAEE base 2018 Actividades Terciarias (BISE 6207137762, promedio anual de trimestres) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E08-IE028",
+      "fuente_id": "sader_agricultura",
+      "url": "http://nube.agricultura.gob.mx/cierreagricola/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E09-IE029",
+      "fuente_id": "sefiplan_siafev",
+      "url": "",
+      "params": {},
+      "observaciones": "Fuente institucional sin URL directa; pendiente de gestión y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E10-IE30",
+      "fuente_id": "sedema_veracruz",
+      "url": "",
+      "params": {},
+      "observaciones": "Fuente institucional sin URL directa; pendiente de gestión y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E11-IE031",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/sistemas/Infoenoe/Default",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E11-IE032",
+      "fuente_id": "stps_federal",
+      "url": "",
+      "params": {},
+      "observaciones": "Fuente institucional sin URL directa; pendiente de gestión y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E07-PS05-O01-E1.1-IE021",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/temas/itaee/#tabulados",
+      "params": {
+        "serie_id": "6207137771",
+        "agregacion": "promedio"
+      },
+      "observaciones": "Serie estatal ITAEE base 2018 Industrias Manufactureras (BISE 6207137771, promedio anual de trimestres) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E07-PS05-O01-E1.2-IE022",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/app/tabulados/default.aspx?pr=15&vr=5&in=50&tp=20&wr=1&cno=1&idrt=3259&opc",
+      "params": {
+        "serie_id": "6207137787",
+        "agregacion": "promedio"
+      },
+      "observaciones": "Serie estatal ITAEE base 2018 Comercio (BISE 6207137787, promedio anual de trimestres) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E08-PS06-O01-E1.1-IE023",
+      "fuente_id": "sader_agricultura",
+      "url": "https://nube.agricultura.gob.mx/datosAbiertos/Pecuario.phpComisión",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E08-PS06-O01-E1.2-IE024",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/ena/2019/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E08-PS06-O01-E1.5-IE025",
+      "fuente_id": "sader_agricultura",
+      "url": "https://nube.agricultura.gob.mx/cierre_agricola/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E09-PS07-O01-E1.2-IE026",
+      "fuente_id": "gob_veracruz",
+      "url": "https://seinet.veracruz.mx/guiasvigentes.php",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E09-PS07-O01-E1.3-IE027",
+      "fuente_id": "sectur_datatur",
+      "url": "https://datatur.sectur.gob.mx/SitePages/CompendioEstadistico.aspx",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E09-PS07-O01-E1.3-IE028",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/app/tabulados/default.aspx?pr=18&vr=1&in=78&tp=20&wr=1&cno=1&idrt=3260&opc=p",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E09-PS07-O01-E1.5-IE029",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/sistemas/Infoenoe/Default_15mas.aspx",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E10-PS08-O01-E1.4-IE030",
+      "fuente_id": "sedema_veracruz",
+      "url": "",
+      "params": {},
+      "observaciones": "Fuente institucional sin URL directa; pendiente de gestión y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E10-PS08-O01-E1.1-IE031",
+      "fuente_id": "gob_veracruz",
+      "url": "https://www.veracruz.gob.mx/medioambiente/ordenamiento-ecologico/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E10-PS08-O01-E1.4-IE032",
+      "fuente_id": "sedema_veracruz",
+      "url": "",
+      "params": {},
+      "observaciones": "Fuente institucional sin URL directa; pendiente de gestión y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E11-PS09-O01-E1.1-IE033",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/rellaborales/#tabulados",
+      "params": {
+        "serie_id": "1007000013"
+      },
+      "observaciones": "Serie estatal de conflictos de trabajo solucionados (BISE 1007000013) obtenida vía API oficial del INEGI para Veracruz."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E11-PS09-O01-E1.2-IE034",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/sistemas/Infoenoe/Default_15mas.aspx",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E07-ODS09-IE010",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/enoe/15ymas/#tabulados",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E10-ODS12-IE011",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/cngmd/#tabulados",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER2-O02-E11-ODS05-IE012",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E00-IE006",
+      "fuente_id": "sin_fuente_definida",
+      "url": "",
+      "params": {},
+      "observaciones": "Medio de verificación vacío o N/A; requiere revisión documental."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E12-IE033",
+      "fuente_id": "ceieg_veracruz",
+      "url": "http://ceieg.veracruz.gob.mx/2024/05/25/integracion-de-informacion-estadistica-y-geografica-de-los-estados-iegemc-2023/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E13-IE034",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/encig/2023/",
+      "params": {
+        "serie_id": "6200028387"
+      },
+      "observaciones": "Serie estatal ENCIG de satisfacción con servicios provistos por la entidad federativa (BISE 6200028387) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E14-IE035",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/endutih/2023/#tabulados",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E14-IE036",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/endutih/2023/#tabulados",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E15-IE037",
+      "fuente_id": "inegi_pm_2024",
+      "params": {
+        "label": "Carencia por calidad y espacios de la vivienda",
+        "complement": false
+      },
+      "observaciones": "Histórico estatal de Veracruz extraído directamente de la hoja Ver. del libro de Pobreza Multidimensional 2024."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E15-IE038",
+      "fuente_id": "inegi_pm_2024",
+      "params": {
+        "label": "Carencia por acceso a los servicios básicos en la vivienda",
+        "complement": false
+      },
+      "observaciones": "Histórico estatal de Veracruz extraído directamente de la hoja Ver. del libro de Pobreza Multidimensional 2024."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E00-IE057",
+      "fuente_id": "sefiplan_siafev",
+      "url": "",
+      "params": {},
+      "observaciones": "Fuente institucional sin URL directa; pendiente de gestión y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E12-PS10-O01-E1.2-IE035",
+      "fuente_id": "ceieg_veracruz",
+      "url": "http://ceieg.veracruz.gob.mx",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E13-PS10-O02-E2.3-IE036",
+      "fuente_id": "sefiplan_siafev",
+      "url": "",
+      "params": {},
+      "observaciones": "Fuente institucional sin URL directa; pendiente de gestión y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E13-PS10-O02-E2.6-IE037",
+      "fuente_id": "sefiplan_siafev",
+      "url": "",
+      "params": {},
+      "observaciones": "Fuente institucional sin URL directa; pendiente de gestión y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E14-PS10-O03-E3.1-IE038",
+      "fuente_id": "otra_fuente_veracruz",
+      "url": "",
+      "params": {},
+      "observaciones": "Fuente institucional sin URL directa; pendiente de gestión y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E14-PS10-O03-E3.3-IE039",
+      "fuente_id": "centro_mexico_digital",
+      "url": "https://centromexico.digital/iddes/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E15-PS10-O04-E4.1-IE040",
+      "fuente_id": "conavi_siesco",
+      "url": "https://siesco.conavi.gob.mx/demanda/rezago_estatal.aspx#",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E15-PS10-O04-E4.2-IE041",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E13-PS10-O05-E5.1-IE042",
+      "fuente_id": "siop_veracruz",
+      "url": "",
+      "params": {},
+      "observaciones": "Fuente institucional sin URL directa; pendiente de gestión y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E13-PS10-O05-E5.2-IE043",
+      "fuente_id": "siop_veracruz",
+      "url": "",
+      "params": {},
+      "observaciones": "Fuente institucional sin URL directa; pendiente de gestión y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E13-ODS04-IE013",
+      "fuente_id": "sev_prontuario",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E13-ODS04-IE014",
+      "fuente_id": "sev_prontuario",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E13-ODS04-IE015",
+      "fuente_id": "sev_prontuario",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E13-ODS04-IE016",
+      "fuente_id": "sev_prontuario",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E13-ODS04-IE017",
+      "fuente_id": "sev_prontuario",
+      "url": "https://www.sev.gob.mx/v1/servicios/anuario-estadistico/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E12-ODS16-IE018",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/encig/2023/#tabulados",
+      "params": {
+        "serie_id": "6200032268"
+      },
+      "observaciones": "Serie estatal ENCIG de satisfacción con calles y avenidas (BISE 6200032268) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E13-ODS16-IE019",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/encig/2023/#tabulados",
+      "params": {
+        "serie_id": "6200032262"
+      },
+      "observaciones": "Serie estatal ENCIG de satisfacción con parques y jardines públicos (BISE 6200032262) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E13-ODS16-IE020",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/encig/2023/#tabulados",
+      "params": {
+        "serie_id": "6200032277"
+      },
+      "observaciones": "Serie estatal ENCIG de satisfacción con el servicio de agua potable (BISE 6200032277) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E13-ODS16-IE021",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/encig/2023/#tabulados",
+      "params": {
+        "serie_id": "6207068400"
+      },
+      "observaciones": "Serie estatal ENCIG de satisfacción con drenaje y alcantarillado (BISE 6207068400) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E13-ODS16-IE022",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/encig/2023/#tabulados",
+      "params": {
+        "serie_id": "6200032273"
+      },
+      "observaciones": "Serie estatal ENCIG de satisfacción con alumbrado público (BISE 6200032273) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ER3-O03-E14-ODS17-IE023",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/endutih/2024/#tabulados",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E00-IE007",
+      "fuente_id": "idd_mex",
+      "url": "https://idd-mex.org/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E00-IE008",
+      "fuente_id": "ie_paz_mexico",
+      "url": "https://www.indicedepazmexico.org/mapa-mpi-2024",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E17-IE040",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/envipe",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E17-IE041",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/envipe",
+      "params": {
+        "serie_id": "6200028554"
+      },
+      "observaciones": "Serie estatal ENVIPE de percepción sobre inseguridad pública en la entidad (BISE 6200028554) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E18-IE042",
+      "fuente_id": "gob_mx_federal",
+      "url": "https://www.gob.mx/sesnsp/acciones-y-programas/incidencia-delictiva-del-fuero-comun-nueva-metodologia?state=published",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E18-IE043",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/envipe",
+      "params": {
+        "serie_id": "6200002197",
+        "escala": 0.001
+      },
+      "observaciones": "Serie estatal ENVIPE de prevalencia delictiva convertida a tasa por cada 100 habitantes (BISE 6200002197 × 0.001) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E19-IE044",
+      "fuente_id": "gob_mx_federal",
+      "url": "https://www.gob.mx/cms/uploads/attachment/file/979810/Doc_Analitico_Indice_Gestion_del_Riesgo_2023.pdf",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E19-IE045",
+      "fuente_id": "gob_mx_federal",
+      "url": "https://www.gob.mx/cms/uploads/attachment/file/979810/Doc_Analitico_Indice_Gestion_del_Riesgo_2023.pdf",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E16-PS11-O01-E1.1-IE044",
+      "fuente_id": "centro_mexico_digital",
+      "url": "https://centromexico.digital/idde/2024/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E16-PS11-O01-E1.2-IE045",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/encig/2023/#tabulados",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E16-PS11-O01-E1.3-IE046",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/encig/2023/#tabulados",
+      "params": {
+        "serie_id": "6200028387"
+      },
+      "observaciones": "Serie estatal ENCIG de satisfacción con servicios provistos por la entidad federativa (BISE 6200028387) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E19-PS13-O01-E1-IE047",
+      "fuente_id": "gob_mx_federal",
+      "url": "https://www.gob.mx/cms/uploads/attachment/file/979810/Doc_Analitico_Indice_Gestion_del_Riesgo_2023.pdf",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E19-PS13-O01-E4-IE048",
+      "fuente_id": "gob_mx_federal",
+      "url": "https://www.gob.mx/cms/uploads/attachment/file/979810/Doc_Analitico_Indice_Gestion_del_Riesgo_2023.pdf",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E19-PS13-O01-E5-IE049",
+      "fuente_id": "gob_mx_federal",
+      "url": "https://www.gob.mx/cms/uploads/attachment/file/979810/Doc_Analitico_Indice_Gestion_del_Riesgo_2023.pdf",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E18-ODS16-IE024",
+      "fuente_id": "gob_mx_federal",
+      "url": "https://www.gob.mx/sesnsp/documentos/historico-de-incidencia-delictiva-del-fuero-comun?idiom=es",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E17-ODS16-IE025",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/envipe/2024/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E18-ODS16-IE026",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/cnsipef/2025/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER4-O04-E18-ODS16-IE027",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/enve/2024/#tabulados",
+      "params": {
+        "serie_id": "6200002199",
+        "escala": 0.01
+      },
+      "observaciones": "Serie estatal ENVE de prevalencia delictiva en unidades económicas convertida a porcentaje (BISE 6200002199 × 0.01) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E00-IE009",
+      "fuente_id": "shcp_disciplina",
+      "url": "",
+      "params": {},
+      "observaciones": "Fuente institucional sin URL directa; pendiente de gestión y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E00-IE010",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/encig/2023/",
+      "params": {
+        "serie_id": "6200028376"
+      },
+      "observaciones": "Serie estatal ENCIG de tasa de prevalencia de corrupción por cada 100 mil habitantes (BISE 6200028376) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E00-IE011",
+      "fuente_id": "centro_mexico_digital",
+      "url": "https://centromexico.digital/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E20-IE046",
+      "fuente_id": "sefiplan_siafev",
+      "url": "",
+      "params": {},
+      "observaciones": "Fuente institucional sin URL directa; pendiente de gestión y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E21-IE047",
+      "fuente_id": "shcp_transparencia",
+      "url": "https://www.transparenciapresupuestaria.gob.mx/es/PTP/EntidadesFederativas#DiagnosticoPbR-SED",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E22-IE048",
+      "fuente_id": "shcp_disciplina",
+      "url": "https://www.disciplinafinanciera.hacienda.gob.mx/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E23-IE049",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/encig/2023/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E23-IE050",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/encig/2023/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E24-IE051",
+      "fuente_id": "centro_mexico_digital",
+      "url": "https://centromexico.digital/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E25-IE052",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/endutih/2023/#tabulados",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E20-PS14-O01-E1.1-IE050",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/encig/#tabulados",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E21-PS14-O02-E2.1-IE051",
+      "fuente_id": "shcp_transparencia",
+      "url": "https://www.transparenciapresupuestaria.gob.mx/Entidades-Federativas",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E21-PS14-O02-E2.1-IE052",
+      "fuente_id": "shcp_transparencia",
+      "url": "https://www.transparenciapresupuestaria.gob.mx/Entidades-Federativas",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E21-PS14-O02-E2.3-IE053",
+      "fuente_id": "shcp_transparencia",
+      "url": "https://www.transparenciapresupuestaria.gob.mx/Entidades-Federativas",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E21-PS14-O02-E2.3-IE054",
+      "fuente_id": "shcp_transparencia",
+      "url": "https://www.transparenciapresupuestaria.gob.mx/Entidades-Federativas",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E22-PS14-O03-E3.1-IE055",
+      "fuente_id": "gob_veracruz",
+      "url": "https://www.veracruz.gob.mx/finanzas/transparencia/transparencia-proactiva/contabilidad-gubernamental/cuenta-publica/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E22-PS14-O03-E3.2-IE056",
+      "fuente_id": "gob_veracruz",
+      "url": "https://www.veracruz.gob.mx/finanzas/transparencia/transparencia-proactiva/contabilidad-gubernamental/cuenta-publica/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E22-PS14-O03-E3.3-IE057",
+      "fuente_id": "gob_veracruz",
+      "url": "https://www.veracruz.gob.mx/finanzas/transparencia/transparencia-proactiva/contabilidad-gubernamental/cuenta-publica/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E24-PE17-O01-E1.1-IE058",
+      "fuente_id": "centro_mexico_digital",
+      "url": "https://centromexico.digital/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E24-PE17-O01-E1.3-IE059",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/encig",
+      "params": {
+        "serie_id": "6200032272"
+      },
+      "observaciones": "Serie estatal ENCIG de interacción con el gobierno a través de internet (BISE 6200032272) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ET5-O05-E23-ODS16-IE028",
+      "fuente_id": "inegi_api_bise",
+      "url": "https://www.inegi.org.mx/programas/encig/",
+      "params": {
+        "serie_id": "6200028376",
+        "escala": 0.001
+      },
+      "observaciones": "Serie estatal ENCIG de prevalencia de corrupción en trámites convertida a porcentaje (BISE 6200028376 × 0.001) vía API oficial del INEGI."
+    },
+    {
+      "id": "CGID-PVD25.30-ER6-O06-E00-IE012",
+      "fuente_id": "wjp_mexico",
+      "url": "https://index.worldjusticeproject.mx/factor/f4/MX00",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ER6-O06-E00-IE013",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/endireh/2021/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET6-O06-E26-IE053",
+      "fuente_id": "wjp_mexico",
+      "url": "https://worldjusticeproject.mx/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET6-O06-E27-IE054",
+      "fuente_id": "gob_mx_federal",
+      "url": "https://www.gob.mx/sesnsp/acciones-y-programas/incidencia-delictiva-del-fuero-comun-nueva-metodologia?state=published",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET6-O06-E28-IE055",
+      "fuente_id": "idd_mex",
+      "url": "https://idd-mex.org/estudios-y-datos/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET6-O06-E29-IE056",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/enadis/2022/",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET6-O06-E26-PS18-O01-E1.6-IE060",
+      "fuente_id": "wjp_mexico",
+      "url": "https://worldjusticeproject.mx/reportes-estatales-iedmx/#",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET6-O06-E26-PS18-O01-E1.7-IE061",
+      "fuente_id": "wjp_mexico",
+      "url": "https://worldjusticeproject.mx/reportes-estatales-iedmx/#",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET6-O6-E27-ODS01-IE029",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/enigh/nc/2024/#tabulados",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET6-O6-E29-ODS04-IE030",
+      "fuente_id": "agenda2030_mx",
+      "url": "https://agenda2030.mx/ODSind.html?ind=ODS004000300010&cveind=154&cveCob=99&lang=es#/Indicator",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    },
+    {
+      "id": "CGID-PVD25.30-ET6-O6-E26-ODS08-IE031",
+      "fuente_id": "inegi_pendientes",
+      "url": "https://www.inegi.org.mx/programas/enti/2022/#tabulados",
+      "params": {},
+      "observaciones": "Fuente identificada; pendiente de descarga y extracción."
+    }
+  ]
+}

@@ -206,8 +206,8 @@ onBeforeUnmount(() => {
   <section class="surface-card content-panel">
     <div class="content-panel__header">
       <div>
-        <span class="section-kicker">CATÁLOGO PRIORITARIO</span>
-        <h2>Indicadores prioritarios del PVD</h2>
+        <span class="section-kicker">CATÁLOGO PVD 2025–2030</span>
+        <h2>Indicadores del Plan Veracruzano de Desarrollo</h2>
       </div>
       <div class="catalog-header-actions">
         <span class="table-caption" aria-live="polite">

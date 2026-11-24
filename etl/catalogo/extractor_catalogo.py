@@ -15,6 +15,14 @@ ENCABEZADOS_PDF = (
 )
 
 
+def _parse_numero(texto):
+    return float(texto.replace(',', '').strip())
+
+
+def _normalizar_bloque_numerico(texto):
+    return re.sub(r'(\d+,)\s*\n\s*(\d{3})', r'\1\2', texto)
+
+
 def limpiar_bloque(texto):
     """Normaliza un bloque conservando el contenido útil del PDF."""
     texto = re.sub(ENCABEZADOS_PDF, ' ', texto, flags=re.IGNORECASE)
@@ -136,43 +144,47 @@ def procesar_pdf_completo(pdf_path):
         indicador['clave'] = m_clave.group(1).strip() if m_clave else f"Pendiente_{i}"
         
         m_eje = re.search(
-            r'Eje Rector\s+(\d+\.[^\n]+)\n'
-            r'(?:Eje Rector o Transversal1\.1\.1|Eje Transversal1\.1\.1)\n'
-            r'([^\n]+)',
+            r'Eje\s+(?:Rector|Transversal)\s+(\d+\.[^\n]+)\n'
+            r'(?:Eje Rector o Transversal1\.1\.1|Eje Transversal1\.1\.1|Eje Rector1\.1\.1)[ \t]*([^\n]*)'
+            r'(?:\n([^\n]+))?',
             ficha,
             re.IGNORECASE,
         )
         if m_eje:
-            indicador['eje_rector'] = ' '.join(
-                f'{m_eje.group(1)} {m_eje.group(2)}'.split()
-            )
+            part1 = m_eje.group(1)
+            part2 = m_eje.group(2).strip() or (m_eje.group(3) or '').strip()
+            indicador['eje_rector'] = ' '.join(f'{part1} {part2}'.split()).rstrip('.')
         else:
             indicador['eje_rector'] = "No encontrado"
 
-        # En el texto lineal del PDF, el valor de Nombre está en la misma
-        # línea que su etiqueta. La descripción empieza en las líneas
-        # siguientes y su propia etiqueta aparece al final del bloque.
-        m_nombre = re.search(r'Nombre[ \t]*2\.1\.2', ficha, re.IGNORECASE)
-        nombre = ""
-        if m_nombre:
-            linea_siguiente = ficha[m_nombre.end():].splitlines()[0].strip()
-            if linea_siguiente:
-                nombre = linea_siguiente
-            else:
-                # Algunos formularios parten el nombre justo antes de la
-                # etiqueta y continúan en la línea posterior.
-                lineas_previas = ficha[:m_nombre.start()].rstrip().splitlines()
-                nombre = ' '.join(
-                    [lineas_previas[-1] if lineas_previas else "", *ficha[m_nombre.end():].splitlines()[1:2]]
-                )
-        indicador['nombre'] = ' '.join(nombre.split()) if nombre else "No encontrado"
-        
-        # --- 2. TEXTOS LARGOS (Expediente) ---
-        m_desc = re.search(
-            r'Nombre[ \t]*2\.1\.2[ \t]*(?:\n[ \t]*)?[^\n]+\n(.*?)Dimensión a medir',
+        # pdfplumber centra verticalmente la etiqueta "Nombre 2.1.2" junto a la
+        # celda del nombre: si abarca 2 o 3 líneas, aparece texto entre Clave y
+        # la etiqueta y la última línea continúa justo después de ella.
+        m_nombre = re.search(
+            r'Clave\s*2\.1\.1\s*[A-Z0-9\-\.]+\s*\n(.*?)Nombre[ \t]*2\.1\.2[ \t]*([^\n]*)\n([^\n]*)\n',
             ficha,
             re.DOTALL | re.IGNORECASE,
         )
+        nombre = ""
+        desc_start = 0
+        if m_nombre:
+            between = m_nombre.group(1).strip()
+            same = m_nombre.group(2).strip()
+            nxt1 = m_nombre.group(3).strip()
+            if between:
+                nombre = ' '.join(f'{between} {same} {nxt1}'.split())
+                desc_start = m_nombre.end()
+            else:
+                nombre = ' '.join(same.split())
+                desc_start = m_nombre.start(3)
+        indicador['nombre'] = nombre if nombre else "No encontrado"
+
+        # --- 2. TEXTOS LARGOS (Expediente) ---
+        m_desc = re.search(
+            r'(.*?)Dimensión a medir',
+            ficha[desc_start:],
+            re.DOTALL | re.IGNORECASE,
+        ) if desc_start else None
         descripcion = m_desc.group(1) if m_desc else ""
         descripcion = re.sub(
             r'Descripción\s+o\s+definición\s*2\.1\.3',
@@ -196,20 +208,38 @@ def procesar_pdf_completo(pdf_path):
         indicador['medio_verificacion'] = extraer_medio_verificacion(ficha)
         
         # --- 3. METAS Y GRÁFICAS ---
-        m_base = re.search(r'Línea base\s*5\.1\.1.*?(\d{4})\s+([\d\.]+)', ficha, re.DOTALL)
+        m_base_blk = re.search(
+            r'Línea base\s*5\.1\.1(.*?)(?:Justificación|Meta sexenal|5\.1\.2|$)',
+            ficha,
+            re.DOTALL,
+        )
+        m_base = (
+            re.search(r'(\d{4})\s+(-?[\d,]+(?:\.\d+)?)', _normalizar_bloque_numerico(m_base_blk.group(1)))
+            if m_base_blk
+            else None
+        )
         indicador['linea_base_anio'] = int(m_base.group(1)) if m_base else None
-        indicador['linea_base_valor'] = float(m_base.group(2)) if m_base else None
-        
-        m_meta = re.search(r'Meta sexenal\s*5\.1\.2.*?(\d{4})\s+([\d\.]+)', ficha, re.DOTALL)
-        indicador['meta_2030_valor'] = float(m_meta.group(2)) if m_meta else None
-        
+        indicador['linea_base_valor'] = _parse_numero(m_base.group(2)) if m_base else None
+
+        m_meta_blk = re.search(
+            r'Meta sexenal\s*5\.1\.2(.*?)(?:Justificación|Metas intermedias|5\.1\.3|$)',
+            ficha,
+            re.DOTALL,
+        )
+        m_meta = (
+            re.search(r'(\d{4})\s+(-?[\d,]+(?:\.\d+)?)', _normalizar_bloque_numerico(m_meta_blk.group(1)))
+            if m_meta_blk
+            else None
+        )
+        indicador['meta_2030_valor'] = _parse_numero(m_meta.group(2)) if m_meta else None
+
         m_intermedias = re.search(r'Metas intermedias\s*5\.1\.3(.*?)Fecha de publicación', ficha, re.DOTALL)
         metas_json = {}
         if m_intermedias:
-            bloque_metas = m_intermedias.group(1)
-            pares = re.findall(r'(\d{4})\s+([\d\.]+)', bloque_metas)
+            bloque_metas = _normalizar_bloque_numerico(m_intermedias.group(1))
+            pares = re.findall(r'(\d{4})\s+(-?[\d,]+(?:\.\d+)?)', bloque_metas)
             for anio, valor in pares:
-                metas_json[anio] = float(valor)
+                metas_json[anio] = _parse_numero(valor)
                 
         indicador['metas_intermedias_json'] = json.dumps(metas_json)
         
@@ -228,6 +258,7 @@ def main(pdf_path=PDF_DEFAULT, output_path=OUTPUT_DEFAULT):
     
     if datos:
         df = pd.DataFrame(datos)
+        df["linea_base_anio"] = pd.array(df["linea_base_anio"], dtype="Int64")
         output_path = Path(output_path)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         df.to_csv(output_path, index=False, encoding='utf-8-sig')

@@ -1,11 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { SITE_NAME } from './config/site'
-import AboutView from './views/AboutView.vue'
-import DashboardView from './views/DashboardView.vue'
-import IndicatorDetailView from './views/IndicatorDetailView.vue'
-import IndicatorsView from './views/IndicatorsView.vue'
-import NotFoundView from './views/NotFoundView.vue'
-import SourcesView from './views/SourcesView.vue'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -22,7 +16,7 @@ export const router = createRouter({
     {
       path: '/',
       name: 'dashboard',
-      component: DashboardView,
+      component: () => import('./views/DashboardView.vue'),
       meta: {
         title: 'Inicio',
         subtitle: 'Una lectura clara del avance del catálogo prioritario para Veracruz.',
@@ -31,7 +25,7 @@ export const router = createRouter({
     {
       path: '/indicadores',
       name: 'indicadores',
-      component: IndicatorsView,
+      component: () => import('./views/IndicatorsView.vue'),
       meta: {
         title: 'Indicadores',
         subtitle: 'Busca, filtra y descarga los indicadores prioritarios del PVD.',
@@ -40,7 +34,7 @@ export const router = createRouter({
     {
       path: '/indicadores/:id',
       name: 'indicator-detail',
-      component: IndicatorDetailView,
+      component: () => import('./views/IndicatorDetailView.vue'),
       meta: {
         title: 'Indicador',
         hideHeader: true,
@@ -50,7 +44,7 @@ export const router = createRouter({
     {
       path: '/fuentes',
       name: 'fuentes',
-      component: SourcesView,
+      component: () => import('./views/SourcesView.vue'),
       meta: {
         title: 'Fuentes y cobertura',
         subtitle: 'Origen, periodos y estado de cada serie de datos.',
@@ -59,7 +53,7 @@ export const router = createRouter({
     {
       path: '/acerca',
       name: 'acerca',
-      component: AboutView,
+      component: () => import('./views/AboutView.vue'),
       meta: {
         title: 'Metodología y ayuda',
         subtitle: 'Cómo leer los indicadores, glosario y fuentes.',
@@ -68,7 +62,7 @@ export const router = createRouter({
     {
       path: '/:pathMatch(.*)*',
       name: 'not-found',
-      component: NotFoundView,
+      component: () => import('./views/NotFoundView.vue'),
       meta: {
         title: 'Página no encontrada',
         hideHeader: true,

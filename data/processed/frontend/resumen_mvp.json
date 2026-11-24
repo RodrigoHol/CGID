@@ -1,12 +1,13 @@
 {
   "entidad": "Veracruz",
-  "totalIndicadores": 15,
-  "indicadoresConHistorico": 9,
-  "indicadoresSinHistorico": 6,
-  "indicadoresConMeta2030": 15,
+  "totalIndicadores": 148,
+  "indicadoresConHistorico": 46,
+  "indicadoresSinHistorico": 102,
+  "indicadoresConMeta2030": 144,
   "porEstadoHistorico": {
-    "procesado": 9,
-    "fuente_identificada": 6
+    "procesado": 46,
+    "fuente_identificada": 101,
+    "pendiente_revision": 1
   },
   "periodosHistoricos": [
     1990,
@@ -44,7 +45,8 @@
     2022,
     2023,
     2024,
-    2025
+    2025,
+    2026
   ],
-  "fechaActualizacion": "2026-11-23"
+  "fechaActualizacion": "2026-11-24"
 }
