@@ -14,6 +14,12 @@ export default defineConfig({
             return 'datos-catalogo'
           }
           if (
+            normalized.includes('/node_modules/chart.js/')
+            || normalized.includes('/node_modules/@kurkle/')
+          ) {
+            return 'charts'
+          }
+          if (
             normalized.includes('/node_modules/primevue/')
             || normalized.includes('/node_modules/@primeuix/')
             || normalized.includes('/node_modules/@primevue/')

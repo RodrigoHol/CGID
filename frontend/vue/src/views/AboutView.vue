@@ -47,21 +47,28 @@ const institutions = computed(() =>
     </section>
 
     <section class="surface-card content-panel">
-      <span class="section-kicker">DISPONIBILIDAD</span>
-      <h2>Estado de los datos</h2>
-      <div class="status-guide-grid">
-        <article class="status-guide-item">
+      <span class="section-kicker">SEMÁFORO DE DISPONIBILIDAD</span>
+      <h2>¿Qué significa cada color del semáforo?</h2>
+      <div class="status-guide-grid status-guide-grid--three">
+        <article class="status-guide-item status-guide-item--green">
           <StatusTag estado="procesado" />
           <p>
-            Indicadores cuya serie histórica oficial ya fue extraída, validada e integrada al
-            catálogo para su consulta gráfica, tabla de observaciones y descarga en CSV.
+            <strong>Verde:</strong> Indicadores cuya serie histórica oficial ya fue validada e integrada
+            para su consulta gráfica, tabla por año y descarga en Excel.
           </p>
         </article>
-        <article class="status-guide-item">
+        <article class="status-guide-item status-guide-item--amber">
           <StatusTag estado="fuente_identificada" />
           <p>
-            Indicadores cuya ficha técnica y fuente oficial ya están documentadas, mientras los
-            datos históricos se encuentran en proceso de extracción e integración.
+            <strong>Ámbar:</strong> Indicadores cuya ficha técnica y fuente oficial ya están documentadas,
+            mientras sus datos históricos se encuentran en proceso de integración.
+          </p>
+        </article>
+        <article class="status-guide-item status-guide-item--red">
+          <StatusTag estado="pendiente_revision" />
+          <p>
+            <strong>Rojo:</strong> Indicadores cuya fuente o metodología requiere verificación documental
+            adicional antes de publicar su serie histórica oficial.
           </p>
         </article>
       </div>
@@ -72,10 +79,10 @@ const institutions = computed(() =>
       <h2>Fuentes y criterios</h2>
       <p>
         Las series publicadas provienen directamente de tabulados y reportes oficiales de
-        {{ institutions.join(' y ') }} para {{ data.resumen.entidad }}.
+        {{ institutions.slice(0, 5).join(', ') }} y otros organismos públicos para {{ data.resumen.entidad }}.
       </p>
       <p>
-        Las gráficas muestran solo periodos publicados; no se interpolan años faltantes.
+        Las gráficas muestran solo periodos publicados; no se estiman ni interpolan años faltantes.
       </p>
     </section>
 

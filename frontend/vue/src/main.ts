@@ -1,11 +1,14 @@
 import { createApp } from 'vue'
 import PrimeVue from 'primevue/config'
+import ToastService from 'primevue/toastservice'
 import Tooltip from 'primevue/tooltip'
-import 'primeicons/primeicons.css'
 import './styles/main.css'
 import App from './App.vue'
+import { initTheme } from './composables/useTheme'
 import { router } from './router'
 import { IapPreset } from './theme/preset'
+
+initTheme()
 
 const app = createApp(App)
 
@@ -14,7 +17,7 @@ app.use(PrimeVue, {
   theme: {
     preset: IapPreset,
     options: {
-      darkModeSelector: false,
+      darkModeSelector: '.app-dark',
     },
   },
   locale: {
@@ -23,6 +26,7 @@ app.use(PrimeVue, {
     emptySearchMessage: 'Sin resultados',
   },
 })
+app.use(ToastService)
 app.directive('tooltip', Tooltip)
 
 app.mount('#app')

@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { computed, ref, watchEffect } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import Breadcrumb from 'primevue/breadcrumb'
 import Button from 'primevue/button'
 import Tag from 'primevue/tag'
+import { useToast } from 'primevue/usetoast'
+import AppIcon from '../components/common/AppIcon.vue'
 import StatusState from '../components/common/StatusState.vue'
 import StatusTag from '../components/common/StatusTag.vue'
 import HistoricalChart from '../components/indicators/HistoricalChart.vue'
@@ -20,6 +21,7 @@ import {
 
 const route = useRoute()
 const router = useRouter()
+const toast = useToast()
 const data = useFrontendData()
 
 const indicator = computed(() => data.indicadores.find((item) => item.id === route.params.id))
@@ -40,6 +42,12 @@ const variationLabel = computed(() =>
 const variationAssessment = computed(() =>
   indicator.value ? assessVariation(variation.value, indicator.value.sentido) : null,
 )
+const variationCardClass = computed(() => {
+  if (!variationAssessment.value) return ''
+  if (variationAssessment.value.cls === 'trend--good') return 'detail-metric-card--good'
+  if (variationAssessment.value.cls === 'trend--bad') return 'detail-metric-card--bad'
+  return 'detail-metric-card--neutral'
+})
 const direction = computed(() => directionInfo(indicator.value?.sentido ?? ''))
 const sourceUrl = computed(() => source.value?.url || indicator.value?.fuente.url || '')
 
@@ -48,24 +56,6 @@ const recentSeries = computed(() => [...series.value].reverse())
 const visibleObservations = computed(() =>
   observationsExpanded.value ? recentSeries.value : recentSeries.value.slice(0, 3),
 )
-
-const backToCatalogPath = computed(() => {
-  const back = window.history.state?.back
-  if (typeof back === 'string' && (back === '/indicadores' || back.startsWith('/indicadores?'))) {
-    return back
-  }
-  return '/indicadores'
-})
-
-const breadcrumbHome = { icon: 'pi pi-home', route: '/', label: 'Inicio' }
-const breadcrumbItems = computed(() => {
-  const rawName = indicator.value?.nombre ?? 'Indicador'
-  const truncated = rawName.length > 60 ? `${rawName.slice(0, 57)}…` : rawName
-  return [
-    { label: 'Indicadores', route: backToCatalogPath.value },
-    { label: truncated },
-  ]
-})
 
 watchEffect(() => {
   document.title = indicator.value
@@ -87,32 +77,28 @@ function exportSeriesCsv() {
   const headers = ['Año', 'Valor']
   const rows = series.value.map((point) => [point.anio, point.valor])
   downloadCsv(`${indicator.value.clave}-serie.csv`, headers, rows)
+  toast.add({
+    severity: 'success',
+    summary: 'Archivo listo',
+    detail: `Se exportó ${indicator.value.clave}-serie.csv (${rows.length} años).`,
+    life: 3200,
+  })
 }
 </script>
 
 <template>
   <section v-if="indicator" class="detail-page">
     <div class="detail-topbar">
-      <Breadcrumb :home="breadcrumbHome" :model="breadcrumbItems" class="detail-breadcrumb">
-        <template #item="{ item }">
-          <RouterLink v-if="item.route" :to="item.route" class="p-breadcrumb-item-link">
-            <i v-if="item.icon" :class="item.icon" aria-hidden="true"></i>
-            <span>{{ item.label }}</span>
-          </RouterLink>
-          <span v-else class="p-breadcrumb-item-link p-breadcrumb-item-link--current" aria-current="page">
-            {{ item.label }}
-          </span>
-        </template>
-      </Breadcrumb>
-
       <Button
         label="Volver al catálogo"
-        icon="pi pi-arrow-left"
         text
-        size="small"
         class="back-button"
         @click="goBack"
-      />
+      >
+        <template #icon>
+          <AppIcon name="arrow_back" size="sm" />
+        </template>
+      </Button>
     </div>
 
     <section class="surface-card detail-hero">
@@ -126,9 +112,12 @@ function exportSeriesCsv() {
         <Tag
           v-if="indicator.unidadMedida"
           :value="indicator.unidadMedida"
-          icon="pi pi-tag"
           class="unit-tag"
-        />
+        >
+          <template #icon>
+            <AppIcon name="sell" size="xs" />
+          </template>
+        </Tag>
       </div>
     </section>
 
@@ -136,12 +125,14 @@ function exportSeriesCsv() {
       <article class="surface-card detail-metric-card">
         <span class="detail-metric-card__label">
           Línea base
-          <i
-            class="pi pi-info-circle info-hint"
+          <span
+            class="info-hint-inline"
             tabindex="0"
             :aria-label="GLOSSARY_BY_KEY.lineaBase.definition"
             v-tooltip.top="GLOSSARY_BY_KEY.lineaBase.definition"
-          ></i>
+          >
+            <AppIcon name="info" size="sm" />
+          </span>
         </span>
         <strong>{{ formatValue(indicator.lineaBase.valor, indicator.unidadMedida) }}</strong>
         <small>{{ indicator.lineaBase.anio || 'No disponible' }}</small>
@@ -150,12 +141,14 @@ function exportSeriesCsv() {
       <article class="surface-card detail-metric-card">
         <span class="detail-metric-card__label">
           Meta 2030
-          <i
-            class="pi pi-info-circle info-hint"
+          <span
+            class="info-hint-inline"
             tabindex="0"
             :aria-label="GLOSSARY_BY_KEY.meta2030.definition"
             v-tooltip.top="GLOSSARY_BY_KEY.meta2030.definition"
-          ></i>
+          >
+            <AppIcon name="info" size="sm" />
+          </span>
         </span>
         <strong>{{ formatValue(indicator.meta2030, indicator.unidadMedida) }}</strong>
         <small>Objetivo del PVD</small>
@@ -164,35 +157,43 @@ function exportSeriesCsv() {
       <article class="surface-card detail-metric-card">
         <span class="detail-metric-card__label">
           Último valor
-          <i
-            class="pi pi-info-circle info-hint"
+          <span
+            class="info-hint-inline"
             tabindex="0"
             :aria-label="GLOSSARY_BY_KEY.ultimoValor.definition"
             v-tooltip.top="GLOSSARY_BY_KEY.ultimoValor.definition"
-          ></i>
+          >
+            <AppIcon name="info" size="sm" />
+          </span>
         </span>
         <strong>{{ latest ? formatValue(latest.valor, indicator.unidadMedida) : '—' }}</strong>
         <small>{{ latest?.anio || 'Sin periodo' }}</small>
       </article>
 
-      <article class="surface-card detail-metric-card">
+      <article class="surface-card detail-metric-card" :class="variationCardClass">
         <span class="detail-metric-card__label">
           Variación observada
-          <i
-            class="pi pi-info-circle info-hint"
+          <span
+            class="info-hint-inline"
             tabindex="0"
             :aria-label="GLOSSARY_BY_KEY.variacionObservada.definition"
             v-tooltip.top="GLOSSARY_BY_KEY.variacionObservada.definition"
-          ></i>
+          >
+            <AppIcon name="info" size="sm" />
+          </span>
         </span>
         <strong>{{ variationLabel }}</strong>
         <div class="detail-metric-card__foot">
           <Tag
             v-if="variationAssessment"
             :value="variationAssessment.label"
-            :icon="variationAssessment.icon"
             :class="['trend-tag', variationAssessment.cls]"
-          />
+          >
+            <template #icon>
+              <span class="sem-dot" aria-hidden="true"></span>
+              <AppIcon :name="variationAssessment.icon" size="xs" />
+            </template>
+          </Tag>
           <small>{{ first?.anio || '—' }} a {{ latest?.anio || '—' }}</small>
         </div>
       </article>
@@ -226,12 +227,15 @@ function exportSeriesCsv() {
             <span class="observation-count">{{ series.length }} periodos</span>
             <Button
               v-if="series.length"
-              label="Descargar serie (CSV)"
-              icon="pi pi-download"
+              label="Exportar a Excel (CSV)"
               outlined
               size="small"
               @click="exportSeriesCsv"
-            />
+            >
+              <template #icon>
+                <AppIcon name="download" size="sm" />
+              </template>
+            </Button>
           </div>
         </div>
 
@@ -258,13 +262,15 @@ function exportSeriesCsv() {
           v-if="series.length > 3"
           class="observation-toggle"
           :label="observationsExpanded ? 'Mostrar solo los 3 más recientes' : `Mostrar los ${series.length} periodos`"
-          :icon="observationsExpanded ? 'pi pi-chevron-up' : 'pi pi-chevron-down'"
           iconPos="right"
           text
-          size="small"
           :aria-expanded="observationsExpanded"
           @click="observationsExpanded = !observationsExpanded"
-        />
+        >
+          <template #icon>
+            <AppIcon :name="observationsExpanded ? 'expand_less' : 'expand_more'" size="sm" />
+          </template>
+        </Button>
       </section>
 
       <section class="surface-card detail-card detail-facts">
@@ -278,15 +284,17 @@ function exportSeriesCsv() {
           <div>
             <dt>
               Sentido
-              <i
-                class="pi pi-info-circle info-hint"
+              <span
+                class="info-hint-inline"
                 tabindex="0"
                 :aria-label="GLOSSARY_BY_KEY.sentido.definition"
                 v-tooltip.top="GLOSSARY_BY_KEY.sentido.definition"
-              ></i>
+              >
+                <AppIcon name="info" size="sm" />
+              </span>
             </dt>
             <dd class="direction-value">
-              <i :class="direction.icon" aria-hidden="true"></i>
+              <AppIcon :name="direction.icon" size="sm" />
               <span>
                 {{ direction.label }}
                 <template v-if="indicator.sentido">({{ indicator.sentido.toLowerCase() }})</template>
@@ -335,7 +343,7 @@ function exportSeriesCsv() {
           :aria-label="`Consultar fuente en ${source?.institucion || 'sitio oficial'} (abre en una pestaña nueva)`"
         >
           <span>Consultar fuente</span>
-          <i class="pi pi-external-link" aria-hidden="true"></i>
+          <AppIcon name="open_in_new" size="sm" />
         </a>
         <span v-else class="source-unavailable">Enlace no disponible</span>
       </div>
@@ -350,8 +358,16 @@ function exportSeriesCsv() {
         :message="`La clave “${String(route.params.id)}” no existe o fue actualizada.`"
       >
         <template #actions>
-          <Button label="Ir al catálogo" icon="pi pi-list" @click="router.push('/indicadores')" />
-          <Button label="Ir al inicio" icon="pi pi-home" severity="secondary" outlined @click="router.push('/')" />
+          <Button label="Ir al catálogo" @click="router.push('/indicadores')">
+            <template #icon>
+              <AppIcon name="monitoring" size="sm" />
+            </template>
+          </Button>
+          <Button label="Ir al inicio" severity="secondary" outlined @click="router.push('/')">
+            <template #icon>
+              <AppIcon name="home" size="sm" />
+            </template>
+          </Button>
         </template>
       </StatusState>
     </div>

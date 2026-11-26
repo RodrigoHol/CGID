@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter, type LocationQuery } from 'vue-router'
 import Button from 'primevue/button'
+import Chip from 'primevue/chip'
 import Column from 'primevue/column'
 import DataTable, { type DataTableRowClickEvent } from 'primevue/datatable'
 import IconField from 'primevue/iconfield'
@@ -9,6 +10,8 @@ import InputIcon from 'primevue/inputicon'
 import InputText from 'primevue/inputtext'
 import Select from 'primevue/select'
 import SelectButton from 'primevue/selectbutton'
+import { useToast } from 'primevue/usetoast'
+import AppIcon from '../components/common/AppIcon.vue'
 import StatusTag from '../components/common/StatusTag.vue'
 import { useFrontendData } from '../composables/useFrontendData'
 import type { Indicator } from '../types/contract'
@@ -16,17 +19,19 @@ import { downloadCsv } from '../utils/csv'
 import { GLOSSARY_BY_KEY } from '../utils/glossary'
 import { directionInfo, formatValue, normalizeText, statusInfo } from '../utils/labels'
 
-type EstadoFilter = 'todos' | 'procesado' | 'fuente_identificada'
+type EstadoFilter = 'todos' | 'procesado' | 'fuente_identificada' | 'pendiente_revision'
 
 const VALID_SORT_FIELDS = new Set(['nombre', 'ejeRector', 'estadoHistorico'])
 const STATUS_OPTIONS: { label: string; value: EstadoFilter }[] = [
   { label: 'Todos', value: 'todos' },
-  { label: 'Con serie histórica', value: 'procesado' },
+  { label: 'Disponibles', value: 'procesado' },
   { label: 'En integración', value: 'fuente_identificada' },
+  { label: 'En revisión', value: 'pendiente_revision' },
 ]
 
 const route = useRoute()
 const router = useRouter()
+const toast = useToast()
 const data = useFrontendData()
 
 const axisOptions = computed(() =>
@@ -40,7 +45,6 @@ const estado = ref<EstadoFilter>('todos')
 const eje = ref<string | null>(null)
 const sortField = ref<string | undefined>(undefined)
 const sortOrder = ref<number | undefined>(undefined)
-const searchInputRef = ref<{ $el?: HTMLElement } | null>(null)
 let syncingFromRoute = false
 
 function readQueryValue(value: LocationQuery[string]): string {
@@ -57,7 +61,10 @@ function syncFromRoute(query: LocationQuery) {
   const rawDir = readQueryValue(query.dir)
 
   search.value = q
-  estado.value = rawEstado === 'procesado' || rawEstado === 'fuente_identificada' ? rawEstado : 'todos'
+  estado.value =
+    rawEstado === 'procesado' || rawEstado === 'fuente_identificada' || rawEstado === 'pendiente_revision'
+      ? rawEstado
+      : 'todos'
   eje.value = rawEje && axisOptions.value.includes(rawEje) ? rawEje : null
   sortField.value = VALID_SORT_FIELDS.has(rawOrden) ? rawOrden : undefined
   sortOrder.value = rawDir === '1' ? 1 : rawDir === '-1' ? -1 : undefined
@@ -120,6 +127,26 @@ const hasActiveFilters = computed(
   () => Boolean(search.value.trim()) || estado.value !== 'todos' || Boolean(eje.value),
 )
 
+const activeFilterChips = computed(() => {
+  const chips: { key: 'search' | 'estado' | 'eje'; label: string }[] = []
+  if (search.value.trim()) {
+    chips.push({ key: 'search', label: `Búsqueda: “${search.value.trim()}”` })
+  }
+  if (estado.value !== 'todos') {
+    chips.push({ key: 'estado', label: `Semáforo: ${statusInfo(estado.value).label}` })
+  }
+  if (eje.value) {
+    chips.push({ key: 'eje', label: `Eje: ${eje.value}` })
+  }
+  return chips
+})
+
+function removeChip(key: 'search' | 'estado' | 'eje') {
+  if (key === 'search') search.value = ''
+  if (key === 'estado') estado.value = 'todos'
+  if (key === 'eje') eje.value = null
+}
+
 function getLatestPoint(indicatorId: string) {
   return data.historicos[indicatorId]?.datos?.at(-1) ?? null
 }
@@ -177,29 +204,13 @@ function exportCsv() {
     ]
   })
   downloadCsv('indicadores-pvd-veracruz.csv', headers, rows)
+  toast.add({
+    severity: 'success',
+    summary: 'Archivo listo',
+    detail: `Se exportaron ${rows.length} indicadores para Excel.`,
+    life: 3200,
+  })
 }
-
-function onWindowKeydown(event: KeyboardEvent) {
-  if (event.key !== '/' || event.ctrlKey || event.metaKey || event.altKey) return
-  const target = event.target as HTMLElement | null
-  const tag = target?.tagName
-  if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || target?.isContentEditable) return
-  event.preventDefault()
-  const el = searchInputRef.value?.$el
-  if (el instanceof HTMLInputElement) {
-    el.focus()
-  } else {
-    el?.querySelector('input')?.focus()
-  }
-}
-
-onMounted(() => {
-  window.addEventListener('keydown', onWindowKeydown)
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('keydown', onWindowKeydown)
-})
 </script>
 
 <template>
@@ -214,13 +225,15 @@ onBeforeUnmount(() => {
           {{ filteredIndicators.length }} de {{ data.indicadores.length }} indicadores
         </span>
         <Button
-          label="Descargar CSV"
-          icon="pi pi-download"
+          label="Exportar a Excel (CSV)"
           outlined
-          size="small"
           :disabled="filteredIndicators.length === 0"
           @click="exportCsv"
-        />
+        >
+          <template #icon>
+            <AppIcon name="download" size="sm" />
+          </template>
+        </Button>
       </div>
     </div>
 
@@ -228,42 +241,42 @@ onBeforeUnmount(() => {
       <div class="catalog-search-group">
         <label class="sr-only" for="catalog-search-input">Buscar indicadores</label>
         <IconField class="catalog-search-field">
-          <InputIcon class="pi pi-search" />
+          <InputIcon>
+            <AppIcon name="search" size="sm" />
+          </InputIcon>
           <InputText
             id="catalog-search-input"
-            ref="searchInputRef"
             v-model="search"
             type="search"
-            placeholder="Buscar por nombre, clave o eje"
+            placeholder="Escribe el nombre, clave o tema del indicador"
           />
         </IconField>
-        <span class="shortcut-hint" aria-hidden="true">
-          <kbd>/</kbd> para buscar
-        </span>
       </div>
 
       <div class="catalog-controls">
         <div class="filter-group">
-          <span class="filter-label">Estado de los datos</span>
+          <span class="filter-label">Semáforo de disponibilidad</span>
           <SelectButton
             v-model="estado"
             :options="STATUS_OPTIONS"
             optionLabel="label"
             optionValue="value"
             :allowEmpty="false"
-            aria-label="Filtrar por estado de los datos"
+            aria-label="Filtrar por disponibilidad de datos"
           />
         </div>
 
         <div class="filter-group">
           <span class="filter-label">
             Eje rector
-            <i
-              class="pi pi-info-circle info-hint"
+            <span
+              class="info-hint-inline"
               tabindex="0"
               :aria-label="GLOSSARY_BY_KEY.ejeRector.definition"
               v-tooltip.top="GLOSSARY_BY_KEY.ejeRector.definition"
-            ></i>
+            >
+              <AppIcon name="info" size="sm" />
+            </span>
           </span>
           <Select
             v-model="eje"
@@ -278,17 +291,59 @@ onBeforeUnmount(() => {
         <Button
           v-if="hasActiveFilters"
           label="Limpiar filtros"
-          icon="pi pi-filter-slash"
           text
-          size="small"
           @click="resetFilters"
-        />
+        >
+          <template #icon>
+            <AppIcon name="filter_alt_off" size="sm" />
+          </template>
+        </Button>
+      </div>
+
+      <div class="semaphore-inline-legend" aria-hidden="true">
+        <span class="semaphore-item semaphore-item--green">
+          <span class="sem-dot"></span> Verde: con serie lista
+        </span>
+        <span class="semaphore-item semaphore-item--amber">
+          <span class="sem-dot"></span> Ámbar: en integración
+        </span>
+        <span class="semaphore-item semaphore-item--red">
+          <span class="sem-dot"></span> Rojo: en revisión
+        </span>
+      </div>
+
+      <div v-if="activeFilterChips.length" class="active-chips" aria-label="Filtros activos">
+        <Chip
+          v-for="chip in activeFilterChips"
+          :key="chip.key"
+          :label="chip.label"
+          removable
+          class="filter-chip"
+          @remove="removeChip(chip.key)"
+        >
+          <template #removeicon="{ removeCallback, keydownCallback }">
+            <button
+              type="button"
+              class="filter-chip__remove"
+              :aria-label="`Quitar filtro ${chip.label}`"
+              @click="removeCallback"
+              @keydown="keydownCallback"
+            >
+              <AppIcon name="close" size="xs" />
+            </button>
+          </template>
+        </Chip>
       </div>
     </div>
 
     <DataTable
       :value="filteredIndicators"
       dataKey="id"
+      paginator
+      :rows="20"
+      :rowsPerPageOptions="[10, 20, 50, 148]"
+      paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
+      currentPageReportTemplate="{first}–{last} de {totalRecords}"
       :sortField="sortField"
       :sortOrder="sortOrder"
       removableSort
@@ -333,7 +388,7 @@ onBeforeUnmount(() => {
 
       <template #empty>
         <div class="table-empty">
-          <i class="pi pi-search" aria-hidden="true"></i>
+          <AppIcon name="search_off" size="xl" />
           <p>
             No encontramos indicadores
             <template v-if="search.trim()">para “{{ search.trim() }}”</template>
@@ -342,10 +397,13 @@ onBeforeUnmount(() => {
           <Button
             v-if="hasActiveFilters"
             label="Limpiar filtros"
-            icon="pi pi-filter-slash"
             text
             @click="resetFilters"
-          />
+          >
+            <template #icon>
+              <AppIcon name="filter_alt_off" size="sm" />
+            </template>
+          </Button>
         </div>
       </template>
     </DataTable>

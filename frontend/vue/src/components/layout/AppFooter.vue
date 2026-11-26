@@ -14,8 +14,8 @@ const currentYear = new Date().getFullYear()
   <footer class="app-footer">
     <div class="app-footer__inner">
       <div class="app-footer__brand">
-        <div class="app-footer__logo">
-          <img :src="logoHorizontal" alt="Instituto de Administración Pública de Veracruz" />
+        <div class="app-footer__logo-plate">
+          <img class="app-footer__logo" :src="logoHorizontal" alt="Instituto de Administración Pública de Veracruz" />
         </div>
         <p class="app-footer__description">
           Catálogo General de Indicadores de Desempeño · Plan Veracruzano de Desarrollo 2025–2030

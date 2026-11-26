@@ -5,7 +5,6 @@ declare module 'vue-router' {
   interface RouteMeta {
     title?: string
     subtitle?: string
-    hideHeader?: boolean
     section?: string
   }
 }
@@ -18,8 +17,8 @@ export const router = createRouter({
       name: 'dashboard',
       component: () => import('./views/DashboardView.vue'),
       meta: {
-        title: 'Inicio',
-        subtitle: 'Una lectura clara del avance del catálogo prioritario para Veracruz.',
+        title: 'Panorama general',
+        subtitle: 'Seguimiento visual del Catálogo de Indicadores PVD 2025–2030.',
       },
     },
     {
@@ -28,7 +27,7 @@ export const router = createRouter({
       component: () => import('./views/IndicatorsView.vue'),
       meta: {
         title: 'Indicadores',
-        subtitle: 'Busca, filtra y descarga los indicadores prioritarios del PVD.',
+        subtitle: 'Busca, filtra por eje o estado y descarga las series oficiales.',
       },
     },
     {
@@ -36,8 +35,8 @@ export const router = createRouter({
       name: 'indicator-detail',
       component: () => import('./views/IndicatorDetailView.vue'),
       meta: {
-        title: 'Indicador',
-        hideHeader: true,
+        title: 'Ficha del indicador',
+        subtitle: 'Serie histórica, ficha técnica y fuente oficial verificable.',
         section: 'indicadores',
       },
     },
@@ -47,7 +46,7 @@ export const router = createRouter({
       component: () => import('./views/SourcesView.vue'),
       meta: {
         title: 'Fuentes y cobertura',
-        subtitle: 'Origen, periodos y estado de cada serie de datos.',
+        subtitle: 'Origen institucional, periodos disponibles y trazabilidad de cada serie.',
       },
     },
     {
@@ -56,7 +55,7 @@ export const router = createRouter({
       component: () => import('./views/AboutView.vue'),
       meta: {
         title: 'Metodología y ayuda',
-        subtitle: 'Cómo leer los indicadores, glosario y fuentes.',
+        subtitle: 'Cómo interpretar los indicadores, glosario y criterios técnicos.',
       },
     },
     {
@@ -65,7 +64,7 @@ export const router = createRouter({
       component: () => import('./views/NotFoundView.vue'),
       meta: {
         title: 'Página no encontrada',
-        hideHeader: true,
+        subtitle: 'La ruta solicitada no forma parte del catálogo.',
       },
     },
   ],

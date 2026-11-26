@@ -19,26 +19,26 @@ export interface VariationAssessment {
 
 export function statusInfo(estado: HistoricalStatus | string): StatusInfo {
   if (estado === 'procesado') {
-    return { label: 'Con serie histórica', cls: 'status-tag--ready', icon: 'pi pi-chart-line' }
+    return { label: 'Disponible', cls: 'status-tag--ready', icon: 'check_circle' }
   }
   if (estado === 'pendiente_revision') {
-    return { label: 'En revisión', cls: 'status-tag--pending', icon: 'pi pi-search' }
+    return { label: 'En revisión', cls: 'status-tag--review', icon: 'error' }
   }
-  return { label: 'En integración', cls: 'status-tag--pending', icon: 'pi pi-clock' }
+  return { label: 'En integración', cls: 'status-tag--pending', icon: 'schedule' }
 }
 
 export function directionInfo(sentido: string): DirectionInfo {
   const normalized = normalizeText(sentido || '')
   if (normalized === 'ascendente') {
-    return { label: 'Mayor es mejor', icon: 'pi pi-arrow-up' }
+    return { label: 'Mayor es mejor', icon: 'arrow_upward' }
   }
   if (normalized === 'descendente') {
-    return { label: 'Menor es mejor', icon: 'pi pi-arrow-down' }
+    return { label: 'Menor es mejor', icon: 'arrow_downward' }
   }
   if (normalized === 'regular') {
-    return { label: 'Mantener en rango', icon: 'pi pi-arrows-h' }
+    return { label: 'Mantener en rango', icon: 'sync_alt' }
   }
-  return { label: 'No especificado', icon: 'pi pi-minus' }
+  return { label: 'No especificado', icon: 'remove' }
 }
 
 export function formatNumber(value: number): string {
@@ -63,10 +63,10 @@ export function assessVariation(diff: number | null | undefined, sentido: string
   if (diff === null || diff === undefined || Number.isNaN(diff)) return null
   const rounded = Math.round(diff * 100) / 100
   const icon = rounded > 0
-    ? 'pi pi-arrow-up-right'
+    ? 'trending_up'
     : rounded < 0
-      ? 'pi pi-arrow-down-right'
-      : 'pi pi-minus'
+      ? 'trending_down'
+      : 'trending_flat'
   const dir = normalizeText(sentido || '')
   if (rounded === 0 || (dir !== 'ascendente' && dir !== 'descendente')) {
     return { label: 'Sin cambio', cls: 'trend--neutral', icon }

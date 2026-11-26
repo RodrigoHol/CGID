@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import AppIcon from './AppIcon.vue'
+
 defineProps<{
   type: 'loading' | 'error' | 'empty'
   title: string
@@ -13,9 +15,9 @@ defineProps<{
     :role="type === 'error' ? 'alert' : 'status'"
   >
     <div class="status-state__icon" aria-hidden="true">
-      <i v-if="type === 'loading'" class="pi pi-spin pi-spinner"></i>
-      <i v-else-if="type === 'error'" class="pi pi-exclamation-triangle"></i>
-      <i v-else class="pi pi-inbox"></i>
+      <AppIcon v-if="type === 'loading'" name="progress_activity" size="lg" spin />
+      <AppIcon v-else-if="type === 'error'" name="error_outline" size="lg" />
+      <AppIcon v-else name="inbox" size="lg" />
     </div>
     <div class="status-state__body">
       <h2>{{ title }}</h2>

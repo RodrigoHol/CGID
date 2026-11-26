@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import Button from 'primevue/button'
+import AppIcon from '../components/common/AppIcon.vue'
 import StatusState from '../components/common/StatusState.vue'
 
 const router = useRouter()
@@ -15,8 +16,16 @@ const router = useRouter()
         message="La dirección solicitada no existe o no forma parte de este catálogo."
       >
         <template #actions>
-          <Button label="Ir al inicio" icon="pi pi-home" @click="router.push('/')" />
-          <Button label="Ver indicadores" icon="pi pi-list" severity="secondary" outlined @click="router.push('/indicadores')" />
+          <Button label="Ir al inicio" @click="router.push('/')">
+            <template #icon>
+              <AppIcon name="home" size="sm" />
+            </template>
+          </Button>
+          <Button label="Ver indicadores" severity="secondary" outlined @click="router.push('/indicadores')">
+            <template #icon>
+              <AppIcon name="monitoring" size="sm" />
+            </template>
+          </Button>
         </template>
       </StatusState>
     </div>

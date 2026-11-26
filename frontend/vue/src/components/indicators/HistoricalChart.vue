@@ -1,8 +1,11 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import Button from 'primevue/button'
+import { computed } from 'vue'
+import type { ChartData, ChartOptions, Plugin, ScriptableContext } from 'chart.js'
+import { useTheme } from '../../composables/useTheme'
 import type { Baseline, HistoricalPoint } from '../../types/contract'
 import { formatNumber, formatValue } from '../../utils/labels'
+import BaseChart from '../charts/BaseChart.vue'
+import AppIcon from '../common/AppIcon.vue'
 
 const props = defineProps<{
   points: HistoricalPoint[]
@@ -12,51 +15,139 @@ const props = defineProps<{
   unit?: string
 }>()
 
-const hoveredYear = ref<number | null>(null)
+const { isDark } = useTheme()
 
-const width = 760
-const height = 315
-const padding = { top: 28, right: 28, bottom: 45, left: 58 }
-const plotWidth = width - padding.left - padding.right
-const plotHeight = height - padding.top - padding.bottom
-
-const values = computed(() => [
-  ...props.points.map((point) => point.valor),
-  ...(props.baseline.valor === null ? [] : [props.baseline.valor]),
-  ...(props.target === null ? [] : [props.target]),
-])
-const minValue = computed(() => {
-  const min = Math.min(...values.value)
-  return Math.max(0, Math.floor((min - Math.max(2, (Math.max(...values.value) - min) * 0.12)) / 5) * 5)
+const bounds = computed(() => {
+  const vals = [
+    ...props.points.map((p) => p.valor),
+    ...(props.baseline.valor === null ? [] : [props.baseline.valor]),
+    ...(props.target === null ? [] : [props.target]),
+  ]
+  if (!vals.length) return { min: 0, max: 100 }
+  const minVal = Math.min(...vals)
+  const maxVal = Math.max(...vals)
+  const span = Math.max(maxVal - minVal, 2)
+  return {
+    min: minVal >= 0 ? Math.max(0, minVal - span * 0.14) : minVal - span * 0.14,
+    max: maxVal + span * 0.14,
+  }
 })
-const maxValue = computed(() => {
-  const max = Math.max(...values.value)
-  return Math.ceil((max + Math.max(2, (max - minValue.value) * 0.12)) / 5) * 5
-})
-const x = (index: number) =>
-  padding.left + (props.points.length <= 1 ? plotWidth / 2 : (index / (props.points.length - 1)) * plotWidth)
-const y = (value: number) =>
-  padding.top + plotHeight - ((value - minValue.value) / (maxValue.value - minValue.value || 1)) * plotHeight
 
-const linePath = computed(() =>
-  props.points.map((point, index) => `${index === 0 ? 'M' : 'L'} ${x(index)} ${y(point.valor)}`).join(' '),
-)
-const gridLines = computed(() =>
-  Array.from({ length: 5 }, (_, index) => {
-    const value = minValue.value + ((maxValue.value - minValue.value) * index) / 4
-    return { value: Math.round(value * 100) / 100, y: y(value) }
-  }),
-)
-const pointsWithLabels = computed(() =>
-  props.points.map((point, index) => ({
-    ...point,
-    x: x(index),
-    y: y(point.valor),
-  })),
-)
-const showPointLabels = computed(() => props.points.length <= 12)
-const yearLabelStep = computed(() => Math.max(1, Math.ceil(props.points.length / 8)))
-const hoveredPoint = computed(() => pointsWithLabels.value.find((point) => point.anio === hoveredYear.value))
+const lineColor = computed(() => (isDark.value ? '#E57A99' : '#7A1737'))
+const baselineColor = computed(() => (isDark.value ? '#F59E0B' : '#BA864A'))
+const targetColor = computed(() => (isDark.value ? '#22C55E' : '#18332F'))
+
+const chartData = computed<ChartData<'line'>>(() => ({
+  labels: props.points.map((p) => String(p.anio)),
+  datasets: [
+    {
+      label: 'Valor observado',
+      data: props.points.map((p) => p.valor),
+      borderColor: lineColor.value,
+      borderWidth: 3,
+      tension: 0.28,
+      fill: true,
+      backgroundColor: (context: ScriptableContext<'line'>) => {
+        const { ctx, chartArea } = context.chart
+        const baseRgb = isDark.value ? '229, 122, 153' : '122, 23, 55'
+        if (!chartArea) return `rgba(${baseRgb}, 0.12)`
+        const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom)
+        gradient.addColorStop(0, `rgba(${baseRgb}, 0.22)`)
+        gradient.addColorStop(1, `rgba(${baseRgb}, 0.0)`)
+        return gradient
+      },
+      pointRadius: 5.5,
+      pointHoverRadius: 7.5,
+      pointBackgroundColor: isDark.value ? '#181D21' : '#FFFFFF',
+      pointBorderColor: lineColor.value,
+      pointBorderWidth: 2.5,
+      pointHoverBackgroundColor: '#BA864A',
+      pointHoverBorderColor: '#FFFFFF',
+      pointHoverBorderWidth: 2,
+    },
+  ],
+}))
+
+const chartOptions = computed<ChartOptions<'line'>>(() => ({
+  interaction: { mode: 'index', intersect: false },
+  plugins: {
+    legend: { display: false },
+    tooltip: {
+      callbacks: {
+        title: (items) => `Periodo ${items[0]?.label ?? ''}`,
+        label: (ctx) => ` Valor observado: ${formatValue(ctx.parsed.y, props.unit)}`,
+      },
+    },
+  },
+  scales: {
+    x: {
+      grid: { display: false },
+      border: { display: false },
+      ticks: {
+        color: isDark.value ? '#CBD5E1' : '#111111',
+        maxRotation: 0,
+        autoSkipPadding: 14,
+        font: { size: 13, weight: 600 },
+      },
+    },
+    y: {
+      suggestedMin: bounds.value.min,
+      suggestedMax: bounds.value.max,
+      grid: { color: isDark.value ? '#2E363D' : '#EAE4D9' },
+      border: { display: false },
+      ticks: {
+        color: isDark.value ? '#CBD5E1' : '#111111',
+        font: { size: 13 },
+        callback: (value) => formatNumber(Number(value)),
+      },
+    },
+  },
+}))
+
+const referenceLinesPlugin: Plugin<'line'> = {
+  id: 'cgidReferenceLines',
+  afterDatasetsDraw(chart) {
+    const { ctx, chartArea, scales } = chart
+    const yScale = scales.y
+    if (!chartArea || !yScale) return
+
+    const drawRef = (val: number | null, color: string, label: string, alignTop: boolean) => {
+      if (val === null || Number.isNaN(val)) return
+      const yPos = yScale.getPixelForValue(val)
+      if (yPos < chartArea.top - 4 || yPos > chartArea.bottom + 4) return
+
+      ctx.save()
+      ctx.beginPath()
+      ctx.setLineDash([6, 5])
+      ctx.lineWidth = 2
+      ctx.strokeStyle = color
+      ctx.moveTo(chartArea.left, yPos)
+      ctx.lineTo(chartArea.right, yPos)
+      ctx.stroke()
+
+      ctx.setLineDash([])
+      ctx.font = '700 12px Inter, Arial, sans-serif'
+      const textWidth = ctx.measureText(label).width
+      const pillW = textWidth + 14
+      const pillH = 22
+      const pillX = chartArea.right - pillW
+      const pillY = alignTop ? Math.max(chartArea.top, yPos - pillH - 4) : Math.min(chartArea.bottom - pillH, yPos + 4)
+
+      ctx.fillStyle = color
+      ctx.beginPath()
+      ctx.roundRect(pillX, pillY, pillW, pillH, 6)
+      ctx.fill()
+
+      ctx.fillStyle = '#FFFFFF'
+      ctx.textBaseline = 'middle'
+      ctx.fillText(label, pillX + 7, pillY + pillH / 2)
+      ctx.restore()
+    }
+
+    drawRef(props.baseline.valor, baselineColor.value, 'Línea base', false)
+    drawRef(props.target, targetColor.value, 'Meta 2030', true)
+  },
+}
 
 const chartAriaLabel = computed(() => {
   if (!props.points.length) return 'Gráfica histórica del indicador sin datos'
@@ -80,142 +171,75 @@ const chartAriaLabel = computed(() => {
       </span>
     </div>
 
-    <div class="chart-scroll" @mouseleave="hoveredYear = null">
-      <svg :viewBox="`0 0 ${width} ${height}`" role="img" :aria-label="chartAriaLabel">
-        <g class="chart-grid">
-          <line
-            v-for="line in gridLines"
-            :key="line.value"
-            :x1="padding.left"
-            :x2="width - padding.right"
-            :y1="line.y"
-            :y2="line.y"
-          />
-          <text
-            v-for="line in gridLines"
-            :key="`label-${line.value}`"
-            :x="padding.left - 10"
-            :y="line.y + 4"
-            text-anchor="end"
-          >
-            {{ formatNumber(line.value) }}
-          </text>
-        </g>
-
-        <line
-          v-if="baseline.valor !== null"
-          class="chart-reference chart-reference--baseline"
-          :x1="padding.left"
-          :x2="width - padding.right"
-          :y1="y(baseline.valor)"
-          :y2="y(baseline.valor)"
-        />
-        <line
-          v-if="target !== null"
-          class="chart-reference chart-reference--target"
-          :x1="padding.left"
-          :x2="width - padding.right"
-          :y1="y(target)"
-          :y2="y(target)"
-        />
-        <path class="chart-path" :d="linePath" />
-
-        <g v-for="(point, index) in pointsWithLabels" :key="point.anio">
-          <line
-            v-if="hoveredYear === point.anio"
-            class="chart-hover-guide"
-            :x1="point.x"
-            :x2="point.x"
-            :y1="padding.top"
-            :y2="height - padding.bottom"
-          />
-          <circle
-            class="chart-point"
-            :class="{ 'chart-point--active': hoveredYear === point.anio }"
-            :cx="point.x"
-            :cy="point.y"
-            r="5"
-            tabindex="0"
-            role="button"
-            :aria-label="`${point.anio}: ${formatValue(point.valor, unit)}`"
-            @mouseenter="hoveredYear = point.anio"
-            @focus="hoveredYear = point.anio"
-            @blur="hoveredYear = null"
-          />
-          <text
-            v-if="showPointLabels || hoveredYear === point.anio"
-            class="chart-value"
-            :x="point.x"
-            :y="point.y - 12"
-            text-anchor="middle"
-          >
-            {{ formatNumber(point.valor) }}
-          </text>
-          <text
-            v-if="index % yearLabelStep === 0 || index === pointsWithLabels.length - 1"
-            class="chart-year"
-            :x="point.x"
-            :y="height - 15"
-            text-anchor="middle"
-          >
-            {{ point.anio }}
-          </text>
-        </g>
-
-        <g
-          v-if="hoveredPoint"
-          class="chart-tooltip"
-          :transform="`translate(${Math.min(hoveredPoint.x + 12, width - 145)} ${Math.max(hoveredPoint.y - 65, 8)})`"
-        >
-          <rect width="132" height="48" rx="6" />
-          <text x="10" y="19">{{ hoveredPoint.anio }}</text>
-          <text x="10" y="37">{{ formatValue(hoveredPoint.valor, unit) }}</text>
-        </g>
-      </svg>
-    </div>
-
-    <Button
-      v-if="hoveredYear !== null"
-      label="Quitar selección"
-      icon="pi pi-times"
-      text
-      size="small"
-      class="chart-clear"
-      @click="hoveredYear = null"
+    <BaseChart
+      type="line"
+      :data="chartData"
+      :options="chartOptions"
+      :plugins="[referenceLinesPlugin]"
+      :height="310"
+      :aria-label="chartAriaLabel"
     />
+
     <p class="chart-note">
-      La gráfica muestra únicamente los periodos publicados por la fuente. No se interpolan años faltantes.
+      La gráfica muestra únicamente los años con dato oficial publicado. No se estiman ni rellenan años faltantes.
     </p>
   </div>
   <div v-else class="chart-empty">
-    Este indicador aún no cuenta con una serie histórica integrada.
+    <span class="chart-empty__icon" aria-hidden="true">
+      <AppIcon name="show_chart" size="lg" />
+    </span>
+    <strong>Cifras históricas en proceso de integración</strong>
+    <p>
+      Este indicador ya cuenta con ficha técnica y fuente oficial. Puedes consultar el documento original
+      en la sección de fuente de información al final de esta página.
+    </p>
   </div>
 </template>
 
 <style scoped>
 .chart-wrap { width: 100%; }
-.chart-legend { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 12px; color: var(--color-muted); font-size: 12px; }
-.chart-legend span { display: inline-flex; align-items: center; gap: 7px; }
-.legend-line { width: 20px; height: 3px; display: inline-block; border-radius: 2px; }
-.legend-line--history { background: #7A1737; }
-.legend-line--baseline { background: #BA864A; }
-.legend-line--target { background: #18332F; }
-.chart-scroll { overflow-x: auto; }
-svg { display: block; min-width: 650px; width: 100%; height: auto; }
-.chart-grid line { stroke: #E8E1D5; stroke-width: 1; }
-.chart-grid text { fill: #5B6461; font-size: 11px; }
-.chart-reference { stroke-width: 2; stroke-dasharray: 6 5; }
-.chart-reference--baseline { stroke: #BA864A; }
-.chart-reference--target { stroke: #18332F; }
-.chart-path { fill: none; stroke: #7A1737; stroke-linecap: round; stroke-linejoin: round; stroke-width: 3; }
-.chart-point { fill: #ffffff; stroke: #7A1737; stroke-width: 3; cursor: pointer; }
-.chart-point:hover, .chart-point--active { fill: #BA864A; stroke-width: 4; }
-.chart-value { fill: #7A1737; font-size: 11px; font-weight: 700; }
-.chart-hover-guide { stroke: #BA864A; stroke-dasharray: 3 4; stroke-width: 1; }
-.chart-tooltip rect { fill: #18332F; }
-.chart-tooltip text { fill: #ffffff; font-size: 11px; font-weight: 700; }
-.chart-clear { margin-top: 6px; }
-.chart-year { fill: #5B6461; font-size: 11px; }
-.chart-note { margin: 8px 0 0; color: var(--color-muted); font-size: 12px; }
-.chart-empty { padding: 48px 20px; color: var(--color-muted); text-align: center; }
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 14px;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+}
+.chart-legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend-line { width: 22px; height: 4px; display: inline-block; border-radius: 2px; }
+.legend-line--history { background: var(--color-primary); }
+.legend-line--baseline { background: var(--color-secondary); }
+.legend-line--target { background: var(--sem-green-solid); }
+.chart-note { margin: 14px 0 0; color: var(--color-muted); font-size: 14px; }
+.chart-empty {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 40px 24px;
+  border-radius: var(--radius-md);
+  background: var(--color-ivory-light);
+  color: var(--color-muted);
+  text-align: center;
+}
+.chart-empty__icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-md);
+  background: var(--sem-amber-bg);
+  color: var(--sem-amber-text);
+}
+.chart-empty strong {
+  color: var(--color-ink);
+  font-size: 17px;
+}
+.chart-empty p {
+  margin: 0;
+  max-width: 520px;
+  font-size: 15px;
+  line-height: 1.6;
+}
 </style>
