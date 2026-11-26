@@ -6,10 +6,10 @@ import Button from 'primevue/button'
 import paisajeVeracruz from '../assets/paisaje-veracruz.jpg'
 import BaseChart from '../components/charts/BaseChart.vue'
 import AppIcon from '../components/common/AppIcon.vue'
+import HelpHint from '../components/common/HelpHint.vue'
 import { useFrontendData } from '../composables/useFrontendData'
 import { useTheme } from '../composables/useTheme'
 import { CATALOGO_TOTAL_INDICADORES } from '../config/site'
-import { GLOSSARY_BY_KEY } from '../utils/glossary'
 
 const router = useRouter()
 const data = useFrontendData()
@@ -319,6 +319,47 @@ const sourcesChartOptions: ChartOptions<'doughnut'> = {
     },
   },
 }
+
+// Interpretaciones ejecutivas automáticas para las gráficas del tablero (C06)
+const axisChartInsight = computed(() => {
+  if (!axisStats.value.length) return ''
+  const topAxis = axisStats.value[0]
+  const topTotal = topAxis.ready + topAxis.integration + topAxis.review
+  const bestCoverage = [...axisStats.value].sort((a, b) => {
+    const rateA = a.ready / Math.max(1, a.ready + a.integration + a.review)
+    const rateB = b.ready / Math.max(1, b.ready + b.integration + b.review)
+    return rateB - rateA
+  })[0]
+  const bestTotal = bestCoverage.ready + bestCoverage.integration + bestCoverage.review
+  const bestRate = Math.round((bestCoverage.ready / Math.max(1, bestTotal)) * 100)
+  return `${topAxis.shortName} concentra ${topTotal} indicadores; ${bestCoverage.shortName} tiene la mayor disponibilidad (${bestRate}% con serie lista).`
+})
+
+const coverageRingInsight = computed(
+  () =>
+    `${coveragePercent.value}% del catálogo ya tiene cifras integradas; ${pendingIntegration.value} están en integración y ${pendingReview.value} en revisión.`,
+)
+
+const timelineChartInsight = computed(() => {
+  if (!coverageTimeline.value.length) return ''
+  let peakYear = coverageTimeline.value[0][0]
+  let peakCount = coverageTimeline.value[0][1]
+  for (const [year, count] of coverageTimeline.value) {
+    if (count > peakCount) {
+      peakYear = year
+      peakCount = count
+    }
+  }
+  const [latestYear, latestCount] = coverageTimeline.value[coverageTimeline.value.length - 1]
+  return `La mayor cobertura histórica se registró en ${peakYear} (${peakCount} indicadores) y en ${latestYear} hay ${latestCount} con dato publicado.`
+})
+
+const sourcesChartInsight = computed(() => {
+  if (!topSources.value.length) return ''
+  const mainSource = topSources.value[0]
+  const share = Math.round((mainSource.count / Math.max(1, data.fuentes.length)) * 100)
+  return `${mainSource.name} respalda ${mainSource.count} indicadores (${share}% del catálogo oficial).`
+})
 </script>
 
 <template>
@@ -355,7 +396,10 @@ const sourcesChartOptions: ChartOptions<'doughnut'> = {
 
     <!-- Guía rápida de semáforo para reducir carga cognitiva -->
     <div class="surface-card semaphore-bar" aria-label="Significado de colores del semáforo">
-      <span class="semaphore-bar__title">Semáforo de disponibilidad:</span>
+      <span class="semaphore-bar__title">
+        Semáforo de disponibilidad
+        <HelpHint term-key="semaforo" />
+      </span>
       <span class="semaphore-item semaphore-item--green">
         <span class="sem-dot" aria-hidden="true"></span>
         <strong>Verde:</strong> Datos disponibles ({{ data.resumen.indicadoresConHistorico }})
@@ -377,14 +421,7 @@ const sourcesChartOptions: ChartOptions<'doughnut'> = {
           <span class="kpi-card__icon kpi-card__icon--primary">
             <AppIcon name="inventory_2" size="md" />
           </span>
-          <button
-            type="button"
-            class="info-hint-btn"
-            aria-label="Total de indicadores definidos en el Plan Veracruzano de Desarrollo 2025–2030"
-            v-tooltip.top="'Total de indicadores definidos en el Plan Veracruzano de Desarrollo 2025–2030.'"
-          >
-            <AppIcon name="info" size="sm" />
-          </button>
+          <HelpHint term-key="totalCatalogo" />
         </div>
         <strong class="kpi-card__value">{{ CATALOGO_TOTAL_INDICADORES }}</strong>
         <span class="kpi-card__label">Total en catálogo PVD</span>
@@ -398,14 +435,7 @@ const sourcesChartOptions: ChartOptions<'doughnut'> = {
           <span class="kpi-card__icon kpi-card__icon--green">
             <AppIcon name="check_circle" size="md" />
           </span>
-          <span
-            class="info-hint-btn"
-            tabindex="0"
-            :aria-label="GLOSSARY_BY_KEY.conSerieHistorica.definition"
-            v-tooltip.top="GLOSSARY_BY_KEY.conSerieHistorica.definition"
-          >
-            <AppIcon name="info" size="sm" />
-          </span>
+          <HelpHint term-key="conSerieHistorica" />
         </div>
         <strong class="kpi-card__value kpi-card__value--green">{{ data.resumen.indicadoresConHistorico }}</strong>
         <span class="kpi-card__label">Datos disponibles</span>
@@ -417,14 +447,7 @@ const sourcesChartOptions: ChartOptions<'doughnut'> = {
           <span class="kpi-card__icon kpi-card__icon--amber">
             <AppIcon name="schedule" size="md" />
           </span>
-          <span
-            class="info-hint-btn"
-            tabindex="0"
-            :aria-label="GLOSSARY_BY_KEY.enIntegracion.definition"
-            v-tooltip.top="GLOSSARY_BY_KEY.enIntegracion.definition"
-          >
-            <AppIcon name="info" size="sm" />
-          </span>
+          <HelpHint term-key="enIntegracion" />
         </div>
         <strong class="kpi-card__value kpi-card__value--amber">{{ pendingIntegration }}</strong>
         <span class="kpi-card__label">En integración</span>
@@ -438,14 +461,7 @@ const sourcesChartOptions: ChartOptions<'doughnut'> = {
           <span class="kpi-card__icon kpi-card__icon--neutral">
             <AppIcon name="date_range" size="md" />
           </span>
-          <button
-            type="button"
-            class="info-hint-btn"
-            :aria-label="GLOSSARY_BY_KEY.serieHistorica.definition"
-            v-tooltip.top="GLOSSARY_BY_KEY.serieHistorica.definition"
-          >
-            <AppIcon name="info" size="sm" />
-          </button>
+          <HelpHint term-key="serieHistorica" />
         </div>
         <strong class="kpi-card__value">{{ firstPeriod }}–{{ lastPeriod }}</strong>
         <span class="kpi-card__label">Periodo cubierto</span>
@@ -459,7 +475,10 @@ const sourcesChartOptions: ChartOptions<'doughnut'> = {
         <div class="bento-card__header">
           <div>
             <span class="section-kicker">DISTRIBUCIÓN POR TEMA</span>
-            <h3>Indicadores por Eje Rector</h3>
+            <h3 class="bento-card__title-inline">
+              Indicadores por Eje Rector
+              <HelpHint term-key="ejeRector" />
+            </h3>
           </div>
           <span class="bento-chip">Clic en una barra para filtrar</span>
         </div>
@@ -470,6 +489,14 @@ const sourcesChartOptions: ChartOptions<'doughnut'> = {
           :height="285"
           aria-label="Distribución de indicadores por Eje Rector del Plan Veracruzano de Desarrollo"
         />
+        <div v-if="axisChartInsight" class="chart-insight">
+          <span class="chart-insight__icon" aria-hidden="true">
+            <AppIcon name="insights" size="sm" />
+          </span>
+          <p class="chart-insight__text">
+            {{ axisChartInsight }}
+          </p>
+        </div>
       </article>
 
       <article class="surface-card bento-card bento-card--centered">
@@ -493,8 +520,7 @@ const sourcesChartOptions: ChartOptions<'doughnut'> = {
         </div>
 
         <p class="ring-summary">
-          <strong>{{ data.resumen.indicadoresConHistorico }}</strong> de
-          <strong>{{ data.resumen.totalIndicadores }}</strong> indicadores ya tienen cifras históricas listas.
+          {{ coverageRingInsight }}
         </p>
 
         <Button
@@ -526,6 +552,14 @@ const sourcesChartOptions: ChartOptions<'doughnut'> = {
           :height="235"
           aria-label="Cantidad de indicadores con datos observados por año"
         />
+        <div v-if="timelineChartInsight" class="chart-insight">
+          <span class="chart-insight__icon" aria-hidden="true">
+            <AppIcon name="insights" size="sm" />
+          </span>
+          <p class="chart-insight__text">
+            {{ timelineChartInsight }}
+          </p>
+        </div>
       </article>
 
       <article class="surface-card bento-card">
@@ -557,6 +591,15 @@ const sourcesChartOptions: ChartOptions<'doughnut'> = {
               <strong>{{ src.count }}</strong>
             </li>
           </ul>
+        </div>
+
+        <div v-if="sourcesChartInsight" class="chart-insight">
+          <span class="chart-insight__icon" aria-hidden="true">
+            <AppIcon name="account_balance" size="sm" />
+          </span>
+          <p class="chart-insight__text">
+            {{ sourcesChartInsight }}
+          </p>
         </div>
       </article>
     </section>

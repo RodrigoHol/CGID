@@ -38,6 +38,9 @@ export function directionInfo(sentido: string): DirectionInfo {
   if (normalized === 'regular') {
     return { label: 'Mantener en rango', icon: 'sync_alt' }
   }
+  if (normalized === 'nominal') {
+    return { label: 'Referencia nominal', icon: 'tag' }
+  }
   return { label: 'No especificado', icon: 'remove' }
 }
 

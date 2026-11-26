@@ -46,6 +46,12 @@ export const IapPreset = definePreset(Aura, {
           hoverColor: '#f09bb4',
           activeColor: '#d45a7d',
         },
+        text: {
+          color: '#f1f5f9',
+          hoverColor: '#ffffff',
+          mutedColor: '#cbd5e1',
+          hoverMutedColor: '#f1f5f9',
+        },
         surface: {
           0: '#ffffff',
           50: '#f8fafc',

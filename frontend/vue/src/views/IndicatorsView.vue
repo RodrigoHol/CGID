@@ -12,11 +12,12 @@ import Select from 'primevue/select'
 import SelectButton from 'primevue/selectbutton'
 import { useToast } from 'primevue/usetoast'
 import AppIcon from '../components/common/AppIcon.vue'
+import HelpHint from '../components/common/HelpHint.vue'
 import StatusTag from '../components/common/StatusTag.vue'
 import { useFrontendData } from '../composables/useFrontendData'
-import type { Indicator } from '../types/contract'
+import type { HistoricalPoint, Indicator } from '../types/contract'
+import { calculateGoalProgress, type GoalProgress } from '../utils/calculations'
 import { downloadCsv } from '../utils/csv'
-import { GLOSSARY_BY_KEY } from '../utils/glossary'
 import { directionInfo, formatValue, normalizeText, statusInfo } from '../utils/labels'
 
 type EstadoFilter = 'todos' | 'procesado' | 'fuente_identificada' | 'pendiente_revision'
@@ -147,8 +148,37 @@ function removeChip(key: 'search' | 'estado' | 'eje') {
   if (key === 'eje') eje.value = null
 }
 
-function getLatestPoint(indicatorId: string) {
-  return data.historicos[indicatorId]?.datos?.at(-1) ?? null
+interface CatalogRowMetrics {
+  latest: HistoricalPoint | null
+  progress: GoalProgress
+}
+
+const indicatorMetricsMap = computed(() => {
+  const map = new Map<string, CatalogRowMetrics>()
+  for (const indicator of data.indicadores) {
+    const series = data.historicos[indicator.id]?.datos ?? []
+    map.set(indicator.id, {
+      latest: series.at(-1) ?? null,
+      progress: calculateGoalProgress(indicator, series),
+    })
+  }
+  return map
+})
+
+function getRowMetrics(indicatorId: string): CatalogRowMetrics {
+  return indicatorMetricsMap.value.get(indicatorId) ?? {
+    latest: null,
+    progress: {
+      status: 'no_series',
+      percent: null,
+      rawPercent: null,
+      barPercent: 0,
+      tone: 'neutral',
+      shortLabel: 'Sin serie',
+      badgeLabel: 'Sin serie histórica',
+      detail: '',
+    },
+  }
 }
 
 function resetFilters() {
@@ -167,7 +197,7 @@ function onSortOrderChange(value: number | undefined | null) {
 
 function onRowClick(event: DataTableRowClickEvent<Indicator>) {
   const target = event.originalEvent.target as HTMLElement | null
-  if (target?.closest('a')) return
+  if (target?.closest('a') || target?.closest('button')) return
   router.push(`/indicadores/${event.data.id}`)
 }
 
@@ -184,22 +214,24 @@ function exportCsv() {
     'Meta 2030',
     'Último año',
     'Último valor',
+    'Avance 2030',
     'Fuente (URL)',
   ]
   const rows = filteredIndicators.value.map((indicator) => {
-    const latest = getLatestPoint(indicator.id)
+    const { latest, progress } = getRowMetrics(indicator.id)
     return [
       indicator.clave,
       indicator.nombre,
       indicator.ejeRector,
       statusInfo(indicator.estadoHistorico).label,
       `${directionInfo(indicator.sentido).label}${indicator.sentido ? ` (${indicator.sentido})` : ''}`,
-      indicator.unidadMedida || 'No especificada',
+      indicator.unidadMedida || 'Según fuente oficial',
       indicator.lineaBase.anio,
       indicator.lineaBase.valor,
       indicator.meta2030,
       latest?.anio ?? null,
       latest?.valor ?? null,
+      progress.shortLabel,
       indicator.fuente.url,
     ]
   })
@@ -255,7 +287,10 @@ function exportCsv() {
 
       <div class="catalog-controls">
         <div class="filter-group">
-          <span class="filter-label">Semáforo de disponibilidad</span>
+          <span class="filter-label">
+            Semáforo de disponibilidad
+            <HelpHint term-key="semaforo" />
+          </span>
           <SelectButton
             v-model="estado"
             :options="STATUS_OPTIONS"
@@ -269,14 +304,7 @@ function exportCsv() {
         <div class="filter-group">
           <span class="filter-label">
             Eje rector
-            <span
-              class="info-hint-inline"
-              tabindex="0"
-              :aria-label="GLOSSARY_BY_KEY.ejeRector.definition"
-              v-tooltip.top="GLOSSARY_BY_KEY.ejeRector.definition"
-            >
-              <AppIcon name="info" size="sm" />
-            </span>
+            <HelpHint term-key="ejeRector" />
           </span>
           <Select
             v-model="eje"
@@ -372,9 +400,38 @@ function exportCsv() {
 
       <Column header="Último dato">
         <template #body="{ data: row }">
-          <div v-if="getLatestPoint(row.id)" class="latest-cell">
-            <strong>{{ formatValue(getLatestPoint(row.id)?.valor, row.unidadMedida) }}</strong>
-            <small>{{ getLatestPoint(row.id)?.anio }}</small>
+          <div v-if="getRowMetrics(row.id).latest" class="latest-cell">
+            <strong>{{ formatValue(getRowMetrics(row.id).latest?.valor, row.unidadMedida) }}</strong>
+            <small>{{ getRowMetrics(row.id).latest?.anio }}</small>
+          </div>
+          <span v-else class="latest-empty">—</span>
+        </template>
+      </Column>
+
+      <Column>
+        <template #header>
+          <span class="table-header-with-help">
+            Avance 2030
+            <HelpHint term-key="porcentajeAvance" size="xs" />
+          </span>
+        </template>
+        <template #body="{ data: row }">
+          <div v-if="getRowMetrics(row.id).latest" class="catalog-progress-cell">
+            <div class="catalog-progress-label" :class="`catalog-progress-label--${getRowMetrics(row.id).progress.tone}`">
+              <span class="sem-dot" aria-hidden="true"></span>
+              <span>{{ getRowMetrics(row.id).progress.shortLabel }}</span>
+            </div>
+            <div
+              v-if="getRowMetrics(row.id).progress.percent !== null"
+              class="mini-progress-bar"
+              aria-hidden="true"
+            >
+              <div
+                class="mini-progress-fill"
+                :class="`progress-fill--${getRowMetrics(row.id).progress.tone}`"
+                :style="{ width: `${getRowMetrics(row.id).progress.barPercent}%` }"
+              ></div>
+            </div>
           </div>
           <span v-else class="latest-empty">—</span>
         </template>

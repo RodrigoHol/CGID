@@ -1,25 +1,62 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import type { ChartData, ChartOptions, Plugin, ScriptableContext } from 'chart.js'
+import SelectButton from 'primevue/selectbutton'
 import { useTheme } from '../../composables/useTheme'
 import type { Baseline, HistoricalPoint } from '../../types/contract'
+import { buildHistoricalChartInterpretation } from '../../utils/calculations'
 import { formatNumber, formatValue } from '../../utils/labels'
 import BaseChart from '../charts/BaseChart.vue'
 import AppIcon from '../common/AppIcon.vue'
 
-const props = defineProps<{
-  points: HistoricalPoint[]
-  baseline: Baseline
-  target: number | null
-  direction: string
-  unit?: string
-}>()
+const SEXENIO_START_YEAR = 2024
+
+const RANGE_OPTIONS = [
+  { label: 'Serie completa', value: false },
+  { label: 'Sexenio (2024–actual)', value: true },
+]
+
+const props = withDefaults(
+  defineProps<{
+    points: HistoricalPoint[]
+    baseline: Baseline
+    target: number | null
+    direction: string
+    unit?: string
+    entity?: string
+    referenceDate?: string
+  }>(),
+  {
+    unit: undefined,
+    entity: 'Veracruz',
+    referenceDate: undefined,
+  },
+)
 
 const { isDark } = useTheme()
+const sexenioOnly = ref(false)
+
+watch(
+  () => props.points,
+  () => {
+    sexenioOnly.value = false
+  },
+)
+
+const canToggleSexenio = computed(
+  () =>
+    props.points.some((p) => p.anio < SEXENIO_START_YEAR)
+    && props.points.some((p) => p.anio >= SEXENIO_START_YEAR),
+)
+
+const displayedPoints = computed(() => {
+  if (!sexenioOnly.value || !canToggleSexenio.value) return props.points
+  return props.points.filter((p) => p.anio >= SEXENIO_START_YEAR)
+})
 
 const bounds = computed(() => {
   const vals = [
-    ...props.points.map((p) => p.valor),
+    ...displayedPoints.value.map((p) => p.valor),
     ...(props.baseline.valor === null ? [] : [props.baseline.valor]),
     ...(props.target === null ? [] : [props.target]),
   ]
@@ -38,11 +75,11 @@ const baselineColor = computed(() => (isDark.value ? '#F59E0B' : '#BA864A'))
 const targetColor = computed(() => (isDark.value ? '#22C55E' : '#18332F'))
 
 const chartData = computed<ChartData<'line'>>(() => ({
-  labels: props.points.map((p) => String(p.anio)),
+  labels: displayedPoints.value.map((p) => String(p.anio)),
   datasets: [
     {
       label: 'Valor observado',
-      data: props.points.map((p) => p.valor),
+      data: displayedPoints.value.map((p) => p.valor),
       borderColor: lineColor.value,
       borderWidth: 3,
       tension: 0.28,
@@ -56,8 +93,8 @@ const chartData = computed<ChartData<'line'>>(() => ({
         gradient.addColorStop(1, `rgba(${baseRgb}, 0.0)`)
         return gradient
       },
-      pointRadius: 5.5,
-      pointHoverRadius: 7.5,
+      pointRadius: displayedPoints.value.length === 1 ? 8 : 5.5,
+      pointHoverRadius: 9,
       pointBackgroundColor: isDark.value ? '#181D21' : '#FFFFFF',
       pointBorderColor: lineColor.value,
       pointBorderWidth: 2.5,
@@ -150,25 +187,50 @@ const referenceLinesPlugin: Plugin<'line'> = {
 }
 
 const chartAriaLabel = computed(() => {
-  if (!props.points.length) return 'Gráfica histórica del indicador sin datos'
-  const first = props.points[0]
-  const last = props.points[props.points.length - 1]
-  return `Serie histórica de ${first.anio} (${formatValue(first.valor, props.unit)}) a ${last.anio} (${formatValue(last.valor, props.unit)}), con ${props.points.length} observaciones.`
+  if (!displayedPoints.value.length) return 'Gráfica histórica del indicador sin datos'
+  const first = displayedPoints.value[0]
+  const last = displayedPoints.value[displayedPoints.value.length - 1]
+  return `Serie histórica de ${first.anio} (${formatValue(first.valor, props.unit)}) a ${last.anio} (${formatValue(last.valor, props.unit)}), con ${displayedPoints.value.length} observaciones.`
 })
+
+const interpretation = computed(() =>
+  buildHistoricalChartInterpretation({
+    points: displayedPoints.value,
+    baseline: props.baseline,
+    target: props.target,
+    direction: props.direction,
+    unit: props.unit,
+    entity: props.entity,
+    referenceIsoDate: props.referenceDate,
+  }),
+)
 </script>
 
 <template>
   <div v-if="points.length" class="chart-wrap">
-    <div class="chart-legend">
-      <span><i class="legend-line legend-line--history" aria-hidden="true"></i>Valor observado</span>
-      <span v-if="baseline.valor !== null">
-        <i class="legend-line legend-line--baseline" aria-hidden="true"></i>
-        Línea base {{ baseline.anio }}: {{ formatValue(baseline.valor, unit) }}
-      </span>
-      <span v-if="target !== null">
-        <i class="legend-line legend-line--target" aria-hidden="true"></i>
-        Meta 2030: {{ formatValue(target, unit) }}
-      </span>
+    <div class="chart-toolbar">
+      <div class="chart-legend">
+        <span><i class="legend-line legend-line--history" aria-hidden="true"></i>Valor observado</span>
+        <span v-if="baseline.valor !== null">
+          <i class="legend-line legend-line--baseline" aria-hidden="true"></i>
+          Línea base {{ baseline.anio }}: {{ formatValue(baseline.valor, unit) }}
+        </span>
+        <span v-if="target !== null">
+          <i class="legend-line legend-line--target" aria-hidden="true"></i>
+          Meta 2030: {{ formatValue(target, unit) }}
+        </span>
+      </div>
+
+      <SelectButton
+        v-if="canToggleSexenio"
+        v-model="sexenioOnly"
+        :options="RANGE_OPTIONS"
+        optionLabel="label"
+        optionValue="value"
+        :allowEmpty="false"
+        size="small"
+        aria-label="Seleccionar rango de años en la gráfica"
+      />
     </div>
 
     <BaseChart
@@ -180,8 +242,22 @@ const chartAriaLabel = computed(() => {
       :aria-label="chartAriaLabel"
     />
 
+    <div v-if="interpretation" class="chart-insight">
+      <span class="chart-insight__icon" aria-hidden="true">
+        <AppIcon :name="interpretation.icon" size="sm" />
+      </span>
+      <p class="chart-insight__text">
+        {{ interpretation.text }}
+      </p>
+    </div>
+
     <p class="chart-note">
-      La gráfica muestra únicamente los años con dato oficial publicado. No se estiman ni rellenan años faltantes.
+      <template v-if="sexenioOnly && displayedPoints.length === 1">
+        Vista acotada desde el inicio del sexenio ({{ SEXENIO_START_YEAR }}): hasta el momento solo se ha publicado 1 periodo en este tramo.
+      </template>
+      <template v-else>
+        La gráfica muestra únicamente los años con dato oficial publicado. No se estiman ni rellenan años faltantes.
+      </template>
     </p>
   </div>
   <div v-else class="chart-empty">
@@ -198,11 +274,18 @@ const chartAriaLabel = computed(() => {
 
 <style scoped>
 .chart-wrap { width: 100%; }
+.chart-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin-bottom: 14px;
+}
 .chart-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 14px;
+  gap: 18px;
   color: var(--color-text);
   font-size: 14px;
   font-weight: 600;

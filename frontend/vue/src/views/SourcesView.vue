@@ -12,6 +12,7 @@ import SelectButton from 'primevue/selectbutton'
 import Tag from 'primevue/tag'
 import { useToast } from 'primevue/usetoast'
 import AppIcon from '../components/common/AppIcon.vue'
+import HelpHint from '../components/common/HelpHint.vue'
 import StatusTag from '../components/common/StatusTag.vue'
 import { useFrontendData } from '../composables/useFrontendData'
 import type { DataSource } from '../types/contract'
@@ -145,7 +146,10 @@ function exportSourcesCsv() {
 
       <div class="catalog-controls">
         <div class="filter-group">
-          <span class="filter-label">Semáforo de disponibilidad</span>
+          <span class="filter-label">
+            Semáforo de disponibilidad
+            <HelpHint term-key="semaforo" />
+          </span>
           <SelectButton
             v-model="estado"
             :options="STATUS_OPTIONS"

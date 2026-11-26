@@ -30,25 +30,25 @@ Criterio de priorización:
 - **P3 — Metadatos institucionales y calendario / Complejidad Media-Alta:** Exige extender el esquema JSON/CSV, mejorar `extractor_catalogo.py` y recabar insumos oficiales de secretarías/encargados.
 - **P4 — Analítica predictiva y comparativos nacionales/municipales / Complejidad Alta:** Requiere modelos de proyección transparentes, ingesta de series nacionales (32 entidades) y series municipales/regionales (212 municipios).
 
-| ID | Corrección solicitada (nota del cliente) | Prioridad | Complejidad | Capas impactadas | Dependencias |
-| :---: | :--- | :---: | :---: | :--- | :--- |
-| **C01** | Bajar la gráfica en la vista de cada indicador; mostrar primero el contexto | **P1** | Baja | Frontend | Ninguna |
-| **C02** | Describir cada concepto con el ícono de `?` | **P1** | Baja | Frontend | Ninguna |
-| **C03** | Explicar Línea Base y explicar Fórmula cuando no exista | **P1** | Baja | Frontend / Catálogo | Ninguna (UI) / Revisión PDF |
-| **C04** | En Variación observada, permitir seleccionar el año base de comparación | **P1** | Baja | Frontend | Ninguna |
-| **C05** | Mostrar porcentaje de avance hacia la meta y tiempo restante | **P1** | Baja–Media | Frontend | Regla de cálculo unificada |
-| **C06** | Incluir interpretación ejecutiva de cada gráfica | **P1** | Baja–Media | Frontend | Ninguna |
-| **C07** | Mostrar en todos los indicadores cómo inició el sexenio (2024), cómo va hoy y la meta | **P2** | Media | Frontend / ETL | Depuración línea base / 2024 |
-| **C08** | Identificar indicadores prioritarios según el atraso/rezago | **P2** | Media | ETL / Frontend | Limpiar `metas_intermedias_json` y definir criterio de atraso |
-| **C09** | Hoja de Resumen en el Dashboard principal (cuántos, cómo van, más atrasados y su secretaría) | **P2** | Media | Frontend | C08 y C12 (al menos Secretaría) |
-| **C10** | Presentar indicadores por Ejes, por Secretaría y General + apartado claro de filtros | **P2** | Media | Frontend / Datos | C12 (campo Secretaría) |
-| **C11** | Periodicidad en Último Valor + Mes de última publicación y fecha de siguiente publicación | **P3** | Media–Alta | ETL / Esquema / Frontend | Re-extracción PDF + calendario oficial |
-| **C12** | Secretaría, Subsecretaría, Departamento/Área y Nombre del encargado responsable | **P3** | Media–Alta | Esquema / ETL / Gestión Cliente / Frontend | Matriz oficial de responsables del cliente |
-| **C13** | Lista de indicadores que requieren investigación por Secretaría (brechas de datos/ficha) | **P3** | Media | ETL / Gestión Cliente / Frontend | C12 y auditoría automática |
-| **C14** | Proyección de tendencia actual, peor de los casos y mejor de los casos al 2030 | **P4** | Alta | Frontend / Metodología | Validación metodológica del modelo de escenarios |
-| **C15** | Cruce con gráfica nacional (al menos 3 indicadores estatal vs. nacional) | **P4** | Alta | ETL / Esquema / Frontend | Selección de 3+ indicadores piloto |
-| **C16** | Ranking nacional (arriba o abajo de la media nacional) | **P4** | Alta | ETL / Esquema / Frontend | C15 (datos de las 32 entidades y media) |
-| **C17** | Inclusión por municipio o región de Veracruz en el comparativo | **P4** | Alta | ETL / Esquema / Frontend | Disponibilidad municipal/regional en fuentes oficiales |
+| ID | Corrección solicitada (nota del cliente) | Prioridad | Complejidad | Capas impactadas | Dependencias | Estado |
+| :---: | :--- | :---: | :---: | :--- | :--- | :---: |
+| **C01** | Bajar la gráfica en la vista de cada indicador; mostrar primero el contexto | **P1** | Baja | Frontend | Ninguna | **Completado** |
+| **C02** | Describir cada concepto con el ícono de `?` | **P1** | Baja | Frontend | Ninguna | **Completado** |
+| **C03** | Explicar Línea Base y explicar Fórmula cuando no exista | **P1** | Baja | Frontend / Catálogo | Ninguna (UI) / Revisión PDF | **Completado (UI)** |
+| **C04** | En Variación observada, permitir seleccionar el año base de comparación | **P1** | Baja | Frontend | Ninguna | **Completado** |
+| **C05** | Mostrar porcentaje de avance hacia la meta y tiempo restante | **P1** | Baja–Media | Frontend | Regla de cálculo unificada | **Completado** |
+| **C06** | Incluir interpretación ejecutiva de cada gráfica | **P1** | Baja–Media | Frontend | Ninguna | **Completado** |
+| **C07** | Mostrar en todos los indicadores cómo inició el sexenio (2024), cómo va hoy y la meta | **P2** | Media | Frontend / ETL | Depuración línea base / 2024 | Pendiente |
+| **C08** | Identificar indicadores prioritarios según el atraso/rezago | **P2** | Media | ETL / Frontend | Limpiar `metas_intermedias_json` y definir criterio de atraso | Pendiente |
+| **C09** | Hoja de Resumen en el Dashboard principal (cuántos, cómo van, más atrasados y su secretaría) | **P2** | Media | Frontend | C08 y C12 (al menos Secretaría) | Pendiente |
+| **C10** | Presentar indicadores por Ejes, por Secretaría y General + apartado claro de filtros | **P2** | Media | Frontend / Datos | C12 (campo Secretaría) | Pendiente |
+| **C11** | Periodicidad en Último Valor + Mes de última publicación y fecha de siguiente publicación | **P3** | Media–Alta | ETL / Esquema / Frontend | Re-extracción PDF + calendario oficial | Pendiente |
+| **C12** | Secretaría, Subsecretaría, Departamento/Área y Nombre del encargado responsable | **P3** | Media–Alta | Esquema / ETL / Gestión Cliente / Frontend | Matriz oficial de responsables del cliente | Pendiente |
+| **C13** | Lista de indicadores que requieren investigación por Secretaría (brechas de datos/ficha) | **P3** | Media | ETL / Gestión Cliente / Frontend | C12 y auditoría automática | Pendiente |
+| **C14** | Proyección de tendencia actual, peor de los casos y mejor de los casos al 2030 | **P4** | Alta | Frontend / Metodología | Validación metodológica del modelo de escenarios | Pendiente |
+| **C15** | Cruce con gráfica nacional (al menos 3 indicadores estatal vs. nacional) | **P4** | Alta | ETL / Esquema / Frontend | Selección de 3+ indicadores piloto | Pendiente |
+| **C16** | Ranking nacional (arriba o abajo de la media nacional) | **P4** | Alta | ETL / Esquema / Frontend | C15 (datos de las 32 entidades y media) | Pendiente |
+| **C17** | Inclusión por municipio o región de Veracruz en el comparativo | **P4** | Alta | ETL / Esquema / Frontend | Disponibilidad municipal/regional en fuentes oficiales | Pendiente |
 
 ---
 
@@ -243,7 +243,7 @@ Antes de ejecutar las fases P3 y P4 conviene solicitar o validar con el cliente 
 
 ## 5. Hoja de ruta sugerida (4 Sprints)
 
-1. **Sprint 1 (P1 — Inmediato):** `C01` + `C02` + `C03` + `C04` + `C05` + `C06`. Mejora drástica de legibilidad y comprensión financiera sin esperar insumos externos.
+1. **Sprint 1 (P1 — Inmediato · Completado):** `C01` + `C02` + `C03` + `C04` + `C05` + `C06`. Mejora drástica de legibilidad y comprensión financiera sin esperar insumos externos. (Pendiente únicamente revisión documental en PDF para rescatar fórmulas faltantes en catálogo/ETL si existen).
 2. **Sprint 2 (P2 — Resumen y Seguimiento Sexenal):** Depuración de `metas_intermedias_json` + `C07` + `C08` + `C09` + `C10`. Dashboard convertido en hoja de resumen ejecutivo con atrasos y filtros avanzados.
 3. **Sprint 3 (P3 — Responsables y Calendario):** `C11` + `C12` + `C13`. Extracción de periodicidades/fechas, carga de secretarías/encargados y tablero de investigación pendiente por secretaría.
 4. **Sprint 4 (P4 — Proyecciones y Comparativos):** `C14` + `C15` + `C16` + `C17`. Escenarios 2030, cruce Veracruz vs. Nacional, ranking de 32 entidades y desglose por región/municipio.
